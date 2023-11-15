@@ -56,4 +56,4 @@ feature_row:
 {% endfor %}
 
 <!--I want my website verified on my mastodon, but I'd really prefer the link isn't prominent unless I can style it better-->
-<a hidden rel="me" href="https://tech.lgbt/@queenofsquiggles">Mastodon</a>
+<a hidden rel="me" href="https://blobfox.coffee/@queenofsquiggles">Mastodon</a>

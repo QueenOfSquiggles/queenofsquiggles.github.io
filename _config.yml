@@ -116,7 +116,7 @@ author:
   links:
     - label: "Mastodon (Fediverse)"
       icon: "fab fa-fw fa-mastodon"
-      url: "https://tech.lgbt/@queenofsquiggles"
+      url: "https://blobfox.coffee/@queenofsquiggles"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/QueenOfSquiggles"
@@ -129,7 +129,7 @@ footer:
   links:
   - label: "Mastodon (Fediverse)"
     icon: "fab fa-fw fa-mastodon"
-    url: "https://tech.lgbt/@queenofsquiggles"
+    url: "https://blobfox.coffee/@queenofsquiggles"
   - label: "GitHub"
     icon: "fab fa-fw fa-github"
     url: "https://github.com/QueenOfSquiggles"
