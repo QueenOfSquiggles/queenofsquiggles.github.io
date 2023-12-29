@@ -1,9 +1,10 @@
 ---
 permalink: /about/
-title: "About"
+title: "Portfolio"
 layout: single
-excerpt: "Queen Of Squiggles - Formal Portfolio & CV"
-last_modified_at: 2022-02-23
+classes: wide
+excerpt: "Queen Of Squiggles - Portfolio"
+last_modified_at: 2023-12-29
 toc: true
 toc_sticky: true
 author_profile: true
@@ -12,77 +13,104 @@ author_profile: true
 # Forward
 
 > I have been working hard for many years to hone my crafts. I enjoy telling stories and utilizing diverse mediums to tell those stories. I work with game development and in my final year of college got into traditional story writing through short story fiction. 
->
-> I do a majority of my online work under the alias, "Queen Of Squiggles". I've found that using an alias offers me a modicum of anonymity, which helps to protect my friends and family from any potential bad actors that would wish me harm. If you are reading this as a prospective employer, I hope you can understand my choice to not include my name in my online work.
->
-> It may also be interesting to note that for a majority of my projects (included those listed here), I accomplished them while also acting as a full time student, studying Computer Science. 
+
+*I do a majority of my online work under the alias, "Queen Of Squiggles". I've found that using an alias offers me a modicum of anonymity, which helps to protect my friends and family from any potential bad actors that would wish me harm. If you are reading this as a prospective employer, I hope you can understand my choice to not include my name in my online work.*
 
 ----
 
 # Notable Projects
 
-## Where The Dead Lie - January 2023
 
-![image-right]({{ "/assets/images/where-the-dead-lie/wtdl-img-5.png" | relative_url }})
+{% include img_link_text.html 
+	width="80%"
+	header="Contact Range"
+	text=""
+	img="To Be Filled Out"
+	link=""
+%}
 
-This game was made in roughly a week to test my skills as a game developer and the feature of the Godot 4 beta releases.
+{% include img_link_text.html 
+	width="80%"
+	header="Gruesome Claim"
+	text="To Be Filled Out"
+	img=""
+	link=""
+%}
 
-<a href="/games/where-the-dead-lie/" class="btn btn--info">Read More</a>
+{% include img_link_text.html 
+	width="80%"
+	header="Project Furball"
+	text="A tech art project and tutorial creating a simple shell fur system that reacts to movement and is highly customizable."
+	img="/assets/images/shell-fur-plugin/demo_physics.gif"
+	link="/tech/shell-fur-breakdown/"
+%}
 
-## This Metal Heart Still Beats - September 2022
+{% include img_link_text.html 
+	width="80%"
+	header="Godot Lighting Demo"
+	text="A small educational tool showing off how different lighting models affect the appearance of a simple scene."
+	img="/assets/images/squiggles-light-example/image1.png"
+	link="/tech/godot-lighting-exploration/"
+%}
 
-![image-right]({{ "/assets/images/this-metal-heart-still-beats/screenshots_1.png" | relative_url }})
+{% include img_link_text.html 
+	width="80%" 
+	header="Where The Dead Lie - January 2023"
+	text="made in roughly a week to test my skills as a game developer and the feature of the Godot 4 beta releases." 
+	img="/assets/images/where-the-dead-lie/wtdl-img-5.png" 
+	link="/games/where-the-dead-lie/" 
+%}
 
-This game was made for Ludum Dare 51, which had the theme "Every 10 seconds".
+{% include img_link_text.html 
+	width="80%" 
+	header="This Metal Heart Still Beats - September 2022" 
+	text="This game was made for Ludum Dare 51, which had the theme \"Every 10 seconds\"." 
+	img="/assets/images/this-metal-heart-still-beats/screenshots_1.png" 
+	link="/games/this-metal-heart-still-beats/" 
+%}
 
-<a href="/games/this-metal-heart-still-beats/" class="btn btn--info">Read More</a>
+{% include img_link_text.html 
+	width="80%" 
+	header="Ascension Of The Lamb - July 2022" 
+	text="a \"Retro PBR\" game about exploring a mysterious cult bunker" 
+	img="/assets/images/ascension-of-the-lamb/ascension_header.png" 
+	link="/games/ascension-of-the-lamb/" 
+%}
 
-## Ascension Of The Lamb - July 2022
-
-![image-right]({{ "/assets/images/ascension-of-the-lamb/ascension_header.png" | relative_url }})
-
-*Ascension Of The Lamb* is a "Retro PBR" game about exploring a mysterious cult bunker. 
-
-<a href="/games/ascension-of-the-lamb/" class="btn btn--info">Read More</a>
-
-## Godot SDF Gen - May 2022
-
-![image-right]({{ "/assets/images/godot-sdf-gen/tool_preview_1.png" | relative_url }})
-
-Godot SDF Gen is a small tool I made for myself and others to easily generate "Signed Distance Field" textures, which can be used to create a [variety of fun effects](https://shaderfun.com/2018/07/01/signed-distance-fields-part-7-some-simple-effects/). 
-
-<a href="/tools/godot-sdf-gen/" class="btn btn--info">Read More</a>{: .text-right}
+{% include img_link_text.html 
+	width="80%" 
+	header="Godot SDF Gen - May 2022" 
+	text="Godot SDF Gen is a small tool I made for myself and others to easily generate \"Signed Distance Field\" textures, which can be used to create a variety of fun effects" 
+	img="/assets/images/godot-sdf-gen/tool_preview_1.png" 
+	link="/tools/godot-sdf-gen/" 
+%}
 
 # Technology Experience
 
 ## Software
 
-| Software | Years | Type |
-| --- | --- | --- |
-| Godot | 2 | Hobby development |
-| Unity | 3 | Hobby Development |
-| Blender | 1.5 | 3D Game art |
-| Krita | 4 | 2D Game art |
-| Office Suite | 8 | Word processing, Sheets, Presentation, etc... |
+| Software 		| Years 	| Type |
+| --- 			| --- 		| --- |
+| Godot 		| 4 		| Hobby development |
+| Unity 		| 3 		| Hobby Development |
+| Blender 		| 3 		| 3D Game art |
+| Krita 		| 6 		| 2D Game art |
+| Inkscape 		| 2 		| Vector Art (primarily icons) |
+| Office Suite 	| 9 		| Word processing, Sheets, Presentation, etc... |
 
 
 ## Languages
 
-- C#
-- Python
-- C++
-- GDScript
-- Java
-- Rust
-- HTML
-- CSS
-- JavaScript
-- TypeScript
-- Lua
+| Web 			| Scripting | System/Native	|
+| --- 			| --- 		| --- 			|
+| C# 			| C# 		| C# 			|
+| Python 		| Python 	| Rust 			|
+| HTML 			| GDScript 	| Java 			|
+| CSS 			| lua 		| C++ 			|
+| JavaScript 	| \- 		| \- 			| 
+| TypeScript 	| \- 		| \- 			| 
+| Shopify 		| \- 		| \- 			| 
 
-# Writing
-
-I took a class in my final semester of college as an elective for writing short story fiction. I really enjoy writing and making games because both allow me to tell interesting stories. I've included a small collection of my writings in the blog section of this website, under a single category for ease of access. [You can read them here](/categories/#short-stories)
 
 # Hobbies
 
