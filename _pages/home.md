@@ -27,14 +27,6 @@ feature_row:
     url: "https://queenofsquiggles.itch.io/"
     btn_class: "btn--primary"
     btn_label: "Play!"      
-    # Properties to add an image background
-    # image_path: /assets/images/mm-free-feature.png
-    # alt: ""
-  - title: "See my article backlog"
-    excerpt: "A list of potential article ideas that I want to do eventually..."
-    url: /backlog/
-    btn_class: "btn--primary"
-    btn_label: "See Backlog"
 
 ---
 

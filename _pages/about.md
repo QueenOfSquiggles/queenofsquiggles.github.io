@@ -20,38 +20,24 @@ author_profile: true
 
 # Notable Projects
 
+## Games
 
 {% include img_link_text.html 
 	width="80%"
 	header="Contact Range"
-	text=""
-	img="To Be Filled Out"
-	link=""
+	text="My sci-fi action-horror submission to Ludum Dare 54."
+	img="/assets/images/contact-range/sensor_array.png"
+	link="/games/contact-range/"
 %}
 
 {% include img_link_text.html 
 	width="80%"
 	header="Gruesome Claim"
-	text="To Be Filled Out"
-	img=""
-	link=""
+	text="A short horror game with a focus on realism and advanced AI pathing techniques."
+	img="/assets/images/gruesome-claim/couch.png"
+	link="/games/gruesome-claim/"
 %}
 
-{% include img_link_text.html 
-	width="80%"
-	header="Project Furball"
-	text="A tech art project and tutorial creating a simple shell fur system that reacts to movement and is highly customizable."
-	img="/assets/images/shell-fur-plugin/demo_physics.gif"
-	link="/tech/shell-fur-breakdown/"
-%}
-
-{% include img_link_text.html 
-	width="80%"
-	header="Godot Lighting Demo"
-	text="A small educational tool showing off how different lighting models affect the appearance of a simple scene."
-	img="/assets/images/squiggles-light-example/image1.png"
-	link="/tech/godot-lighting-exploration/"
-%}
 
 {% include img_link_text.html 
 	width="80%" 
@@ -77,6 +63,26 @@ author_profile: true
 	link="/games/ascension-of-the-lamb/" 
 %}
 
+
+## Tech Demos
+
+{% include img_link_text.html 
+	width="80%"
+	header="Project Furball"
+	text="A tech art project and tutorial creating a simple shell fur system that reacts to movement and is highly customizable."
+	img="/assets/images/shell-fur-plugin/demo_physics.gif"
+	link="/tech/shell-fur-breakdown/"
+%}
+
+{% include img_link_text.html 
+	width="80%"
+	header="Godot Lighting Demo"
+	text="A small educational tool showing off how different lighting models affect the appearance of a simple scene."
+	img="/assets/images/squiggles-light-example/image1.png"
+	link="/tech/godot-lighting-exploration/"
+%}
+
+
 {% include img_link_text.html 
 	width="80%" 
 	header="Godot SDF Gen - May 2022" 
@@ -84,6 +90,27 @@ author_profile: true
 	img="/assets/images/godot-sdf-gen/tool_preview_1.png" 
 	link="/tools/godot-sdf-gen/" 
 %}
+
+## Educational
+
+{% include img_link_text.html 
+	width="80%" 
+	header="Behaviour Trees vs State Machines" 
+	text="A technical edutainment breakdown of the use cases and logic behind behaviour trees and finite state machines in game development" 
+	img="/assets/images/guides/fsm-vs-bt/banner-notext.jpg" 
+	link="/guides/fsm-vs-bt/" 
+%}
+
+> "Game Design using Obsidian" includes specific examples from my devlopment of *Contact Range*
+
+{% include img_link_text.html 
+	width="80%" 
+	header="Game Design using Obsidian" 
+	text="A guide on how to organize and plan small game development projects using the free notes app, Obsidian" 
+	img="/assets/images/guides/game-design-using-obsidian/banner.jpg" 
+	link="/guides/game-design-using-obsidian/" 
+%}
+
 
 # Technology Experience
 
