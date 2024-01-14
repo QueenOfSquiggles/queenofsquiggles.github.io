@@ -20,6 +20,22 @@ author_profile: true
 
 # Notable Projects
 
+## Open Source Contributions
+
+### Godot Rust
+> Godot Rust is a library that allows for writing rust code that integrates with the Godot Game Engine, whether for specific game scripting or for more general purpose tools development
+
+- Recipes Section Documentation Guides
+	- [Custom Resources][gdrust-custom-resources]
+	- [Editor Plugins][gdrust-editor-plugins]
+	- [Engine Singletons][gdrust-engine-singletons]
+	- [Custom Icons][gdrust-custom-icons]
+
+[gdrust-custom-resources]: https://godot-rust.github.io/book/recipes/custom-resources.html
+[gdrust-editor-plugins]: https://godot-rust.github.io/book/recipes/editor-plugin.html
+[gdrust-engine-singletons]: https://godot-rust.github.io/book/recipes/engine-singleton.html
+[gdrust-custom-icons]: https://godot-rust.github.io/book/recipes/custom-icons.html
+
 ## Games
 
 {% include img_link_text.html 
