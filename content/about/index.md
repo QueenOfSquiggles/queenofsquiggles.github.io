@@ -4,7 +4,7 @@ title: Portfolio
 summary: My portfolio
 date: 2024-01-15
 images:
-  - "/images/website-main-banner.png"
+  - /images/gruesome-claim/couch.png
 ---
 
 ## Notable Projects
