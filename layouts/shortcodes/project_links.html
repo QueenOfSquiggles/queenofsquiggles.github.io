@@ -1,0 +1,7 @@
+<div style="align-content: flex-start; flex-direction: row;">
+	{{ range $k, $v := .Params }}
+	<a href="{{$v}}" class="btn btn-primary" role="button" target="_blank">
+		{{ $k }}
+	</a>
+	{{ end }}
+</div>
