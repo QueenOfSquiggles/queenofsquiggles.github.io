@@ -151,7 +151,7 @@ public override void _Ready() {
 {% endraw >}}
 ```
 
-In case you aren't super familiar with C## code, the above code is connecting the `OnStateFinished` signal from the two types of states available to a lambda expression that calls the `_fsm` (an instance of `FiniteStateMachine`) to change the state to a new state. The signals are emitted from the state when they detect a condition where they need to exit and the orchestating node (in this case a "Player Controller") defines how those are handled. Additionally, we can use external triggers to force a switch if we like. And subclasses of `State` can even define their own signals to allow multiple types of transitions out.
+In case you aren't super familiar with C# code, the above code is connecting the `OnStateFinished` signal from the two types of states available to a lambda expression that calls the `_fsm` (an instance of `FiniteStateMachine`) to change the state to a new state. The signals are emitted from the state when they detect a condition where they need to exit and the orchestating node (in this case a "Player Controller") defines how those are handled. Additionally, we can use external triggers to force a switch if we like. And subclasses of `State` can even define their own signals to allow multiple types of transitions out.
 
 So we have it working great! A small number of states and the transtions handled by an orchestrating node. Now imagine we have 9 possible states with 16 total transitions! That sounds like a whole lot! How would we even begin to create a solution to that, let alone an *elegant* one!?
 
