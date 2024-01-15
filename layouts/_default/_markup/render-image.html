@@ -1,10 +1,10 @@
 {{- $image := resources.Get .Destination -}}
-
+{{- $default_quality := "q60" -}}
 {{- if $image -}}
 {{- $post_image_webp := partial "ImageConverter.html"
 	(dict 
 		"ImageSrc" .Destination 
-		"ImgParam" (printf "%dx%d webp q100" $image.Width $image.Height)
+		"ImgParam" (printf "%dx%d webp %s" $image.Width $image.Height $default_quality)
 	) 
 -}}
 {{- $post_image_jpg := partial "ImageConverter.html"
