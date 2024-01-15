@@ -1,7 +1,7 @@
 ---
 title: "Choreographer Design Documentation"
 summary: "A snapshot of design specification"
-lastmod: 2023-12-9
+date: 2023-12-9
 
 categories:
   - Tech

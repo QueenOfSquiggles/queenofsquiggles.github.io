@@ -1,7 +1,7 @@
 ---
 title: "Godot SDF Gen"
 summary: "A tool for generating simple SDF textures made with Godot."
-lastmod: 2023-02-23
+date: 2022-05-20
 
 # header:
 #     overlay_image: /images/godot-sdf-gen/tool_preview_1.png

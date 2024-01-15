@@ -2,7 +2,7 @@
 title: "Ascension Of The Lamb"
 excerpt: "A small horror game made for Go Godot Jam 3"
 layout: single
-last_modified_at: 2023-12-29
+date: 2024-01-15
 
 categories:
   - Games

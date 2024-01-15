@@ -1,7 +1,6 @@
 ---
 title: "Behaviour Trees versus State Machines"
 summary: "A guide on my two preferred solutions for most games AI including when and why one would use them."
-lastmod: 2024-01-14
 date: 2023-10-11
 
 categories:

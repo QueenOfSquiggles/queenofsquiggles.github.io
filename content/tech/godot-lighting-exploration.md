@@ -1,7 +1,7 @@
 ---
 title: "Godot Lighting Exploration"
 summary: "Playing around with different lighting models available in Godot 4"
-lastmod: 2023-10-05
+date: 2023-10-05
 
 # header:
 #     overlay_filter: 0.7

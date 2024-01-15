@@ -1,7 +1,7 @@
 ---
 title: "Where The Dead Lie"
 summary: "A short horror game made to test out Godot 4's capabilities"
-lastmod: 2024-01-14
+date: 2024-01-15
 
 categories:
   - Games

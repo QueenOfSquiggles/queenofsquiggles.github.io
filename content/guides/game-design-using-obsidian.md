@@ -1,7 +1,7 @@
 ---
 title: "Indie Game Design Using Obsidian"
 summary: "A brief guide on how I use the note-taking app 'Obsidian' to design games"
-lastmod: 2023-10-09
+date: 2024-01-15
 
 header:
     overlay_image: /images/game-design-using-obsidian/banner.jpg

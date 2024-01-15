@@ -1,7 +1,6 @@
 ---
 title: "Gruesome Claim"
-lastmod: 2023-12-29
-
+date: 2024-01-15
 
 
 categories:

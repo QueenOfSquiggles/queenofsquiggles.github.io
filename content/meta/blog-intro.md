@@ -1,7 +1,7 @@
 ---
 title: "Blog Introduction"
 summary: "An introduction of this blog and website in general"
-lastmod: 2023-02-09
+date: 2023-02-09
 
 images:
   - /images/banner.jpg

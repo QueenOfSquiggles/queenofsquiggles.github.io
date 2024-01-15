@@ -1,7 +1,7 @@
 ---
 title: "Blog Update 2023"
 summary: "An update to what I'm planning for this blog going forwards"
-lastmod: 2023-10-07
+date: 2023-10-07
 
 images:
   - /images/banner.jpg

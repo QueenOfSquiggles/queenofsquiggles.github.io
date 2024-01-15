@@ -1,7 +1,7 @@
 ---
 title: "Godot Engine Editor Icon Colours"
 summary: "A cheat sheet for engine colour hex codes"
-lastmod: 2023-11-24
+date: 2023-11-24
 
 categories:
   - Tech

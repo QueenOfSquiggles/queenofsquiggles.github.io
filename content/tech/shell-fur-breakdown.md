@@ -1,7 +1,6 @@
 ---
 title: "Shell Fur Breakdown"
 summary: "Tooling for shell fur in Godot and tech art discussion"
-lastmod: 2024-01-14
 date: 2023-11-14
 
 categories:

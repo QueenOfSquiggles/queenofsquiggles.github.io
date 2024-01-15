@@ -1,7 +1,7 @@
 ---
 title: "This Metal Heart Still Beats"
 summary: "A small puzzle game made for Ludum Dare 51"
-lastmod: 2024-01-14
+date: 2024-01-15
 
 
 

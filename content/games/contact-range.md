@@ -2,7 +2,7 @@
 title: "Contact Range"
 excerpt: "A space action-horror game made for Ludum Dare"
 layout: single
-last_modified_at: 2023-12-29
+date: 2024-01-15
 
 
 
