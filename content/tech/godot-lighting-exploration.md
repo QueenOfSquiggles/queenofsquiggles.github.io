@@ -13,7 +13,6 @@ date: 2023-10-05
 #         -   label: "Runnable Build"
 #             url: "https://queenofsquiggles.itch.io/squiggles-godot-lighting-demo"
 
-
 categories:
   - Tech
 tags:

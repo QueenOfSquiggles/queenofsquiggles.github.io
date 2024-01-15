@@ -1,0 +1,3 @@
+{{ $img := .Ordinal 0 }}
+{{ $res := resources.Get $img }}
+{{ $res.Convert "webp picture" }}

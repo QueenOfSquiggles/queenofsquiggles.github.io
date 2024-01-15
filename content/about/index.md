@@ -4,17 +4,8 @@ title: Portfolio
 summary: My portfolio
 date: 2024-01-15
 images:
-  - /images/website-main-banner.png
+  - "/images/website-main-banner.png"
 ---
-
-
-## Forward
-
-> I have been working hard for many years to hone my crafts. I enjoy telling stories and utilizing diverse mediums to tell those stories. I work with game development and in my final year of college got into traditional story writing through short story fiction. 
-
-*I do a majority of my online work under the alias, "Queen Of Squiggles". I've found that using an alias offers me a modicum of anonymity, which helps to protect my friends and family from any potential bad actors that would wish me harm. If you are reading this as a prospective employer, I hope you can understand my choice to not include my name in my online work.*
-
-----
 
 ## Notable Projects
 
