@@ -27,7 +27,6 @@ images:
 
 ### Games
 
-
 {{< img_link_text 
 	width="80%"
 	header="Gruesome Claim"
