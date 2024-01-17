@@ -27,13 +27,6 @@ images:
 
 ### Games
 
-{{< img_link_text 
-	width="80%"
-	header="Contact Range"
-	text="My sci-fi action-horror submission to Ludum Dare 54."
-	img="/images/contact-range/sensor_array.png"
-	link="/games/contact-range/"
->}}
 
 {{< img_link_text 
 	width="80%"

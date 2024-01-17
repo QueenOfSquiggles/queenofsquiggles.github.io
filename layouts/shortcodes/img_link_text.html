@@ -1,7 +1,15 @@
+{{ $img := .Get "img" }}
+{{ $link := .Get "link" }}
+{{ $header := .Get "header" }}
+{{ $text := .Get "text" }}
+
+{{ with resources.Get $img }}
 <div style="align-content: flex-start; flex-flow: column; border-radius: 3rem;">
 	<div style="position: relative; text-align: left; color: white; width: 60%; min-width: 400px; border-radius: 3rem;">
-		<a href="{{ .Get "link" }}">
-			<img style="width: 100%;  border-radius: 3rem;" alt="A screengrap from the game" src="{{ .Get "img" }}"/>
+		<a href="{{ $link }}">
+			<img style="width: 100%; height: fit-content;  border-radius: 3rem;" 
+				alt="A screengrap from the game" 
+				src=" {{ .RelPermalink }}"/>
 			<div style="position: absolute; 
 					bottom: 0px; 
 					left: 0px;
@@ -25,14 +33,15 @@
 					border-top-right-radius: 2rem;
 					padding: 1.5rem;
 				">
-				{{ if .Get "header" }}
-				<h2 style="color:white;">{{ .Get "header" }}</h2>
+				{{ with $header }}
+				<h2 style="color:white;">{{ . }}</h2>
 				{{ end }}
-				{{ if .Get "text" }}
-					<p style="color:white;"> {{ .Get "text" }} </p>
+				{{ with $text }}
+					<p style="color:white;"> {{ . }} </p>
 				{{ end }}
 			</div>
 		</a>
 	</div>
 	<br/>
 </div>
+{{ end }}
