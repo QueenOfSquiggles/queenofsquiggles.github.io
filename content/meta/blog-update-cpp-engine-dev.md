@@ -1,5 +1,5 @@
 ---
-tvitle: "Blog Update Feb. 2024 - C++ Development"
+title: "Blog Update Feb. 2024 - C++ Development"
 summary: "Another update on the blog and my development goals"
 date: 2024-02-06
 
