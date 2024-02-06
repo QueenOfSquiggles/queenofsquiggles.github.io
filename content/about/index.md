@@ -27,6 +27,16 @@ images:
 
 ### Games
 
+{{< img_link_text
+	width="80%"
+	header="Watery Wails (Engine/Game)"
+	text="A C++ game engine and game for testing my skills in C++ development"
+	img="/images/watery-wails/watery_wails_pbr_demo.png"
+	link="/meta/blog-update-cpp-engine-dev/#c"
+
+>}}
+
+
 {{< img_link_text 
 	width="80%"
 	header="Gruesome Claim"
