@@ -142,13 +142,11 @@ Each state handles it's own logic as if it was completely independant of the oth
 
 In the above example we can see three core states, and the conditions by which they transition to the particular state. It is imporant to note those transitions are one-way directional. States themselves are actually incredibly simple. The complexity comes in when we need to orchestrate transitions based on conditions. A very Godot approach is to use signals, and then have a parent node connect those signals to state change calls. *Which is exactly what I did in Squiggles Core 4X (SC4X)*
 
-```cs
-{% raw >}}
+```csharp
 public override void _Ready() {
     _stateCutscene.OnStateFinished += () => _fsm.ChangeState(_stateMoving);
     _stateMoving.OnStateFinished += () => _fsm.ChangeState(_stateCutscene);
 }
-{% endraw >}}
 ```
 
 In case you aren't super familiar with C# code, the above code is connecting the `OnStateFinished` signal from the two types of states available to a lambda expression that calls the `_fsm` (an instance of `FiniteStateMachine`) to change the state to a new state. The signals are emitted from the state when they detect a condition where they need to exit and the orchestating node (in this case a "Player Controller") defines how those are handled. Additionally, we can use external triggers to force a switch if we like. And subclasses of `State` can even define their own signals to allow multiple types of transitions out.
@@ -289,37 +287,37 @@ For Hugo you need to use shortcodes. Which are not terribly different from Jekyl
 `/layouts/shortcodes/tenor.html`
 ```html
 <div style="margin: auto; width: {{ .Get "width" }}; border: 3px solid black; padding: 10px;">
-    <div
-        class="tenor-gif-embed"
-        data-postid="{{ .Get "data-postid" }}"
-        data-share-method="host"
-        data-aspect-ratio="{{ .Get "data-aspect-ratio" }}"
-        data-width="100%"
-    >
-        <a href="{{ .Get "url" }}"></a>
-    </div>
-    <script type="text/javascript" async src="https://tenor.com/embed.js"/></script>
-    <noscript>
-        {{ if .Get "fallback" }}
-            <img src="{{ .Get "fallback" }}"/>
-        {{ else }}
-            <p>
-				<i>
-					<b>No fallback provided!</b>
-				</i>
-			</p>
-            <br/>
-        {{ end }}
-        	<p>
-				<b>GIF embed failed. </b>
-				<a href="{{ .Get "url" }}">Click to view source.</a>
-			</p>
-    </noscript>
-    {{ if .Get "caption" }}
-        <br/>
-        <b>Caption: </b>
-		<i>{{ .Get "caption" }} </i>
-    {{ end }}
+ <div
+  class="tenor-gif-embed"
+  data-postid="{{ .Get "data-postid" }}"
+  data-share-method="host"
+  data-aspect-ratio="{{ .Get "data-aspect-ratio" }}"
+  data-width="100%"
+ >
+  <a href="{{ .Get "url" }}"></a>
+ </div>
+ <script type="text/javascript" async src="https://tenor.com/embed.js"/></script>
+ <noscript>
+{{ if .Get "fallback" }}
+  <img src="{{ .Get "fallback" }}"/>
+{{ else }}
+  <p>
+   <i>
+    <b>No fallback provided!</b>
+   </i>
+  </p>
+  <br/>
+{{ end }}
+  <p>
+   <b>GIF embed failed. </b>
+   <a href="{{ .Get "url" }}">Click to view source.</a>
+  </p>
+ </noscript>
+{{ if .Get "caption" }}
+ <br/>
+ <b>Caption: </b>
+ <i> {{ .Get "caption" }} </i>
+{{ end }}
 </div>
 <br/>
 ```
