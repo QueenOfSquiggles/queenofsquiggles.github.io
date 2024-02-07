@@ -43,7 +43,7 @@ Hopefully I'm getting across the idea that AI in games is significantly more sim
 
 ## Behaviour Trees my beloved :two_hearts:
 
-Behaviour Trees were my first love. They are absolutely incredible and I would argue that they are functional enough to do some basic scripting with them should the need arise. Now to actually talk about them :grinning_face_with_sweat:
+Behaviour Trees were my first love. They are absolutely incredible and I would argue that they are functional enough to do some basic scripting with them should the need arise. Now to actually talk about them :sweat_smile:
 
 Behaviour Trees are closest to a ["Flow Chart"](https://en.wikipedia.org/wiki/Flowchart), which is probably the best way to think about them if you're just getting started.
 
@@ -246,7 +246,7 @@ Here's some resources to learn more about particular AIs in games and how to use
 | [BitBrain's Behaviour Tree Addon "Beehave" (GDscript)(MIT)](https://github.com/bitbrain/beehave) | A super amazing behaviour tree implementation that uses a few extra node types to make the trees more robust. Comes with debugging tools so you can inspect what the tree is doing at any given time (even in real-time!!!) |
 
 ## Bonus! You like memes?
-> Please note that since the port to Hugo from Jekyll, this is no longer the same process. But a similar system is used through Hugo's "shorcode"
+> Please note that since the port to Hugo from Jekyll, this is no longer the same process. But a similar system is used through Hugo's "shortcode"
 
 
 You might have noticed the GIFs I used in this post. I made a custom "include" type that I can use for my posts that specifically embeds any tenor GIF with a particular width and then centers it and adds a border. Optionally it can add a caption to the gif as well since I'm not sure how well tenor embedded gifs support captions. Plus that way if it fails to load, the meaning is still there. Here's the code I used to make that happen:
