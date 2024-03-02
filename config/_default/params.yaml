@@ -33,6 +33,16 @@ hb:
     # the paginate for categories, tags, series list pages.
     paginate: 6
   blog:
+    giscus:
+      repo: QueenOfSquiggles/queenofsquiggles.github.io
+      repo_id: R_kgDOGcOB7A
+      category: General
+      category_id: DIC_kwDOGcOB7M4Cdq04
+      mapping: pathname
+      strict_matching: true
+      inputPosition: top
+      reactions: true
+      lazy_loading: true
     sidebar:
       profile:
         title: Queen Of Squiggles
@@ -63,16 +73,6 @@ hb:
         # - docs
         # - blog
         # - tutorials
-    giscus:
-      repo: "QueenOfSquiggles/queenofsquiggles.github.io"
-      repo_id: "R_kgDOGcOB7A"
-      category: "General"
-      category_id: "DIC_kwDOGcOB7M4Cdq04"
-      mapping: "pathname"
-      strict_matching: "true"
-      inputPosition: "top"
-      reactions: "true"
-      lazy_loading: "true"
   content_panel:
     repo:
       service: github # github or gitlab.
