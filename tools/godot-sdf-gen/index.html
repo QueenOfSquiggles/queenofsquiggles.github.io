@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title>Godot SDF Gen | Queen Of Squiggles&#x27;s Blog</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  
+  <link rel="stylesheet" 
+    href="https://bootswatch.com/5/cyborg/bootstrap.min.css" >
+  
+  
+  <link rel="me" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles">
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+  
+  
+  <script src="https://queenofsquiggles.github.io/js/blockquote.js"></script>
+  <script src="https://queenofsquiggles.github.io/js/img.js"></script>
+  
+  <script defer src="https://queenofsquiggles.github.io/elasticlunr.min.js"></script>
+  <script defer src="https://queenofsquiggles.github.io/search_index.en.js"></script>
+  <script src="https://queenofsquiggles.github.io/js/search.js"></script>
+  
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://queenofsquiggles.github.io/rss.xml">
+  
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  
+  
+  
+  
+  <nav class="
+      navbar
+      navbar-expand-lg
+      navbar-dark
+      bg-dark
+    ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;" title="The personal blog for all of the Queen&#x27;s news, ramblings, portfolio stuffs, and more!">Queen Of Squiggles&#x27;s Blog</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+        aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav me-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+          </li>
+          
+          
+          
+        </ul>
+        
+        <form class="d-flex" onsubmit="return goSearch(event)">
+          <input class="form-control me-sm-2" type="text" placeholder="Search" />
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        
+      </div>
+    </div>
+  </nav>
+  <main class="container mx-auto my-5">
+    
+<h1>Godot SDF Gen</h1>
+<p class="text-muted">
+  
+  
+  
+  2022&#x2F;05&#x2F;20
+
+</p>
+
+<p>
+  
+  <a href="https://queenofsquiggles.github.io/tags/tool/" class="badge bg-dark text-decoration-none link-light me-1">
+    tool
+  </a>
+  
+</p>
+
+
+
+<div class="content">
+  <div class="container">
+    <div class="float-end">
+      
+
+
+<div class="float" style="padding: 1rem;">
+    <div class="list-group list-group-flush">
+        
+        <h3 class="list-group-item">Table Of Contents</h3>
+
+        
+        <a class="list-group-item list-group-item-action" href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/#Tool_Overview">Tool Overview</a>
+        
+    
+        <a class="list-group-item list-group-item-action" href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/#Purposes">Purposes</a>
+        
+    
+        <a class="list-group-item list-group-item-action" href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/#UI">UI</a>
+        
+    
+        <a class="list-group-item list-group-item-action" href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/#Systems">Systems</a>
+        
+    
+        <a class="list-group-item list-group-item-action" href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/#Reception">Reception</a>
+        
+    
+        <a class="list-group-item list-group-item-action" href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/#Screenshots">Screenshots</a>
+        
+    
+        <a class="list-group-item list-group-item-action" href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/#Widget">Widget</a>
+        
+    
+    </div>
+</div>
+
+
+    </div>
+
+    <div class="">
+      <h2 id="Tool_Overview">Tool Overview</h2>
+<p>Godot SDF Gen is a small tool I made for myself and others to easily generate “Signed Distance Field” textures, which can be used to create a <a rel="noopener nofollow noreferrer" target="_blank" href="https://shaderfun.com/2018/07/01/signed-distance-fields-part-7-some-simple-effects/">variety of fun effects</a>.</p>
+<h2 id="Purposes">Purposes</h2>
+<p>I wanted to create a small, useful tool with the <a rel="noopener nofollow noreferrer" target="_blank" href="https://godotengine.org/">Godot Game Engine</a>. Although largely marketed as a <em>game</em> engine, Godot does actually provide a plethera of features beneficial to desktop and mobile tool applications. And that very distinction that the software application can be made in Godot and exported to desktop and mobile with minimal extra effort was very attractive. Given this project, a mobile version didn’t really make sense.</p>
+<h2 id="UI">UI</h2>
+<p>Godot had recently revamped their Theme designing system, which allowed for the user interface to be customized in many ways. I would say that I over did it on this project. I have a much stronger sense for code and narrative than I do for art. Colour blindness may have affected this.</p>
+<h2 id="Systems">Systems</h2>
+<p>Originally, I created it as a <a rel="noopener nofollow noreferrer" target="_blank" href="https://en.wikipedia.org/wiki/Minimum_viable_product">Minimal Viable Product (MVP)</a>. I used the built-in Godot UI systems and the scripting language, GDScript to manually read the pixels of an image in and process the kernel to determine the SDF value. After getting it to work, I ported the logic to a shader so it could utilize the GPU’s processing power. Unfortunately, setting the kernel size too high actually crashed my computer for reasons I’m still unsure. I believe it had something to do with my desktop environment, but as I said, I’m not sure. I added in a “safety lock” for keeping the kernel within a certain range. I also added a feature where you could have the program play a small notification sound once processing was completed. This was helpful for processing larger files since I was working mainly with a slower laptop at the time.</p>
+<h2 id="Reception">Reception</h2>
+<p>The tool went largely unnoticed by the public. It is available freely, but due to the niche feature, it is mostly just helpful for me and my purposes. Which is still a valuable way to spend my time.</p>
+<h2 id="Screenshots">Screenshots</h2>
+<div class="container container-fluid px-3">
+    <div class="row row-cols-1 gx-5 gy-5">
+
+        
+        <div class="col">
+            <a href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/tool_preview_1.png" target="_blank">
+                
+                <img class="img-fluid rounded" src="tool_preview_1.png" />
+            </a>
+        </div><div class="col">
+            <a href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/tool_preview_2.png" target="_blank">
+                
+                <img class="img-fluid rounded" src="tool_preview_2.png" />
+            </a>
+        </div><div class="col">
+            <a href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/tool_preview_3.png" target="_blank">
+                
+                <img class="img-fluid rounded" src="tool_preview_3.png" />
+            </a>
+        </div>
+    </div>
+    <br />
+</div><h2 id="Widget">Widget</h2>
+<div class="container" style="display: flex; flex-direction: column; align-items: center; justify-items: center;">
+    <iframe src="https://itch.io/embed/1538319?dark=true" width="45%" frameborder="0">
+        <a href="https:&#x2F;&#x2F;queenofsquiggles.itch.io&#x2F;godot-sdf-gen">
+            Godot SDF Gen by QueenOfSquiggles
+        </a>
+    </iframe>
+</div>
+    </div>
+    
+
+  </div>
+</div>
+  
+
+
+
+  </main>
+  
+
+
+  
+  <footer class="
+      mt-auto p-5
+      bg-dark
+      text-center
+      text-black ">
+      
+      <a
+        href=" mailto:thequeenofsquiggles@gmail.com" class="text-reset text-decoration-none">thequeenofsquiggles@gmail.com</a>
+    
+    
+    <div class="mt-2">
+      
+      <a class="text-reset mx-1 bg-transparent" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles" title="Mastodon" ><i class="fab fa-mastodon"></i></a>
+      
+      <a class="text-reset mx-1 bg-transparent" href="rss.xml" title="RSS Feed" ><i class="fas fa-rss"></i></a>
+      
+    </div>
+    
+  </footer>
+  
+</body>
+
+</html>
