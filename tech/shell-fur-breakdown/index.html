@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="synthwave">
+
+<head>
+  
+  <title>
+
+Shell Fur Breakdown | Queen Of Squiggles&#x27;s Blog
+
+</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  
+  <link rel="me" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles">
+  
+
+  <!-- Tailwind compiled CSS -->
+  <link rel="stylesheet" href="https://queenofsquiggles.github.io/output.css">
+  <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+
+  
+  <script defer src="https://queenofsquiggles.github.io/elasticlunr.min.js"></script>
+  <script defer src="https://queenofsquiggles.github.io/search_index.en.js"></script>
+  <script src="https://queenofsquiggles.github.io/js/search.js"></script>
+  
+
+  
+  
+  <!-- Includes the default RSS feed if enabled in configuration -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://queenofsquiggles.github.io/rss.xml">
+  
+  
+  <!-- Includes the ddefault Atom feed if enabled in configuration -->
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="https://queenofsquiggles.github.io/atom.xml" />
+  
+
+  
+  
+</head>
+
+<body>
+  <div class="navbar bg-base-200 sticky top-0 z-50">
+    <div class="navbar-center lg:navbar-start">
+      <div class="hidden lg:flex">
+        <a class="btn btn-ghost text-xl" href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Queen Of Squiggles&#x27;s Blog</a>
+      </div>
+
+      <!-- small screen navbar (drop down) -->
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          Queen Of Squiggles&#x27;s Blog
+
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-300 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-4">
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Home</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+          </li>
+          
+          
+
+          <li class="dropdown">
+            <details>
+              <summary>Theme</summary>
+
+              <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="light" value="light" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="dark" value="dark" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="synthwave" value="synthwave" />
+                </li>
+                
+
+              </ul>
+            </details>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- large screen navbar -->
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+        </li>
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+        </li>
+        
+      </ul>
+      
+
+      <div class="flex-1 gap-2">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            Theme
+          </div>
+          <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="light"
+                value="light" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="dark"
+                value="dark" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="synthwave"
+                value="synthwave" />
+            </li>
+            
+
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <div class="navbar-end hidden lg:flex">
+      <form class="form-control lg:focus-within:grow" onsubmit="return goSearch(event)">
+        <input type="text" class="input input-bordered" placeholder="Search" />
+      </form>
+    </div>
+    
+  </div>
+
+  
+  <div class="navbar flex justify-center lg:hidden pb-4">
+    <form class="form-control" onsubmit="return goSearch(event)">
+      <input type="text" class="input input-bordered" placeholder="Search" />
+    </form>
+  </div>
+  
+
+  <main class="flex flex-col container mx-auto justify-center my-2">
+    
+<div class="flex flex-row flex-wrap lg:flex-nowrap w-full justify-center gap-1 py-2">
+  <div class=" hero container mx-auto bg-base-200 rounded-box">
+    <div class="hero-content flex-col lg:flex-col">
+      
+      
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="demo_pbr.png" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="demo_pbr.png" alt="" title="" />
+            </a>
+        </figure>
+        
+    </div>
+</div>
+
+
+      
+      <div>
+        <h1 class="text-5xl font-bold"> Shell Fur Breakdown </h1>
+        <div class="py-6">
+          
+          <div class="flex flex-row flex-wrap gap-4  py-2">
+            
+            <a href="https://queenofsquiggles.github.io/tags/godot/" class="btn btn-secondary rounded-box">
+              godot
+            </a>
+            
+            <a href="https://queenofsquiggles.github.io/tags/tech discussion/" class="btn btn-secondary rounded-box">
+              tech discussion
+            </a>
+            
+          </div>
+          
+          
+
+          
+          <div class="join join-vertical py-2">
+
+            <div class="btn btn-outline rounded-box no-animation join-item leading-relaxed">Written - 
+Tuesday the 14 of November, 2023
+</div>
+
+            
+
+
+
+            
+
+          </div>
+          <div class="py-2">
+            <i> Read time is about 15 minutes </i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-md">
+    
+
+<!-- Table of contents supporting h1, h2, h3, h4, h5, h6 (or optionally reduced depth based on config) -->
+
+
+<ul class="not-prose flex menu bg-base-200 rounded-box divide-y divide-dotted md:divide-none">
+    <li class="menu-title text-xl">
+        <h1>
+            Table of Contents
+        </h1>
+    </li>
+    
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/#What_happened???">What happened???</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/#The_Challenge">The Challenge</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/#Well_what_is_“Shell_Fur”?">Well what is “Shell Fur”?</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/#So_what_did_I_do?">So what did I do?</a>
+    </li>
+    
+    <li>
+        <ul class="divide-y divide-dotted md:divide-none">
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/#How_do_extrusions_work?">
+                    How do extrusions work?
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/#It’s_rigged">
+                    It’s rigged
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/#Shader_improvements">
+                    Shader improvements
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/#Simulation_improvements">
+                    Simulation improvements
+                </a>
+            </li>
+            
+            <li>
+                <ul class="divide-y divide-dotted md:divide-none">
+                    
+                    <li>
+                        <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/#Godot_Resources_Are_Magical_And_You_Better_Use_Them_Or_Else">
+                            Godot Resources Are Magical And You Better Use Them Or Else
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/#Working_in_realtime">
+                    Working in realtime
+                </a>
+            </li>
+            
+            
+        </ul>
+        
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/#And_then…?">And then…?</a>
+    </li>
+    
+    <li>
+        <ul class="divide-y divide-dotted md:divide-none">
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/#A_Shell_Fur_Plugin">
+                    A Shell Fur Plugin
+                </a>
+            </li>
+            
+            
+        </ul>
+        
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/#Future_Plans">Future Plans</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/#Please_I_beg_of_you">Please I beg of you</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/#Showcase">Showcase</a>
+    </li>
+    
+        
+</ul>
+</li>
+</ul>
+
+
+
+  </div>
+
+</div>
+
+<div class="static">
+  <div class="fixed bottom-4 md:bottom-8 start-4 md:start-8 ">
+    <div class="tooltip" data-tip="Return to top">
+      <a class="btn bg-neutral aspect-square rounded-full shadow-md" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+          <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path fill="#FFFFFF"
+            d="M32 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c53 0 96-43 96-96l0-306.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 416c0 17.7-14.3 32-32 32l-96 0z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-col justify-center">
+  <article
+    class="prose prose-neutral lg:prose-xl px-2 max-w-none prose-blockquote:rounded-r-lg prose-blockquote:shadow-2xl prose-blockquote:bg-base-200 prose-blockquote:p-2">
+    <h2 id="What_happened???"><a class="zola-anchor" href="#What_happened???" aria-label="Anchor link for: What_happened???">What happened???</a></h2>
+<p>Well you see a little youtuber called “Acerola” made a <a rel="noopener nofollow noreferrer" target="_blank" href="https://youtu.be/9dr-tRQzij4">little video</a> and put out a challenge. As a creature fueled by an unholy combination of caffeine and raw impulse, I had to take on this “Acerola Furry Challenge” and exceed.</p>
+<h2 id="The_Challenge"><a class="zola-anchor" href="#The_Challenge" aria-label="Anchor link for: The_Challenge">The Challenge</a></h2>
+<p>Acerola’s original video did a breakdown for how shell fur works and demonstrated how to get it working in Unity. As an elite Godot game dev, I was able to port most of it over quite easily. Acerola’s challenge was to implement the fur rendering he demonstrated in the video, and then extend the functionality in at least one key way.</p>
+<!--
+Embeds a GIF from tenor with some styling to ensure it looks good while not dominating the page
+===
+data_postid: id of the post on tenor (take from embed code)
+data_aspect_ratio: the aspect ratio of the gif (take from embed code)
+url: embed url (take from embed code)
+width: a standard CSS width value to determine how big to display the gif at. (50% usually looks good)
+caption (optional): a text caption that will display below the image and serve as a link to the image. Supports markdown!
+===
+Example Data:
+data_postid="8246706" 
+data_aspect_ratio="1.43103" 
+url='https://tenor.com/view/anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706' 
+caption="Goku from Dragon Ball Z power up to 'super saiyin'" 
+fallback="https://media.tenor.com/XfrqyR_-jzIAAAAC/anime-goku.gif"
+
+-->
+<div class="flex justify-center">
+    <div class="not-prose card bg-base-200 max-w-md">
+        <noscript>
+            <figure>
+                <img src="https:&#x2F;&#x2F;media.tenor.com&#x2F;XfrqyR_-jzIAAAAC&#x2F;anime-goku.gif" />
+            </figure>
+        </noscript>
+        <div class="card-body mx-2">
+            <div class="tenor-gif-embed" data-postid="8246706" data-share-method="host"
+                data-aspect-ratio="1.43103" data-width="100%">
+            </div>
+            <script type="text/javascript" async src="https://tenor.com/embed.js">
+            </script>
+            <div class="prose px-2 md:px-4">
+                <noscript>
+                    <p class="bg-info text-neutral not-prose rounded-box py-2 text-center">
+                        <i class="fas fa-solid fa-info"></i>
+                        <b>GIF embed fallback in use.</b>
+                        <a class="link" href="https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706">
+                            Open remote
+                        </a>
+                    </p>
+                </noscript>
+                <p>Goku from Dragon Ball Z power up to <em>super saiyin</em></p>
+
+            </div>
+        </div>
+    </div>
+</div><h2 id="Well_what_is_“Shell_Fur”?"><a class="zola-anchor" href="#Well_what_is_“Shell_Fur”?" aria-label="Anchor link for: Well_what_is_“Shell_Fur”?">Well what is “Shell Fur”?</a></h2>
+<blockquote>
+<p>If you already know Shell Fur and just wanna get to the results, you don’t need to read this.</p>
+</blockquote>
+<p>Shell Fur is named for the way it implements fur rendering. It utilizes a common method for sub-vertex geometry visualization. If you do work with 3D game development and/or tech art, you are probably at least familiar with normal maps, and possibly parallax rendering (height maps) for materials. Both add extra visual detail without requiring extra vertices. Shell fur does a similar effect by layering multiple meshes on top of each other and selectively discarding specific pixels based on some kind of algorithm.
+Essentially, if you break the UV coordinates into a smaller grid and then discard pixels at the edges of each cell, you would get a square fur, similar to what Acerola references in the game <em>Viva Pinata</em>. By doing a little extra math you can discard anything outside of a circle in the cell. Then going out along the layers you can shrink the size of the circle. With enough layers, this creates a visual effect that resembles strands of fur.
+Something that is incredibly helpful about this method is that while it does increase the vertex count, it does so by such a small margin compared to the details provided. Because we do a lot of our calculations on the pixel level, for a game where furry objects can’t be looked at too closely, it can look quite realistic while not incurring too much of a performance hit.
+Of course I love games with style and I found that it can quite easily create stylized effects as well.</p>
+<!--
+Embeds a GIF from tenor with some styling to ensure it looks good while not dominating the page
+===
+data_postid: id of the post on tenor (take from embed code)
+data_aspect_ratio: the aspect ratio of the gif (take from embed code)
+url: embed url (take from embed code)
+width: a standard CSS width value to determine how big to display the gif at. (50% usually looks good)
+caption (optional): a text caption that will display below the image and serve as a link to the image. Supports markdown!
+===
+Example Data:
+data_postid="8246706" 
+data_aspect_ratio="1.43103" 
+url='https://tenor.com/view/anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706' 
+caption="Goku from Dragon Ball Z power up to 'super saiyin'" 
+fallback="https://media.tenor.com/XfrqyR_-jzIAAAAC/anime-goku.gif"
+
+-->
+<div class="flex justify-center">
+    <div class="not-prose card bg-base-200 max-w-md">
+        <noscript>
+            <figure>
+                <img src="https:&#x2F;&#x2F;media.tenor.com&#x2F;6NRM5QqZja8AAAAC&#x2F;boykisser.gif" />
+            </figure>
+        </noscript>
+        <div class="card-body mx-2">
+            <div class="tenor-gif-embed" data-postid="16777119058470997423" data-share-method="host"
+                data-aspect-ratio="0.985944" data-width="100%">
+            </div>
+            <script type="text/javascript" async src="https://tenor.com/embed.js">
+            </script>
+            <div class="prose px-2 md:px-4">
+                <noscript>
+                    <p class="bg-info text-neutral not-prose rounded-box py-2 text-center">
+                        <i class="fas fa-solid fa-info"></i>
+                        <b>GIF embed fallback in use.</b>
+                        <a class="link" href="https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;boykisser-gif-16777119058470997423">
+                            Open remote
+                        </a>
+                    </p>
+                </noscript>
+                <p>The boykisser meme character smirking</p>
+
+            </div>
+        </div>
+    </div>
+</div><h2 id="So_what_did_I_do?"><a class="zola-anchor" href="#So_what_did_I_do?" aria-label="Anchor link for: So_what_did_I_do?">So what did I do?</a></h2>
+<p>First, I simply wanted to get fur working. So I made a <del>simple</del> system that would make duplicates of the mesh and extrude every single vertex slightly out based on the provided “strand length” and “shell count”. Through that we could make the layers, or shells, very easily. Additionally, it felt appropriate to be placing fur on a character rather than on a cube or sphere. So I searched “furry” into sketchfab and found a League of Legends character called “Kindred”. So I used this mesh and it actually didn’t work.</p>
+<h3 id="How_do_extrusions_work?"><a class="zola-anchor" href="#How_do_extrusions_work?" aria-label="Anchor link for: How_do_extrusions_work?">How do extrusions work?</a></h3>
+<p>I used a nifty tool in Godot called <code>MeshDataTool</code>, which has some lovely documentation. Basically it can load a surface from one mesh, perform manipulations on the data, and then push that new mesh to a mesh object (which could be the original mesh but it wasn’t in this case). So what I did is I loaded each surface and iterated throught the vertices. The <code>MeshDataTool</code> provides a lookup to get all face indices touching a given vertex index. Then I got the normals of each connected face and averaged them out. I normalized the average normal and then multiplied it by the shell layer depth. The original vertex is then offset by that value and we move to the next one.</p>
+<p>I’m actually really interested to see what kinds of fun procedural mesh generation I can do with the <code>MeshDataTool</code> in the future. I believe I could push new vertex data to it should I have something interesting for it. Maybe I could even make a voxel renderer with greedy tiling?</p>
+<h3 id="It’s_rigged"><a class="zola-anchor" href="#It’s_rigged" aria-label="Anchor link for: It’s_rigged">It’s rigged</a></h3>
+<p>So the character model was rigged for an animation, which I thought would be cool to try to make the fur work properly with it. However something about how rigged meshes work means that the original mesh would be properly deformed by the skeleton and the fur meshes would not. It actually resulted in the fur shell meshes doing a T-pose while laying on the ground behind the properly rendering character. Which was quite frustrating. I am not terribly familiar with how skeleton rigs and mesh deforms actually work in terms of the mesh data, so I decided to just strip the rig and make it a static mesh.</p>
+<p>With the stripped mesh, everything was working wonderfully.</p>
+<p>Next I took on working on different systems that could make the fur look nicer.</p>
+<!--
+Embeds a GIF from tenor with some styling to ensure it looks good while not dominating the page
+===
+data_postid: id of the post on tenor (take from embed code)
+data_aspect_ratio: the aspect ratio of the gif (take from embed code)
+url: embed url (take from embed code)
+width: a standard CSS width value to determine how big to display the gif at. (50% usually looks good)
+caption (optional): a text caption that will display below the image and serve as a link to the image. Supports markdown!
+===
+Example Data:
+data_postid="8246706" 
+data_aspect_ratio="1.43103" 
+url='https://tenor.com/view/anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706' 
+caption="Goku from Dragon Ball Z power up to 'super saiyin'" 
+fallback="https://media.tenor.com/XfrqyR_-jzIAAAAC/anime-goku.gif"
+
+-->
+<div class="flex justify-center">
+    <div class="not-prose card bg-base-200 max-w-md">
+        <noscript>
+            <figure>
+                <img src="https:&#x2F;&#x2F;media.tenor.com&#x2F;EcSoC2eQGZMAAAAC&#x2F;wow-t-posing.gif" />
+            </figure>
+        </noscript>
+        <div class="card-body mx-2">
+            <div class="tenor-gif-embed" data-postid="17657676" data-share-method="host"
+                data-aspect-ratio="1.31687" data-width="100%">
+            </div>
+            <script type="text/javascript" async src="https://tenor.com/embed.js">
+            </script>
+            <div class="prose px-2 md:px-4">
+                <noscript>
+                    <p class="bg-info text-neutral not-prose rounded-box py-2 text-center">
+                        <i class="fas fa-solid fa-info"></i>
+                        <b>GIF embed fallback in use.</b>
+                        <a class="link" href="https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;wow-t-posing-spin-vocaloid-hatsune-miku-gif-17657676">
+                            Open remote
+                        </a>
+                    </p>
+                </noscript>
+                <p>A Hatsune Miku model in a t-pose rotating</p>
+
+            </div>
+        </div>
+    </div>
+</div><h3 id="Shader_improvements"><a class="zola-anchor" href="#Shader_improvements" aria-label="Anchor link for: Shader_improvements">Shader improvements</a></h3>
+<p>I wanted to make the fur look nicer, and one way to do that was to use some fun shader stuff. In Godot 4 we have <code>instance uniform</code> variables in shaders which are uniform values that can be assigned on a per-<code>MeshInstance3D</code> basis. So I was able to give each shell layer information on what percentage of the depth it was at and also assigning strand colours. Realistically, the strand colours didn’t need to be on a per-instance basis, but I did it so…yeah.</p>
+<h3 id="Simulation_improvements"><a class="zola-anchor" href="#Simulation_improvements" aria-label="Anchor link for: Simulation_improvements">Simulation improvements</a></h3>
+<p>So you may have noticed that the fur doesn’t really do anything and just sticks straight out. So what I wanted to do was add a basic physics simulation, especially a better one than Acerola made in the video (sorry not surry, bud). I used some basic physics lerping and damped the physics affect factor based on a curve resource.</p>
+<h4 id="Godot_Resources_Are_Magical_And_You_Better_Use_Them_Or_Else"><a class="zola-anchor" href="#Godot_Resources_Are_Magical_And_You_Better_Use_Them_Or_Else" aria-label="Anchor link for: Godot_Resources_Are_Magical_And_You_Better_Use_Them_Or_Else">Godot Resources Are Magical And You Better Use Them Or Else</a></h4>
+<!--
+Embeds a GIF from tenor with some styling to ensure it looks good while not dominating the page
+===
+data_postid: id of the post on tenor (take from embed code)
+data_aspect_ratio: the aspect ratio of the gif (take from embed code)
+url: embed url (take from embed code)
+width: a standard CSS width value to determine how big to display the gif at. (50% usually looks good)
+caption (optional): a text caption that will display below the image and serve as a link to the image. Supports markdown!
+===
+Example Data:
+data_postid="8246706" 
+data_aspect_ratio="1.43103" 
+url='https://tenor.com/view/anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706' 
+caption="Goku from Dragon Ball Z power up to 'super saiyin'" 
+fallback="https://media.tenor.com/XfrqyR_-jzIAAAAC/anime-goku.gif"
+
+-->
+<div class="flex justify-center">
+    <div class="not-prose card bg-base-200 max-w-md">
+        <noscript>
+            <figure>
+                <img src="https:&#x2F;&#x2F;media.tenor.com&#x2F;VAn-KzIfuvIAAAAC&#x2F;happy-cry.gif" />
+            </figure>
+        </noscript>
+        <div class="card-body mx-2">
+            <div class="tenor-gif-embed" data-postid="17477970" data-share-method="host"
+                data-aspect-ratio="1.39738" data-width="100%">
+            </div>
+            <script type="text/javascript" async src="https://tenor.com/embed.js">
+            </script>
+            <div class="prose px-2 md:px-4">
+                <noscript>
+                    <p class="bg-info text-neutral not-prose rounded-box py-2 text-center">
+                        <i class="fas fa-solid fa-info"></i>
+                        <b>GIF embed fallback in use.</b>
+                        <a class="link" href="https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;happy-cry-tears-of-joy-pokemon-team-tocket-gif-17477970">
+                            Open remote
+                        </a>
+                    </p>
+                </noscript>
+                <p>James from Pokemon crying happy tears</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<p>Something that was really awesome for me when I first moved to Godot from Unity way back in 2020 (yeah I switched before it was cool) was the sheer quantity of useful resources available to be as a developer. And the ability to just export that and use it to manipulate stuff was incredible. They’ve only gotten better over time. Though <code>Curve</code> is definitely a classic. It’s simply a curve that supports different handle types and can have multiple vertices as well. I generally used it for making a basic smoothstep function, but the curve resource is fully customizable to change the thickness of strands along their length.</p>
+<p>I was able to use <code>Curve</code>s not only for visual thickness but also for the simulated “stiffness” of the strands along the length. What that means is that you can choose which parts of the strand are stiff and which aren’t.</p>
+<h3 id="Working_in_realtime"><a class="zola-anchor" href="#Working_in_realtime" aria-label="Anchor link for: Working_in_realtime">Working in realtime</a></h3>
+<p>So all of this is <strong>technically</strong> working in real-time. One trouble is that the fur shells don’t exist until the game starts and a behemoth of mesh generation is done (at startup!!!)</p>
+<h2 id="And_then…?"><a class="zola-anchor" href="#And_then…?" aria-label="Anchor link for: And_then…?">And then…?</a></h2>
+<p>What comes next may surprise you… I made a plugin. Of course I made a plugin. I’m an addict for plugins. Tooling is love and tooling is life.</p>
+<h3 id="A_Shell_Fur_Plugin"><a class="zola-anchor" href="#A_Shell_Fur_Plugin" aria-label="Anchor link for: A_Shell_Fur_Plugin">A Shell Fur Plugin</a></h3>
+<blockquote>
+<p>Recently I got to see the lovely GodotCon talk by Miguel (bitbrain) talking about tooling in Godot. It was a great talk and if you love Godot you should really check it out. One of the key things I learned from the talk (at least that is relevant here) is the difference between “addon” and “plugin” in godot. “addon” is literally just something third party. Plugins are specifically code that is registered with the engine and requires the <code>plugin.cfg</code> file for godot to handle it. Basically, all plugins are addons, but not all addons are plugins.</p>
+</blockquote>
+<p>So I got to work on a proper plugin for this shell fur. I had a few hopes, but I wasn’t sure what would all work in-editor so I had to play around with.</p>
+<p>A key difference in my approach was in my programming language. For my original development, I chose to use C# since it’s one of my favourite languages to use with Godot. However, for this plugin, I wanted to make it compatible with more projects (and most people don’t use C# to my knowledge. Yes you may gasp now.) So this was ported to GDScript. Since, to my knowledge, there is no transpiler from C# to GDscript, I did basically rewrite everything but in a different language. On the bright side, I got to play with some of the new GDScript features introduced to recent versions of Godot such as <code>static var</code> and typed arrays.</p>
+<p>Once I had the basics up and running for the shell fur I wanted to make some spicy stuff (No, no, not that! Where’s the damn spray bottle?). I wanted to see how much of the fur I could get running in the editor. That means mesh generation, real-time editing of fur properties, and physics. It turned out surprisingly well, excepting a few key areas.
+Basically, the mesh generation takes a ton of processing time (1.5 seconds in some instances). Which causes a huge stutter if I do it synchronously. But if I try to use a coroutine or a thread, I have to make sure I’m managing data access (async code is hell). I spent days just trying to get different asynchronous bits of code working. In the end I never actually got it to work. I opted to just have buttons at the top (inserted by a custom <code>InspectorPlugin</code>, which are surprisingly easy to set up!). The buttons would either trigger mesh regeneration, or purge the shell meshes. I did have to learn a bit more about editor instanced nodes. For example, if they don’t have an owner, they don’t save. If you don’t have an <code>EditorInterface</code> reference, you can’t tell the editor that it needs to be saved. Oh and that group you’re using to separate out your instanced meshes out from the other meshes in the scene that really need to not be messed with? Yeah you gotta add the group slightly differently to ensure it stays when saving, else it gets purged upon reload.</p>
+<blockquote>
+<p>(Lewd Joke Incoming) Plugin development is a either like sex or school team projects: either way I’m getting fucked, all that changes is if I’m having a good time or not.</p>
+</blockquote>
+<p>I had to do a lot of work trying to make the asynchronous code work and ended up failing after trying for almost an entire week. And it’s probably worth mentioning that I’m currently (as of writing) unemployed. I was putting 9-10 hours a day for like 5 days into this and couldn’t make it work. I want to believe there is a fundamental gap in my knowledge that is causing this problem, but I was unable to figure it out with all that time so if you know how to make it work submit a PR or something? It’s open source.</p>
+<p>That rant out of the way, what I did manage to get working was basically everything else on my checklist. Additionally, I added the option to provide a texture to the fur, which would let you do more intersting stylings for the fur. And this is where the strand colours being a per-instance and not a per-material uniform gets really fun. (And it was totally on purpose and definitely not a happy accident). The instance colours are multiplied on the texture colour, which lets you have colour variations across instances of the same fur material, for example if you wanted to have a slight variation across several furry creatures. (Frankly if you wanted to make a wetness system you could modify the colour and stiffness. However currently the roughness and metalness are on a per-material basis so a shader rewrite may be needed to make that totally work as desired.) Hey speaking of shader rewrites, I made an option so the fur tool will allow you to load a custom material instead of the default material. So while the default material is pretty robust, if you want a different style you can totally do that. You could even go so far as to have a custom shader so long as the uniforms match the expected names and types.</p>
+<p>Also if you are super cool and awesome, there might be a few “easter eggs” in the plugin to find. Mainly because I can’t help myself when I’m banging my head into the wall for days. I needed something fun, so now you get to deal with it. XOXO</p>
+<!--
+Embeds a GIF from tenor with some styling to ensure it looks good while not dominating the page
+===
+data_postid: id of the post on tenor (take from embed code)
+data_aspect_ratio: the aspect ratio of the gif (take from embed code)
+url: embed url (take from embed code)
+width: a standard CSS width value to determine how big to display the gif at. (50% usually looks good)
+caption (optional): a text caption that will display below the image and serve as a link to the image. Supports markdown!
+===
+Example Data:
+data_postid="8246706" 
+data_aspect_ratio="1.43103" 
+url='https://tenor.com/view/anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706' 
+caption="Goku from Dragon Ball Z power up to 'super saiyin'" 
+fallback="https://media.tenor.com/XfrqyR_-jzIAAAAC/anime-goku.gif"
+
+-->
+<div class="flex justify-center">
+    <div class="not-prose card bg-base-200 max-w-md">
+        <noscript>
+            <figure>
+                <img src="https:&#x2F;&#x2F;media.tenor.com&#x2F;8mUbihM7AJAAAAAC&#x2F;toradora-palm-top-tiger.gif" />
+            </figure>
+        </noscript>
+        <div class="card-body mx-2">
+            <div class="tenor-gif-embed" data-postid="22688840" data-share-method="host"
+                data-aspect-ratio="1.95122" data-width="100%">
+            </div>
+            <script type="text/javascript" async src="https://tenor.com/embed.js">
+            </script>
+            <div class="prose px-2 md:px-4">
+                <noscript>
+                    <p class="bg-info text-neutral not-prose rounded-box py-2 text-center">
+                        <i class="fas fa-solid fa-info"></i>
+                        <b>GIF embed fallback in use.</b>
+                        <a class="link" href="https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;toradora-palm-top-tiger-taiga-aisaka-anime-gif-22688840">
+                            Open remote
+                        </a>
+                    </p>
+                </noscript>
+                <p>Toradora laughing with the caption ‘menace to society’</p>
+
+            </div>
+        </div>
+    </div>
+</div><h2 id="Future_Plans"><a class="zola-anchor" href="#Future_Plans" aria-label="Anchor link for: Future_Plans">Future Plans</a></h2>
+<p>I’m not entirely certain if I have any plans for this addon. I did get an issue requesting support for older Godot version, since <code>static var</code> isn’t actually supported in Godot 4.0. So I rewrote some sections that would allow compatibilty for all currently available 4.X versions. If at some point people want to use it with 4.3 and there’s some breaking change, I could look into upgrading it, but with projects like this I generally do a “lazy maintenance” approach. That is, because I am not personally using this tool in my own projects, I don’t have any real needs for it. I could theoretically develop it forever. So instead I let it sit and if someone submits an issue I’ll look into fixing it, or mark the plugin as archived/unmaintained. Really I probably have several repositories that I need to do that for, so if I ever have a boring afternoon I might have to spruce up my GitHub repos.</p>
+<p>As this plugin is MIT licensed and fully open source, anyone is free to fork it and make it their own, or even better they can do a pull request for adding new features to the plugin. But that is only really meaningful if there are a decent number of people using the plugin, and as far as I am aware the total number is zero. That could definitely just be my limited ability to see who uses my tools. I really can only see when people star the repo on GitHub. Downloads from there and from the Godot Asset Library are completely opaque and provide no insights as to whether anyone is using my tools. Which can feel disheartening at times since I can’t ever be sure if all of this work is for nothing.</p>
+<!--
+Embeds a GIF from tenor with some styling to ensure it looks good while not dominating the page
+===
+data_postid: id of the post on tenor (take from embed code)
+data_aspect_ratio: the aspect ratio of the gif (take from embed code)
+url: embed url (take from embed code)
+width: a standard CSS width value to determine how big to display the gif at. (50% usually looks good)
+caption (optional): a text caption that will display below the image and serve as a link to the image. Supports markdown!
+===
+Example Data:
+data_postid="8246706" 
+data_aspect_ratio="1.43103" 
+url='https://tenor.com/view/anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706' 
+caption="Goku from Dragon Ball Z power up to 'super saiyin'" 
+fallback="https://media.tenor.com/XfrqyR_-jzIAAAAC/anime-goku.gif"
+
+-->
+<div class="flex justify-center">
+    <div class="not-prose card bg-base-200 max-w-md">
+        <noscript>
+            <figure>
+                <img src="https:&#x2F;&#x2F;media.tenor.com&#x2F;HtRb68DqNPwAAAAC&#x2F;little-witch-academia-sucy.gif" />
+            </figure>
+        </noscript>
+        <div class="card-body mx-2">
+            <div class="tenor-gif-embed" data-postid="25463727" data-share-method="host"
+                data-aspect-ratio="1.09622" data-width="100%">
+            </div>
+            <script type="text/javascript" async src="https://tenor.com/embed.js">
+            </script>
+            <div class="prose px-2 md:px-4">
+                <noscript>
+                    <p class="bg-info text-neutral not-prose rounded-box py-2 text-center">
+                        <i class="fas fa-solid fa-info"></i>
+                        <b>GIF embed fallback in use.</b>
+                        <a class="link" href="https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;little-witch-academia-sucy-shrug-gif-25463727">
+                            Open remote
+                        </a>
+                    </p>
+                </noscript>
+                <p>Sucy from Little Witch Academia shrugging</p>
+
+            </div>
+        </div>
+    </div>
+</div><h2 id="Please_I_beg_of_you"><a class="zola-anchor" href="#Please_I_beg_of_you" aria-label="Anchor link for: Please_I_beg_of_you">Please I beg of you</a></h2>
+<!--
+Embeds a GIF from tenor with some styling to ensure it looks good while not dominating the page
+===
+data_postid: id of the post on tenor (take from embed code)
+data_aspect_ratio: the aspect ratio of the gif (take from embed code)
+url: embed url (take from embed code)
+width: a standard CSS width value to determine how big to display the gif at. (50% usually looks good)
+caption (optional): a text caption that will display below the image and serve as a link to the image. Supports markdown!
+===
+Example Data:
+data_postid="8246706" 
+data_aspect_ratio="1.43103" 
+url='https://tenor.com/view/anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706' 
+caption="Goku from Dragon Ball Z power up to 'super saiyin'" 
+fallback="https://media.tenor.com/XfrqyR_-jzIAAAAC/anime-goku.gif"
+
+-->
+<div class="flex justify-center">
+    <div class="not-prose card bg-base-200 max-w-md">
+        <noscript>
+            <figure>
+                <img src="https:&#x2F;&#x2F;media.tenor.com&#x2F;4q5OwnFZJdEAAAAC&#x2F;adorable-pleading.gif" />
+            </figure>
+        </noscript>
+        <div class="card-body mx-2">
+            <div class="tenor-gif-embed" data-postid="22150014" data-share-method="host"
+                data-aspect-ratio="0.8625" data-width="100%">
+            </div>
+            <script type="text/javascript" async src="https://tenor.com/embed.js">
+            </script>
+            <div class="prose px-2 md:px-4">
+                <noscript>
+                    <p class="bg-info text-neutral not-prose rounded-box py-2 text-center">
+                        <i class="fas fa-solid fa-info"></i>
+                        <b>GIF embed fallback in use.</b>
+                        <a class="link" href="https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;adorable-pleading-eyes-anime-crying-gif-22150014">
+                            Open remote
+                        </a>
+                    </p>
+                </noscript>
+                <p>A young anime girl with a pleading look on her face (I don’t know the character or anime lol)</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<p>If you use a plugin, even once, go tell the creator(s) that you used it. Tell them how you feel about it, especially if you really enjoyed it (And maybe keep things kind and constructive if you had a negative experience). It really means a lot. Frankly, everyone who creates things for others wants to know that people are enojying it. Can you imagine what it would be like if you published a game and the platform you published on didn’t have comments, views, downloads, or anything for analytics??</p>
+<p>While I’m on this topic, it really stretches well beyond the confines of game development! I don’t talk about it much, but I recently self published a book. I spent maybe a year or two on it and to this day I have barely any insights into what people think besides my family members that tell me. Everyone who creates for others, deserves to hear that their creations sparked joy, even if it was just for a moment. Even if it was something dumb.</p>
+<p>Also the reason I don’t talk about the book much is that it had some pretty personal stuff in it that if I linked in my socials would basically doxx me. My next novel is gonna have absolutely nothing unsafe and it’s gonna be published under a different pen name so I’ll be totally safe to hype it up for my online friends.</p>
+<h2 id="Showcase"><a class="zola-anchor" href="#Showcase" aria-label="Anchor link for: Showcase">Showcase</a></h2>
+
+<div class="flex flex-row flex-wrap bg-base-200 p-2 rounded-box container mx-auto gap-4 justify-center">
+    
+    
+    
+
+    <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/fuzzy.gif" target="_blank">
+        
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="fuzzy.gif" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="fuzzy.gif" alt="Showing off how the fur reacts to motion (in a simulation of physics)" title="Showing off how the fur reacts to motion (in a simulation of physics)" />
+            </a>
+        </figure>
+        
+        <div class="card-body">
+            <p class="prose">
+                Showing off how the fur reacts to motion (in a simulation of physics)
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+
+    </a>
+    
+    
+
+    <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/demo_pbr.png" target="_blank">
+
+        
+        
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="demo_pbr.png" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="demo_pbr.png" alt="The fur can handle PBR materials as well. Here it&#x27;s a reflective gold, smoothed because it&#x27;s using the base normals of the mesh instead of individual strands" title="The fur can handle PBR materials as well. Here it&#x27;s a reflective gold, smoothed because it&#x27;s using the base normals of the mesh instead of individual strands" />
+            </a>
+        </figure>
+        
+        <div class="card-body">
+            <p class="prose">
+                The fur can handle PBR materials as well. Here it’s a reflective gold, smoothed because it’s using the base normals of the mesh instead of individual strands
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+
+    </a>
+    
+    
+
+    <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/demo_physics.gif" target="_blank">
+        
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="demo_physics.gif" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="demo_physics.gif" alt="A little tool allows setting the stiffness of the strands along their length, which can create some interesting effects" title="A little tool allows setting the stiffness of the strands along their length, which can create some interesting effects" />
+            </a>
+        </figure>
+        
+        <div class="card-body">
+            <p class="prose">
+                A little tool allows setting the stiffness of the strands along their length, which can create some interesting effects
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+
+    </a>
+    
+    
+
+    <a href="https://queenofsquiggles.github.io/tech/shell-fur-breakdown/demo_texture.gif" target="_blank">
+        
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="demo_texture.gif" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="demo_texture.gif" alt="It also supports realtime texturing. In this example I used a noise map to make a weird cheetah print" title="It also supports realtime texturing. In this example I used a noise map to make a weird cheetah print" />
+            </a>
+        </figure>
+        
+        <div class="card-body">
+            <p class="prose">
+                It also supports realtime texturing. In this example I used a noise map to make a weird cheetah print
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+
+    </a>
+</div>
+  </article>
+</div>
+
+<div class="flex justify-center py-2">
+  
+  <ul class="menu menu-vertical lg:menu-horizontal bg-secondary text-neutral rounded-box">
+    <li class="menu-title text-neutral">Read more with tag:</li>
+    
+    <li class="bg-secondary hover:bg-primary rounded-box">
+      <a href="https://queenofsquiggles.github.io/tags/godot/">
+        godot
+      </a>
+    </li>
+    
+    <li class="bg-secondary hover:bg-primary rounded-box">
+      <a href="https://queenofsquiggles.github.io/tags/tech discussion/">
+        tech discussion
+      </a>
+    </li>
+    
+  </ul>
+  
+
+</div>
+
+
+  </main>
+
+  
+  
+
+  
+  <footer class="footer bg-neutral text-neutral-content p-10 justify-center">
+    <aside>
+      
+      <a href=" mailto:thequeenofsquiggles@gmail.com">thequeenofsquiggles@gmail.com</a>
+      
+    </aside>
+    
+    <nav>
+      <h6 class="footer-title">Socials</h6>
+      <div class="grid grid-flow-col gap-4">
+        
+        <a class="flex-auto" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles"  title="Mastodon" ><i
+            class="fab fa-mastodon"></i></a>
+        
+        <a class="flex-auto" href="rss.xml"  title="RSS Feed" ><i
+            class="fas fa-rss"></i></a>
+        
+      </div>
+    </nav>
+    
+  </footer>
+  
+</body>
+
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="synthwave">
+
+<head>
+  
+  <title>
+
+Godot Lighting Exploration | Queen Of Squiggles&#x27;s Blog
+
+</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  
+  <link rel="me" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles">
+  
+
+  <!-- Tailwind compiled CSS -->
+  <link rel="stylesheet" href="https://queenofsquiggles.github.io/output.css">
+  <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+
+  
+  <script defer src="https://queenofsquiggles.github.io/elasticlunr.min.js"></script>
+  <script defer src="https://queenofsquiggles.github.io/search_index.en.js"></script>
+  <script src="https://queenofsquiggles.github.io/js/search.js"></script>
+  
+
+  
+  
+  <!-- Includes the default RSS feed if enabled in configuration -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://queenofsquiggles.github.io/rss.xml">
+  
+  
+  <!-- Includes the ddefault Atom feed if enabled in configuration -->
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="https://queenofsquiggles.github.io/atom.xml" />
+  
+
+  
+  
+</head>
+
+<body>
+  <div class="navbar bg-base-200 sticky top-0 z-50">
+    <div class="navbar-center lg:navbar-start">
+      <div class="hidden lg:flex">
+        <a class="btn btn-ghost text-xl" href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Queen Of Squiggles&#x27;s Blog</a>
+      </div>
+
+      <!-- small screen navbar (drop down) -->
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          Queen Of Squiggles&#x27;s Blog
+
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-300 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-4">
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Home</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+          </li>
+          
+          
+
+          <li class="dropdown">
+            <details>
+              <summary>Theme</summary>
+
+              <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="light" value="light" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="dark" value="dark" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="synthwave" value="synthwave" />
+                </li>
+                
+
+              </ul>
+            </details>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- large screen navbar -->
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+        </li>
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+        </li>
+        
+      </ul>
+      
+
+      <div class="flex-1 gap-2">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            Theme
+          </div>
+          <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="light"
+                value="light" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="dark"
+                value="dark" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="synthwave"
+                value="synthwave" />
+            </li>
+            
+
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <div class="navbar-end hidden lg:flex">
+      <form class="form-control lg:focus-within:grow" onsubmit="return goSearch(event)">
+        <input type="text" class="input input-bordered" placeholder="Search" />
+      </form>
+    </div>
+    
+  </div>
+
+  
+  <div class="navbar flex justify-center lg:hidden pb-4">
+    <form class="form-control" onsubmit="return goSearch(event)">
+      <input type="text" class="input input-bordered" placeholder="Search" />
+    </form>
+  </div>
+  
+
+  <main class="flex flex-col container mx-auto justify-center my-2">
+    
+<div class="flex flex-row flex-wrap lg:flex-nowrap w-full justify-center gap-1 py-2">
+  <div class=" hero container mx-auto bg-base-200 rounded-box">
+    <div class="hero-content flex-col lg:flex-col">
+      
+      
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="image1.png" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="image1.png" alt="" title="" />
+            </a>
+        </figure>
+        
+    </div>
+</div>
+
+
+      
+      <div>
+        <h1 class="text-5xl font-bold"> Godot Lighting Exploration </h1>
+        <div class="py-6">
+          
+          <div class="flex flex-row flex-wrap gap-4  py-2">
+            
+            <a href="https://queenofsquiggles.github.io/tags/godot/" class="btn btn-secondary rounded-box">
+              godot
+            </a>
+            
+            <a href="https://queenofsquiggles.github.io/tags/tech discussion/" class="btn btn-secondary rounded-box">
+              tech discussion
+            </a>
+            
+          </div>
+          
+          
+          <div class="flex flex-row flex-wrap gap-4 py-2">
+            
+            <a href=" https:&#x2F;&#x2F;queenofsquiggles.itch.io&#x2F;squiggles-godot-lighting-demo" class="btn btn-primary rounded-box" role="button" target="_blank"
+              rel="noopener noreferrer">
+              Playable Demo
+            </a>
+            
+            <a href=" https:&#x2F;&#x2F;github.com&#x2F;QueenOfSquiggles&#x2F;Godot-Lighting-Capabilities-Test" class="btn btn-primary rounded-box" role="button" target="_blank"
+              rel="noopener noreferrer">
+              Github Source
+            </a>
+            
+          </div>
+          
+
+          
+          <div class="join join-vertical py-2">
+
+            <div class="btn btn-outline rounded-box no-animation join-item leading-relaxed">Written - 
+Thursday the  5 of October, 2023
+</div>
+
+            
+
+
+
+            
+
+          </div>
+          <div class="py-2">
+            <i> Read time is about 5 minutes </i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-md">
+    
+
+<!-- Table of contents supporting h1, h2, h3, h4, h5, h6 (or optionally reduced depth based on config) -->
+
+
+<ul class="not-prose flex menu bg-base-200 rounded-box divide-y divide-dotted md:divide-none">
+    <li class="menu-title text-xl">
+        <h1>
+            Table of Contents
+        </h1>
+    </li>
+    
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/godot-lighting-exploration/#The_goal">The goal</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/godot-lighting-exploration/#SDFGI">SDFGI</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/godot-lighting-exploration/#VoxelGI">VoxelGI</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/godot-lighting-exploration/#LightmapGI">LightmapGI</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/godot-lighting-exploration/#ReflectionProbe">ReflectionProbe</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/godot-lighting-exploration/#The_experiment">The experiment</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/godot-lighting-exploration/#Designing_a_level">Designing a level</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/godot-lighting-exploration/#Initial_bugs">Initial bugs</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/godot-lighting-exploration/#Results">Results</a>
+    </li>
+    
+        
+</ul>
+</li>
+</ul>
+
+
+
+  </div>
+
+</div>
+
+<div class="static">
+  <div class="fixed bottom-4 md:bottom-8 start-4 md:start-8 ">
+    <div class="tooltip" data-tip="Return to top">
+      <a class="btn bg-neutral aspect-square rounded-full shadow-md" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+          <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path fill="#FFFFFF"
+            d="M32 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c53 0 96-43 96-96l0-306.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 416c0 17.7-14.3 32-32 32l-96 0z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-col justify-center">
+  <article
+    class="prose prose-neutral lg:prose-xl px-2 max-w-none prose-blockquote:rounded-r-lg prose-blockquote:shadow-2xl prose-blockquote:bg-base-200 prose-blockquote:p-2">
+    <h2 id="The_goal"><a class="zola-anchor" href="#The_goal" aria-label="Anchor link for: The_goal">The goal</a></h2>
+<p>I recently competed in Ludum Dare 54 (theme “Limited Space”). One of the problems players have mentioned is the poor performance. Mainly this is due to heavy leaning on <code>VoxelGI</code> and <code>SDFGI</code> which are Godot’s premier techniques for rendering realtime global illumination. What I wanted out of this is to explore what is possible with Godot, and what options are available if I want to lean towards supporting end users on lower end hardware.</p>
+<p>Let’s look at the techniques we have available to us!</p>
+<h2 id="SDFGI"><a class="zola-anchor" href="#SDFGI" aria-label="Anchor link for: SDFGI">SDFGI</a></h2>
+<p>SDFGI is a light model managed not by a particular node but as a part of the <code>WorldEnvironment</code>. The technical details of it go way over my head, but basically it uses the geometry of the scene to approximate(?) the global illumination while making heavy use of Signed Distance Fields</p>
+<h2 id="VoxelGI"><a class="zola-anchor" href="#VoxelGI" aria-label="Anchor link for: VoxelGI">VoxelGI</a></h2>
+<p>VoxelGI is a semi-realtime model that makes use some some baked data as well as real time calculations. This does limit how fully an environment is able to be lit realistically. However it makes up for that by being quite easy to set up and immediately adds details to the game. The main downside is runtime performance.</p>
+<h2 id="LightmapGI"><a class="zola-anchor" href="#LightmapGI" aria-label="Anchor link for: LightmapGI">LightmapGI</a></h2>
+<p>Lightmap Global Illumination uses exclusively pre-baked data. Meaning that while requiring a large file that caches the lighting data, the runtime performance cost is extremely low. (But not zero because nothing is ever easy!)</p>
+<p>Because the lighting model is baked ahead of time, you can have highly realistic simulated light for a given space. And on top of that, the node automatically places lighting probes based on your settings. Though there is a lightmap probe node if you want to set some specific probe locations.</p>
+<h2 id="ReflectionProbe"><a class="zola-anchor" href="#ReflectionProbe" aria-label="Anchor link for: ReflectionProbe">ReflectionProbe</a></h2>
+<p>Reflection Probe might not be something you think of for lighting model. While extremely useful for creating <em>reflections</em>, it also provides some indirect lighting through the reflection contribution. Because of this, it can provide some added light while also making reflections appear more realistic.</p>
+<p>However, there are two modes:</p>
+<ul>
+<li>
+<p>Update Once</p>
+<ul>
+<li>More performant</li>
+<li>Does not detect changes</li>
+</ul>
+</li>
+<li>
+<p>Update Always</p>
+<ul>
+<li>Slower</li>
+<li>Reacts to changes in the scene</li>
+</ul>
+</li>
+</ul>
+<p>So when it comes to reflection probes, you may want to evaluate which mode is most effective for your scene in particular. Because I made a purely static scene for this experiment, I used “Update Once”.</p>
+<h2 id="The_experiment"><a class="zola-anchor" href="#The_experiment" aria-label="Anchor link for: The_experiment">The experiment</a></h2>
+<p>This experiment was to create a somewhat interesting scene. I recently saw the new Dune movie and liked the “mars” themes of this asset pack by Kay Lousberg. So I decided to make a desert planet themed scene.</p>
+<p>The main reason I opted to use this asset pack (besides looking really cool) is that LightmapGI requires UV2 data from meshes. And Godot can only generate those for <code>MeshInstance3D</code> nodes that are using an <code>ArrayMesh</code> resource. At least as far as I could tell. With the GLTF models Kay produced, I was able to import them with static light baking enabled (which is <strong>not</strong> on by default)</p>
+<p>The experiment was to see if individual light model nodes could all contribute to the same scene, and if disabling individual nodes would affect the illumination contributions negatively.</p>
+<h2 id="Designing_a_level"><a class="zola-anchor" href="#Designing_a_level" aria-label="Anchor link for: Designing_a_level">Designing a level</a></h2>
+<p>With the assets I started to make a little story about a landing zone, some bases set up and trucks moving cargo around. The actual details of it were not super important, the goal was to show off the lighting anyway. But making little stories is one of my joys.</p>
+<p>Something I discovered is all of the assets use a single material and texture, and it’s their UV coordinates that affect the colour of the mesh. Which is incredibly efficient for space when making a game. However it did not allow me to override individual “materials” of different models. For example I wanted to make the trucks have reflective windshields and more metallic hulls. Instead I opted to duplicate one of the rock meshes and replace the entire material with a slightly rough metallic material. Just to make sure the reflection probes were working as expected.</p>
+<h2 id="Initial_bugs"><a class="zola-anchor" href="#Initial_bugs" aria-label="Anchor link for: Initial_bugs">Initial bugs</a></h2>
+<p>As it would turn out, moving nodes arround, which I did to make the project easier to parse for people hoping to learn from it, actually breaks <code>LightmapGI</code> nodes. As it would turn out, <code>LightmapGI</code> nodes only search for meshes among their siblings and children (recursively). So if there are components of a specific branch of the scene tree that are inaccessible, the <code>LightmapGI</code> will be unable to discover them!</p>
+<p>While frustrating at first, this is actually <em>incredibly</em> useful! What this means is that you can have individual “segments” of your level with different light maps baked. So you could have a segment that the player will see all the time, and a segment that is only seen in cutscenes and even putting those in the same scene file, you can separate the lightmap baking and even use different settings!</p>
+<h2 id="Results"><a class="zola-anchor" href="#Results" aria-label="Anchor link for: Results">Results</a></h2>
+<p>It appears that layering static and dynamic light model nodes works rather well! There are some artifacts produced when the settings are changed, but it would appear that overall the quality is extremently high!</p>
+<p>If you want to try out the application for yourself, it’s free on my itch. <a rel="noopener nofollow noreferrer" target="_blank" href="https://queenofsquiggles.itch.io/squiggles-godot-lighting-demo">Download here!</a></p>
+
+  </article>
+</div>
+
+<div class="flex justify-center py-2">
+  
+  <ul class="menu menu-vertical lg:menu-horizontal bg-secondary text-neutral rounded-box">
+    <li class="menu-title text-neutral">Read more with tag:</li>
+    
+    <li class="bg-secondary hover:bg-primary rounded-box">
+      <a href="https://queenofsquiggles.github.io/tags/godot/">
+        godot
+      </a>
+    </li>
+    
+    <li class="bg-secondary hover:bg-primary rounded-box">
+      <a href="https://queenofsquiggles.github.io/tags/tech discussion/">
+        tech discussion
+      </a>
+    </li>
+    
+  </ul>
+  
+
+</div>
+
+
+  </main>
+
+  
+  
+
+  
+  <footer class="footer bg-neutral text-neutral-content p-10 justify-center">
+    <aside>
+      
+      <a href=" mailto:thequeenofsquiggles@gmail.com">thequeenofsquiggles@gmail.com</a>
+      
+    </aside>
+    
+    <nav>
+      <h6 class="footer-title">Socials</h6>
+      <div class="grid grid-flow-col gap-4">
+        
+        <a class="flex-auto" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles"  title="Mastodon" ><i
+            class="fab fa-mastodon"></i></a>
+        
+        <a class="flex-auto" href="rss.xml"  title="RSS Feed" ><i
+            class="fas fa-rss"></i></a>
+        
+      </div>
+    </nav>
+    
+  </footer>
+  
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+[
+    {
+        "header": "Gruesome Claim",
+        "text": "A short horror game with a focus on realism and advanced AI pathing techniques.",
+        "img": "couch.png",
+        "link": ""
+    },
+    {
+        "header": "Where The Dead Lie - January 2023",
+        "text": "made in roughly a week to test my skills as a game developer and the feature of the Godot 4 beta releases.",
+        "img": "wtdl-img-5.png",
+        "link": ""
+    },
+    {
+        "header": "This Metal Heart Still Beats - September 2022",
+        "text": "This game was made for Ludum Dare 51, which had the theme 'Every 10 seconds'.",
+        "img": "screenshots_1.png",
+        "link": ""
+    },
+    {
+        "header": "Ascension Of The Lamb - July 2022",
+        "text": "a 'Retro PBR' game about exploring a mysterious cult bunker",
+        "img": "ascension_header.png",
+        "link": ""
+    }
+]

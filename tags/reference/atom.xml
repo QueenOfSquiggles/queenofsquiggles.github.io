@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Queen Of Squiggles&#x27;s Blog - reference</title>
+    <subtitle>The personal blog for all of the Queen&#x27;s news, ramblings, portfolio stuffs, and more!</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://queenofsquiggles.github.io/tags/reference/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://queenofsquiggles.github.io/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-12-09T00:00:00+00:00</updated>
+    <id>https://queenofsquiggles.github.io/tags/reference/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Choreographer Design Documentation</title>
+        <published>2023-12-09T00:00:00+00:00</published>
+        <updated>2023-12-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Queen Of Squiggles
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://queenofsquiggles.github.io/tech/choreographer-design/"/>
+        <id>https://queenofsquiggles.github.io/tech/choreographer-design/</id>
+        
+        <content type="html" xml:base="https://queenofsquiggles.github.io/tech/choreographer-design/">&lt;h2 id=&quot;Blog_Post_Note&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Blog_Post_Note&quot; aria-label=&quot;Anchor link for: Blog_Post_Note&quot;&gt;Blog Post Note&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Update (August 24th, 2024)&lt;&#x2F;strong&gt;: This effort&#x2F;project has since been abandoned. However anyone wishing to take this idea further is quite welcome to!&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Hey, this is the same markdown that is in the choreographer git repository. And one is significantly more likely to be updated. This is the version that was initially uploaded on December 19th, 2023. If you are from the future reading this, it is entirely possible the design has changed by some amount to accommodate changes in our reality. Otherwise please enjoy my mess :3&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Preface:&lt;&#x2F;strong&gt; For simplicity, this document is written in present tense for specific end-goals and in future tense for possible but unlikely goals. This project could be considered to be “complete” once all present tense declarations are true.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;Choreographer&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Choreographer&quot; aria-label=&quot;Anchor link for: Choreographer&quot;&gt;Choreographer&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Choreographer (C11R) is a GDExtension based scripting language for Godot 4.2+.&lt;&#x2F;p&gt;
+&lt;p&gt;Similar to Unreal Engine’s Blueprints system, it uses a Node-Graph Event system to manage code paths. Where an Event is equivalent to a “method” or “function” and is not necessarily related to Events in the context of an Observer Pattern.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;User_Groups&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#User_Groups&quot; aria-label=&quot;Anchor link for: User_Groups&quot;&gt;User Groups&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;There are three core user groups of interest for Choreographer:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Game developers&lt;&#x2F;li&gt;
+&lt;li&gt;Tooling Developers&lt;&#x2F;li&gt;
+&lt;li&gt;Team Collaboration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;Game_Developers&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Game_Developers&quot; aria-label=&quot;Anchor link for: Game_Developers&quot;&gt;Game Developers&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;Game developers are (usually) less concerned with what they use to make a game and more concerned with actually finishing and releasing their game. To that end, Choreographer is intended to be highly usable for increasing efficacy of development as well as lowering the barrier to entry for developers who may not have experience with traditional programming languages.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;Tooling_Developers&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Tooling_Developers&quot; aria-label=&quot;Anchor link for: Tooling_Developers&quot;&gt;Tooling Developers&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;Tooling developers enjoy creating tools for Game Developers to use. They enjoy clean and documented systems which allow them to create interesting resources with minimal effort. Tooling developers are more likely to contribute back to the source project if they deem it worthy and&#x2F;or interesting.
+In order to serve tools developers, as well as to leverage their skills, Choreographer provides a simple “Block” registration system which allows custom logic blocks to be registered from a plugin and can be used from within the Choreographer Scripting Interface&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;Team_Collaboration_&#x2F;_Professional_Development&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Team_Collaboration_&amp;#x2F;_Professional_Development&quot; aria-label=&quot;Anchor link for: Team_Collaboration_&amp;#x2F;_Professional_Development&quot;&gt;Team Collaboration &#x2F; Professional Development&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;Teams, both for smaller ventures like game jams and larger ventures like a complete game company, require specific features that may not necessarily be needed for individuals. For example teams will benefit from being able to leverage Version Control Systems such as git to collaborate more effectively. Additionally, teams are typically comprised of people with a diversity of skills and experience. In order to best leverage their unique skills and talents, they need to be able to leverage each other in mutually beneficial ways.&lt;&#x2F;p&gt;
+&lt;p&gt;In order to best serve teams and professional groups, Choreographer uses a text-based (XML) file format, which allows easily readable files which can ease aches and pains from merge conflicts.
+Additionally, the same feature which allows tooling developers to register custom logic blocks allows individual team members to provide logic blocks internally to their own team. And those highly specialized logic blocks can be used to increase the efficiency and ease of development for all team members.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Language_Specification&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Language_Specification&quot; aria-label=&quot;Anchor link for: Language_Specification&quot;&gt;Language Specification&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;Definitions&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Definitions&quot; aria-label=&quot;Anchor link for: Definitions&quot;&gt;Definitions&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;“Script” - a single file and class of Choreographer.
+“Block” - a single node in the graph of a script.
+“Event” - a method contained in a C11R Script comprised of a directed acyclic graph of Blocks.
+“Connection” - a relationship between two Blocks marked by a line
+“Emit”&#x2F;“Emitting” - refers to a situation where the connection is on the right side of the block meaning it is an output
+“Receive”&#x2F;“Receiving” - refers to a situation where the connection is on the left side of the block meaning it is an input&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Graph_Systems_Review_(Mathematical)&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Graph_Systems_Review_(Mathematical)&quot; aria-label=&quot;Anchor link for: Graph_Systems_Review_(Mathematical)&quot;&gt;Graph Systems Review (Mathematical)&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;The graphs in Choreographer are “directed acyclic graphs”, which is a specific type of graph which allows for validation of certain properties. For simplicity the details are described here:&lt;&#x2F;p&gt;
+&lt;p&gt;“Directed” - connections between nodes go in a particular direction and can but are not necessarily bi-directional
+“Acyclic” - there are no sequences of connections in the graph which would allow a “cycle”, or a chain that loops infinitely.&lt;&#x2F;p&gt;
+&lt;p&gt;Directed and Acyclic graphs are both long-standing mathematical descriptions and have a plethora of algorithms available for managing them.&lt;&#x2F;p&gt;
+&lt;p&gt;In terms of the mathematical description, “nodes” can also be referred to as “vertices”, but in this specific case we call them “Blocks” to avoid confusion with the &lt;code&gt;Node&lt;&#x2F;code&gt; types in Godot.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Event_Systems&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Event_Systems&quot; aria-label=&quot;Anchor link for: Event_Systems&quot;&gt;Event Systems&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Each &lt;code&gt;Event&lt;&#x2F;code&gt; is a sequence of operations. A specific type of connection called the &lt;code&gt;Event Connection&lt;&#x2F;code&gt; is connected across the graph to determine the flow of logic. Other connections are of a value type, called &lt;code&gt;Value Connection&lt;&#x2F;code&gt;. Internally, these are an &lt;code&gt;enum Connection&lt;&#x2F;code&gt; which allows every connection to be one of each type, not both, and not nothing(&lt;code&gt;null&lt;&#x2F;code&gt;).&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;Event_Connection&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Event_Connection&quot; aria-label=&quot;Anchor link for: Event_Connection&quot;&gt;&lt;code&gt;Event Connection&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;Event Connections work through a push system. Once the block emitting the event connection completes execution, the event connections which are marked as active are used to find the next Block(s) in the event graph.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;Value_Connection&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Value_Connection&quot; aria-label=&quot;Anchor link for: Value_Connection&quot;&gt;&lt;code&gt;Value Connection&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;Value connections work through a pull system. When a block is triggered to execute, it checks in memory for the input data. If any receiving port has stale (&lt;code&gt;null&lt;&#x2F;code&gt;) data, it first triggers the emitting block to regenerate that data, this can trigger recursively if necessary.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Block_Definitions&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Block_Definitions&quot; aria-label=&quot;Anchor link for: Block_Definitions&quot;&gt;Block Definitions&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Blocks can be defined in a variety of ways depending on the source of their creation.&lt;&#x2F;p&gt;
+&lt;p&gt;All block definitions require a data segment and a logic segment as follows:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Name (String)&lt;&#x2F;li&gt;
+&lt;li&gt;Documentation (String) (Optional)&lt;&#x2F;li&gt;
+&lt;li&gt;Inputs (Array&amp;lt;Connection&amp;gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Outputs (Array&amp;lt;Connection&amp;gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Execution Function (sig: &lt;code&gt;fn(Vec&amp;lt;Connection&amp;gt;) -&amp;gt; Vec&amp;lt;Connection&amp;gt;&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Input Icons (Array&amp;lt;String&amp;gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Output Icons (Array&amp;lt;String&amp;gt;)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;Core_Library&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Core_Library&quot; aria-label=&quot;Anchor link for: Core_Library&quot;&gt;Core Library&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;The Core Library, or the collection of Block Definitions made available by Choreographer itself, are all namespaced to “core”. These block definitions are the basic units of logic for Choreographer and are registered internally by defining them as rust structs that implement the &lt;code&gt;IBlock&lt;&#x2F;code&gt; trait and submitting them to the &lt;code&gt;ChoreographerServer&lt;&#x2F;code&gt; registry.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Third_Party_Libraries&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Third_Party_Libraries&quot; aria-label=&quot;Anchor link for: Third_Party_Libraries&quot;&gt;Third Party Libraries&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Third Party Libraries are collections of blocks registered by some means besides Choreographer. This is the intended way to add specificity to Choreographer.&lt;&#x2F;p&gt;
+&lt;p&gt;While it is potentially possible to define and register these block definitions through an additional GDExtension project, it is recommended to write custom block definitions in GDScript and register them through a plugin.&lt;&#x2F;p&gt;
+&lt;p&gt;The reasoning behind this is that I am not entirely certain how to use Choreographer as a library for type definitions without simply appending it to the project as a dependency, which could potentially cause problems with FFI. Should someone smarter than me know how this part of GDExtension&#x2F;FFI works and is able to help with this side, registering custom blocks through GDExtension could become possible. However, please remember that the end user will require a binary for every platform they may want to publish their game on, and as such the number of GDExtension libraries in their project will exponentially increase the difficulty of exporting if those libraries are not pre-compiled for the user’s target platforms (Think Mobile and Apple platforms, which are tricky).&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;How_Third_Party_Block_Definitions_work_internally&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#How_Third_Party_Block_Definitions_work_internally&quot; aria-label=&quot;Anchor link for: How_Third_Party_Block_Definitions_work_internally&quot;&gt;How Third Party Block Definitions work internally&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;Internally, there is a “CustomBlock” block definition which redirects standard &lt;code&gt;IBlock&lt;&#x2F;code&gt; function calls to a series of &lt;code&gt;Callable&lt;&#x2F;code&gt;s point at particular function names.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In the future, when abstract method definitions become available, I want this to be refactored to use abstract methods instead, which should ease the pain of development&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;The method of storage for these callables should be &lt;code&gt;Option&amp;lt;Callable&amp;gt;&lt;&#x2F;code&gt; such that when encountering a value of &lt;code&gt;None&lt;&#x2F;code&gt;, we can emit a warning message and skip processing.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Virtual_Heap_Memory&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Virtual_Heap_Memory&quot; aria-label=&quot;Anchor link for: Virtual_Heap_Memory&quot;&gt;Virtual Heap Memory&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Choreographer uses a heap memory abstraction. That is, a &lt;code&gt;Vec&amp;lt;Option&amp;lt;Variant&amp;gt;&amp;gt;&lt;&#x2F;code&gt; which allows indices to serve as a memory address and value checking on the rust-side of things.&lt;&#x2F;p&gt;
+&lt;p&gt;The organization of the heap is as such:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Script local variables (effectively static as variables cannot be de-initialized until the script itself is dropped)&lt;&#x2F;li&gt;
+&lt;li&gt;Temporary Event execution memory (dropped upon event completion)&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;ul&gt;
+&lt;li&gt;An option available to the user could be to choose between memory usage and performance. For example, to save performance costs, the memory heap could simply be nulled (&lt;code&gt;None&lt;&#x2F;code&gt;) out rather than resizing the &lt;code&gt;Vec&lt;&#x2F;code&gt;. But this could create a memory cost as each execution unit increases the size of the nothing array. The immediate deletion would remove need for some kind of garbage collection system, which I see as a band-aid for bad memory management.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Each script is in charge of its own virtual heap memory.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note, though it is referred to as “virtual” the data being stored is also literally in the program’s heap memory. But by virtualizing it the scripts create an effective memory arena such that the entire block of memory can be dropped all at once when the script instance is dropped.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h3 id=&quot;How_do_individual_blocks_interact_with_the_virtual_heap?&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#How_do_individual_blocks_interact_with_the_virtual_heap?&quot; aria-label=&quot;Anchor link for: How_do_individual_blocks_interact_with_the_virtual_heap?&quot;&gt;How do individual blocks interact with the virtual heap?&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;The script execution maps inputs and outputs to virtual heap addresses (&lt;code&gt;usize&lt;&#x2F;code&gt; value) such that when an output is calculated it is assigned to the address that inputs requiring that value are also targeting. A value goes stale once there are no remaining inputs that target that address, and as such can be dropped.&lt;&#x2F;p&gt;
+&lt;p&gt;It is possible to develop a system by which stale memory is detected throughout the execution of an event graph, this would certainly increase the efficiency of larger event graphs, however this may be difficult to implement based on a variety of factors. Testing will be needed.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Choreographer_Scripting_Interface_(CSI)&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Choreographer_Scripting_Interface_(CSI)&quot; aria-label=&quot;Anchor link for: Choreographer_Scripting_Interface_(CSI)&quot;&gt;Choreographer Scripting Interface (CSI)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The CSI is a visual representation of the data model contained in memory and in the corresponding &lt;code&gt;.c11r&lt;&#x2F;code&gt; file. Hence, the reasonable approach towards developing the CSI is to use the Model-View-Controller system.&lt;&#x2F;p&gt;
+&lt;p&gt;The CSI is effectively the View and Controller as the Model is the only component required for execution at runtime. CSI displays a graph of blocks using Godot’s &lt;code&gt;GraphEdit&lt;&#x2F;code&gt; systems. And all changes are marshalled out to the controller component which in turn serializes changes in data.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;The_.c11r_format&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#The_.c11r_format&quot; aria-label=&quot;Anchor link for: The_.c11r_format&quot;&gt;The &lt;code&gt;.c11r&lt;&#x2F;code&gt; format&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Choreographer Script files use the &lt;code&gt;c11r&lt;&#x2F;code&gt; extension and are in the well tested XML file format. The logic behind using XML is that it allows attributes to be appended onto a tag, which allows for a more detailed description of individual objects without necessitating deep nesting like JSON would require. Additionally, as HTML is a superset of XML, those familiar with web development should be able to easily read &lt;code&gt;c11r&lt;&#x2F;code&gt; files with minimal effort.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;Example_.c11r_data&#x2F;schema&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Example_.c11r_data&amp;#x2F;schema&quot; aria-label=&quot;Anchor link for: Example_.c11r_data&amp;#x2F;schema&quot;&gt;Example &lt;code&gt;.c11r&lt;&#x2F;code&gt; data&#x2F;schema&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;pre data-lang=&quot;xml&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-xml &quot;&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span&gt;&amp;lt;?&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;xml &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;version&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;1.0&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;?&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;c11r&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;godot &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;uid&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;02123&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;godot&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;dependencies&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;res &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;guid&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;02165&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;path&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;res:&#x2F;&#x2F;asdaslkhjasd&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;res&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;dependencies&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;vars&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;item &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;some_var&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;value&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;12&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;isconst&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;false&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;item&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;item &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;12&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;another_var&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;value&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;something&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;isconst&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;false&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;item&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;vars&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;blocks&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;block &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;id&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;0001&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;IfElse&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;block&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;blocks&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;connections&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;link &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;left_id&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;0001&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;left_port&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;right_id&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;0002&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;right_port&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;link&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;connections&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;metadata&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;doc &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;id&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;0001&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;            This is a docstring
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;doc&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;gui &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;id&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;0001&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;pos&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;1.2;3.6&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;gui&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;comment &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;id&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;0001&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;pos&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;1.2;1.0&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;            This is a comment block
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;comment&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;metadata&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;c11r&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;Testing_Challenges&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Testing_Challenges&quot; aria-label=&quot;Anchor link for: Testing_Challenges&quot;&gt;Testing Challenges&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Unit testing is incredibly helpful for verifying that functions operate as intended when changes are made. Unfortunately for godot-rust, the actual components that interoperate with Godot’s types cannot be used because the definitions are only known when Godot loads the library into memory and initializes it over FFI. What this means is that &lt;em&gt;&lt;strong&gt;no component that uses Godot types can be unit tested without a very specific setup&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;. There are currently tools and attempts to create a custom testing environment for godot-rust, however as of now I believe the most effective way to test a godot-rust project is to extract what logic is possible away from the Godot Types. For example the serialization&#x2F;deserialization systems are based on a submodule that emits and receives structured metadata rather than a Godot type. This allows these systems to be unit tested.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Continuation_of_documentation&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Continuation_of_documentation&quot; aria-label=&quot;Anchor link for: Continuation_of_documentation&quot;&gt;Continuation of documentation&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;This here is all I can think of that should be included at this present moment. Unfortunately I am a mortal and am prone to mistakes, so please let me know if something needs to be changed and&#x2F;or updated by creating an issue in the repository.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Godot Engine Editor Icon Colours</title>
+        <published>2023-11-24T00:00:00+00:00</published>
+        <updated>2023-11-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Queen Of Squiggles
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://queenofsquiggles.github.io/tech/godot-icon-colours/"/>
+        <id>https://queenofsquiggles.github.io/tech/godot-icon-colours/</id>
+        
+        <content type="html" xml:base="https://queenofsquiggles.github.io/tech/godot-icon-colours/">&lt;h2 id=&quot;Colours_LUT&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Colours_LUT&quot; aria-label=&quot;Anchor link for: Colours_LUT&quot;&gt;Colours LUT&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The markdown doesn’t really support custom colours, so see below for examples. (dark reader users make sure you disable it for this website if you wanna see accurate colours!!!!)&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&quot;text-align: center&quot;&gt;Hex Light&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: center&quot;&gt;Hex Dark&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: left&quot;&gt;Engine Name&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#478cbf&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#478cbf&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Godot Blue&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#414042&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#414042&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Godot Gray&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#000000&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#bfbfbf&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Pure black&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#ff0000&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#ff0000&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Pure red&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#00ff00&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#00ff00&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Pure green&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#0000ff&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#0000ff&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Pure blue&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#808080&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#808080&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;GUI disabled color&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#b3b3b3&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#363636&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;GUI disabled light color&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#699ce8&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#699ce8&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;GUI highlight color&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#f9f9f9&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#606060&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Scrollbar grabber highlight color&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#fc7f7f&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#cd3838&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Spatial&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#8da5f3&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#3d64dd&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;2D&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#4b70ea&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#1a3eac&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;2D Dark&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#8eef97&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#2fa139&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Control&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#003e7a&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#2b74bb&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Selection (darker blue)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#f7f5cf&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#615f3a&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Gizmo (yellow)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#80ff45&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#74ff34&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Green&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#45ffa2&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#2cff98&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Aqua&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#45d7ff&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#22ccff&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Blue&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#8045ff&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#702aff&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Purple&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#ff4596&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#ff2781&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Pink&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#75d1e6&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#41acc5&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Frozen gradient middle&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#84ffee&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#49ccba&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Frozen gradient bottom&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#eec315&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#d58c0b&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Color track orange&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#dbee15&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#b7d10a&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Color track yellow&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#288027&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#218309&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Color track green&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#a2d2ff&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#4998e3&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Shape resource (light blue)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#ea7940&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#bd5e2c&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;3D Position track&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#ff2b88&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#bd165f&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;3D Rotation track&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#eac840&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#bd9d1f&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;3D Scale track&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#3cf34e&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#16a827&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Call Method track&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#2877f6&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#236be6&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Bezier Curve track&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#eae440&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#9f9722&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Audio Playback track&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#a448f0&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#9853ce&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Animation Playback track&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#5ad5c4&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#0a9c88&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Blend Shape track&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#919191&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#6e6e6e&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Border part&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#c6ced4&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#828f9b&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;New Atlas&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#5abbef&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#4fb2e9&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;int&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#35d4f4&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#27ccf0&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;float&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#4593ec&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#4690e7&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;String&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#ac73f1&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#ad76ee&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Vector2&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#f1738f&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#ee758e&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Rect2&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#de66f0&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#dc6aed&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Vector3&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#b9ec41&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#96ce1a&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Transform2D&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#f74949&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#f77070&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Plane&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#ec418e&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#ec69a3&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Quaternion&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#ee5677&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#ee7991&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;AABB&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#e1ec41&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#b2bb19&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Basis&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#f68f45&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#f49047&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Transform3D&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#417aec&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#6993ec&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;NodePath&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#41ec80&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#2ce573&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;RID&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#55f3e3&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#12d5c3&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Object&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#54ed9e&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#57e99f&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Dictionary&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#cf68ea&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#c050dd&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Functions and expressions&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;#eac968&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;#d9b64f&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Textures and cubemaps&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;h2 id=&quot;Colour_Details&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Colour_Details&quot; aria-label=&quot;Anchor link for: Colour_Details&quot;&gt;Colour Details&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s all the colours. First colour is the light theme, second is dark. Then some text in each colour to show what it looks like.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Godot_Blue&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Godot_Blue&quot; aria-label=&quot;Anchor link for: Godot_Blue&quot;&gt;Godot Blue&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;478cbf –&amp;gt; 478cbf&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #478cbf;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #478cbf;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Godot_Gray&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Godot_Gray&quot; aria-label=&quot;Anchor link for: Godot_Gray&quot;&gt;Godot Gray&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;414042 –&amp;gt; 414042&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #414042;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #414042;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Pure_black&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Pure_black&quot; aria-label=&quot;Anchor link for: Pure_black&quot;&gt;Pure black&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;000000 –&amp;gt; bfbfbf&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #000000;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #bfbfbf;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Pure_red&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Pure_red&quot; aria-label=&quot;Anchor link for: Pure_red&quot;&gt;Pure red&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;ff0000 –&amp;gt; ff0000&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #ff0000;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #ff0000;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Pure_green&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Pure_green&quot; aria-label=&quot;Anchor link for: Pure_green&quot;&gt;Pure green&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;00ff00 –&amp;gt; 00ff00&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #00ff00;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #00ff00;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Pure_blue&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Pure_blue&quot; aria-label=&quot;Anchor link for: Pure_blue&quot;&gt;Pure blue&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;0000ff –&amp;gt; 0000ff&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #0000ff;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #0000ff;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;GUI_disabled_color&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#GUI_disabled_color&quot; aria-label=&quot;Anchor link for: GUI_disabled_color&quot;&gt;GUI disabled color&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;808080 –&amp;gt; 808080&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #808080;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #808080;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;GUI_disabled_light_color&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#GUI_disabled_light_color&quot; aria-label=&quot;Anchor link for: GUI_disabled_light_color&quot;&gt;GUI disabled light color&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;b3b3b3 –&amp;gt; 363636&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #b3b3b3;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #363636;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;GUI_highlight_color&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#GUI_highlight_color&quot; aria-label=&quot;Anchor link for: GUI_highlight_color&quot;&gt;GUI highlight color&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;699ce8 –&amp;gt; 699ce8&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #699ce8;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #699ce8;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Scrollbar_grabber_highlight_color&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Scrollbar_grabber_highlight_color&quot; aria-label=&quot;Anchor link for: Scrollbar_grabber_highlight_color&quot;&gt;Scrollbar grabber highlight color&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;f9f9f9 –&amp;gt; 606060&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #f9f9f9;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #606060;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Spatial&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Spatial&quot; aria-label=&quot;Anchor link for: Spatial&quot;&gt;Spatial&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;fc7f7f –&amp;gt; cd3838&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #fc7f7f;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #cd3838;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;2D&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#2D&quot; aria-label=&quot;Anchor link for: 2D&quot;&gt;2D&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;8da5f3 –&amp;gt; 3d64dd&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #8da5f3;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #3d64dd;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;2D_Dark&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#2D_Dark&quot; aria-label=&quot;Anchor link for: 2D_Dark&quot;&gt;2D Dark&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;4b70ea –&amp;gt; 1a3eac&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #4b70ea;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #1a3eac;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Control&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Control&quot; aria-label=&quot;Anchor link for: Control&quot;&gt;Control&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;8eef97 –&amp;gt; 2fa139&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #8eef97;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #2fa139;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Selection_(darker_blue)&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Selection_(darker_blue)&quot; aria-label=&quot;Anchor link for: Selection_(darker_blue)&quot;&gt;Selection (darker blue)&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;003e7a –&amp;gt; 2b74bb&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #003e7a;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #2b74bb;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Gizmo_(yellow)&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Gizmo_(yellow)&quot; aria-label=&quot;Anchor link for: Gizmo_(yellow)&quot;&gt;Gizmo (yellow)&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;f7f5cf –&amp;gt; 615f3a&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #f7f5cf;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #615f3a;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Green&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Green&quot; aria-label=&quot;Anchor link for: Green&quot;&gt;Green&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;80ff45 –&amp;gt; 74ff34&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #80ff45;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #74ff34;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Aqua&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Aqua&quot; aria-label=&quot;Anchor link for: Aqua&quot;&gt;Aqua&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;45ffa2 –&amp;gt; 2cff98&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #45ffa2;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #2cff98;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Blue&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Blue&quot; aria-label=&quot;Anchor link for: Blue&quot;&gt;Blue&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;45d7ff –&amp;gt; 22ccff&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #45d7ff;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #22ccff;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Purple&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Purple&quot; aria-label=&quot;Anchor link for: Purple&quot;&gt;Purple&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;8045ff –&amp;gt; 702aff&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #8045ff;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #702aff;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Pink&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Pink&quot; aria-label=&quot;Anchor link for: Pink&quot;&gt;Pink&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;ff4596 –&amp;gt; ff2781&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #ff4596;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #ff2781;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Frozen_gradient_middle&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Frozen_gradient_middle&quot; aria-label=&quot;Anchor link for: Frozen_gradient_middle&quot;&gt;Frozen gradient middle&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;75d1e6 –&amp;gt; 41acc5&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #75d1e6;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #41acc5;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Frozen_gradient_bottom&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Frozen_gradient_bottom&quot; aria-label=&quot;Anchor link for: Frozen_gradient_bottom&quot;&gt;Frozen gradient bottom&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;84ffee –&amp;gt; 49ccba&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #84ffee;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #49ccba;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Color_track_orange&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Color_track_orange&quot; aria-label=&quot;Anchor link for: Color_track_orange&quot;&gt;Color track orange&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;eec315 –&amp;gt; d58c0b&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #eec315;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #d58c0b;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Color_track_yellow&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Color_track_yellow&quot; aria-label=&quot;Anchor link for: Color_track_yellow&quot;&gt;Color track yellow&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;dbee15 –&amp;gt; b7d10a&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #dbee15;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #b7d10a;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Color_track_green&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Color_track_green&quot; aria-label=&quot;Anchor link for: Color_track_green&quot;&gt;Color track green&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;288027 –&amp;gt; 218309&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #288027;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #218309;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Shape_resource_(light_blue)&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Shape_resource_(light_blue)&quot; aria-label=&quot;Anchor link for: Shape_resource_(light_blue)&quot;&gt;Shape resource (light blue)&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;a2d2ff –&amp;gt; 4998e3&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #a2d2ff;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #4998e3;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;3D_Position_track&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#3D_Position_track&quot; aria-label=&quot;Anchor link for: 3D_Position_track&quot;&gt;3D Position track&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;ea7940 –&amp;gt; bd5e2c&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #ea7940;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #bd5e2c;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;3D_Rotation_track&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#3D_Rotation_track&quot; aria-label=&quot;Anchor link for: 3D_Rotation_track&quot;&gt;3D Rotation track&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;ff2b88 –&amp;gt; bd165f&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #ff2b88;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #bd165f;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;3D_Scale_track&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#3D_Scale_track&quot; aria-label=&quot;Anchor link for: 3D_Scale_track&quot;&gt;3D Scale track&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;eac840 –&amp;gt; bd9d1f&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #eac840;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #bd9d1f;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Call_Method_track&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Call_Method_track&quot; aria-label=&quot;Anchor link for: Call_Method_track&quot;&gt;Call Method track&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;3cf34e –&amp;gt; 16a827&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #3cf34e;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #16a827;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Bezier_Curve_track&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Bezier_Curve_track&quot; aria-label=&quot;Anchor link for: Bezier_Curve_track&quot;&gt;Bezier Curve track&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;2877f6 –&amp;gt; 236be6&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #2877f6;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #236be6;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Audio_Playback_track&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Audio_Playback_track&quot; aria-label=&quot;Anchor link for: Audio_Playback_track&quot;&gt;Audio Playback track&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;eae440 –&amp;gt; 9f9722&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #eae440;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #9f9722;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Animation_Playback_track&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Animation_Playback_track&quot; aria-label=&quot;Anchor link for: Animation_Playback_track&quot;&gt;Animation Playback track&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;a448f0 –&amp;gt; 9853ce&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #a448f0;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #9853ce;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Blend_Shape_track&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Blend_Shape_track&quot; aria-label=&quot;Anchor link for: Blend_Shape_track&quot;&gt;Blend Shape track&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;5ad5c4 –&amp;gt; 0a9c88&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #5ad5c4;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #0a9c88;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Border_part&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Border_part&quot; aria-label=&quot;Anchor link for: Border_part&quot;&gt;Border part&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;919191 –&amp;gt; 6e6e6e&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #919191;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #6e6e6e;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;New_Atlas&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#New_Atlas&quot; aria-label=&quot;Anchor link for: New_Atlas&quot;&gt;New Atlas&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;c6ced4 –&amp;gt; 828f9b&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #c6ced4;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #828f9b;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;int&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#int&quot; aria-label=&quot;Anchor link for: int&quot;&gt;int&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;5abbef –&amp;gt; 4fb2e9&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #5abbef;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #4fb2e9;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;float&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#float&quot; aria-label=&quot;Anchor link for: float&quot;&gt;float&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;35d4f4 –&amp;gt; 27ccf0&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #35d4f4;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #27ccf0;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;String&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#String&quot; aria-label=&quot;Anchor link for: String&quot;&gt;String&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;4593ec –&amp;gt; 4690e7&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #4593ec;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #4690e7;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Vector2&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Vector2&quot; aria-label=&quot;Anchor link for: Vector2&quot;&gt;Vector2&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;ac73f1 –&amp;gt; ad76ee&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #ac73f1;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #ad76ee;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Rect2&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Rect2&quot; aria-label=&quot;Anchor link for: Rect2&quot;&gt;Rect2&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;f1738f –&amp;gt; ee758e&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #f1738f;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #ee758e;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Vector3&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Vector3&quot; aria-label=&quot;Anchor link for: Vector3&quot;&gt;Vector3&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;de66f0 –&amp;gt; dc6aed&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #de66f0;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #dc6aed;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Transform2D&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Transform2D&quot; aria-label=&quot;Anchor link for: Transform2D&quot;&gt;Transform2D&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;b9ec41 –&amp;gt; 96ce1a&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #b9ec41;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #96ce1a;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Plane&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Plane&quot; aria-label=&quot;Anchor link for: Plane&quot;&gt;Plane&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;f74949 –&amp;gt; f77070&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #f74949;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #f77070;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Quaternion&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Quaternion&quot; aria-label=&quot;Anchor link for: Quaternion&quot;&gt;Quaternion&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;ec418e –&amp;gt; ec69a3&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #ec418e;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #ec69a3;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;AABB&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#AABB&quot; aria-label=&quot;Anchor link for: AABB&quot;&gt;AABB&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;ee5677 –&amp;gt; ee7991&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #ee5677;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #ee7991;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Basis&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Basis&quot; aria-label=&quot;Anchor link for: Basis&quot;&gt;Basis&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;e1ec41 –&amp;gt; b2bb19&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #e1ec41;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #b2bb19;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Transform3D&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Transform3D&quot; aria-label=&quot;Anchor link for: Transform3D&quot;&gt;Transform3D&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;f68f45 –&amp;gt; f49047&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #f68f45;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #f49047;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;NodePath&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#NodePath&quot; aria-label=&quot;Anchor link for: NodePath&quot;&gt;NodePath&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;417aec –&amp;gt; 6993ec&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #417aec;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #6993ec;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;RID&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#RID&quot; aria-label=&quot;Anchor link for: RID&quot;&gt;RID&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;41ec80 –&amp;gt; 2ce573&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #41ec80;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #2ce573;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Object&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Object&quot; aria-label=&quot;Anchor link for: Object&quot;&gt;Object&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;55f3e3 –&amp;gt; 12d5c3&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #55f3e3;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #12d5c3;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Dictionary&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Dictionary&quot; aria-label=&quot;Anchor link for: Dictionary&quot;&gt;Dictionary&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;54ed9e –&amp;gt; 57e99f&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #54ed9e;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #57e99f;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Functions_and_expressions&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Functions_and_expressions&quot; aria-label=&quot;Anchor link for: Functions_and_expressions&quot;&gt;Functions and expressions&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;cf68ea –&amp;gt; c050dd&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #cf68ea;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #c050dd;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Textures_and_cubemaps&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Textures_and_cubemaps&quot; aria-label=&quot;Anchor link for: Textures_and_cubemaps&quot;&gt;Textures and cubemaps&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;eac968 –&amp;gt; d9b64f&lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #eac968;&quot;&gt; Example Light &amp;#9608; &lt;&#x2F;p&gt;
+&lt;p style=&quot;color: #d9b64f;&quot;&gt; Example Dark &amp;#9608; &lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Why_does_this_exist?&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Why_does_this_exist?&quot; aria-label=&quot;Anchor link for: Why_does_this_exist?&quot;&gt;Why does this exist?&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I really like to make my SVG icons for tools and such to be reactive to light&#x2F;dark theme colouration swapping. The godot engine has a massive look up table (LUT) for hex codes that it will swap when going from light to dark themes. So long as you use these colours as a palette for your icons, they will look good in both light and dark themes. This page is mainly a reference page for the various colour codes&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;How_to_use_this&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#How_to_use_this&quot; aria-label=&quot;Anchor link for: How_to_use_this&quot;&gt;How to use this&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;This reference page is mainly intended for people who want to make editor icons for Godot. However you can assign custom icons for any global class you desire. If you are creating a plugin or some kind of code-base to be distributed to third party developers, it is highly recommended that you use these palette swapping colours so the icon will have a greater chance of having a decent contrast against the background. If not please ensure that your icon has enough internal contrast to be clearly visible. Also please be sure that your icon is not completely reliant on colour for users who may be colour blind. (A main example of this is how &lt;code&gt;Node&lt;&#x2F;code&gt;, &lt;code&gt;Control&lt;&#x2F;code&gt;, &lt;code&gt;Node2D&lt;&#x2F;code&gt;, and &lt;code&gt;Node3D&lt;&#x2F;code&gt; are all the exact same shape but differentiated by colour. That’s a bad practice in general).&lt;&#x2F;p&gt;
+&lt;p&gt;If you want more resources on how to author meaningful and efficiently loaded icons, please refer to &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.godotengine.org&#x2F;en&#x2F;stable&#x2F;contributing&#x2F;development&#x2F;editor&#x2F;creating_icons.html&quot;&gt;the official godot documentation on this subject&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

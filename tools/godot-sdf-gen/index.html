@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="synthwave">
+
+<head>
+  
+  <title>
+
+Godot SDF Gen | Queen Of Squiggles&#x27;s Blog
+
+</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  
+  <link rel="me" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles">
+  
+
+  <!-- Tailwind compiled CSS -->
+  <link rel="stylesheet" href="https://queenofsquiggles.github.io/output.css">
+  <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+
+  
+  <script defer src="https://queenofsquiggles.github.io/elasticlunr.min.js"></script>
+  <script defer src="https://queenofsquiggles.github.io/search_index.en.js"></script>
+  <script src="https://queenofsquiggles.github.io/js/search.js"></script>
+  
+
+  
+  
+  <!-- Includes the default RSS feed if enabled in configuration -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://queenofsquiggles.github.io/rss.xml">
+  
+  
+  <!-- Includes the ddefault Atom feed if enabled in configuration -->
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="https://queenofsquiggles.github.io/atom.xml" />
+  
+
+  
+  
+</head>
+
+<body>
+  <div class="navbar bg-base-200 sticky top-0 z-50">
+    <div class="navbar-center lg:navbar-start">
+      <div class="hidden lg:flex">
+        <a class="btn btn-ghost text-xl" href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Queen Of Squiggles&#x27;s Blog</a>
+      </div>
+
+      <!-- small screen navbar (drop down) -->
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          Queen Of Squiggles&#x27;s Blog
+
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-300 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-4">
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Home</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+          </li>
+          
+          
+
+          <li class="dropdown">
+            <details>
+              <summary>Theme</summary>
+
+              <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="light" value="light" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="dark" value="dark" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="synthwave" value="synthwave" />
+                </li>
+                
+
+              </ul>
+            </details>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- large screen navbar -->
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+        </li>
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+        </li>
+        
+      </ul>
+      
+
+      <div class="flex-1 gap-2">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            Theme
+          </div>
+          <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="light"
+                value="light" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="dark"
+                value="dark" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="synthwave"
+                value="synthwave" />
+            </li>
+            
+
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <div class="navbar-end hidden lg:flex">
+      <form class="form-control lg:focus-within:grow" onsubmit="return goSearch(event)">
+        <input type="text" class="input input-bordered" placeholder="Search" />
+      </form>
+    </div>
+    
+  </div>
+
+  
+  <div class="navbar flex justify-center lg:hidden pb-4">
+    <form class="form-control" onsubmit="return goSearch(event)">
+      <input type="text" class="input input-bordered" placeholder="Search" />
+    </form>
+  </div>
+  
+
+  <main class="flex flex-col container mx-auto justify-center my-2">
+    
+<div class="flex flex-row flex-wrap lg:flex-nowrap w-full justify-center gap-1 py-2">
+  <div class=" hero container mx-auto bg-base-200 rounded-box">
+    <div class="hero-content flex-col lg:flex-col">
+      
+      
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="tool_preview_1.png" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="tool_preview_1.png" alt="" title="" />
+            </a>
+        </figure>
+        
+    </div>
+</div>
+
+
+      
+      <div>
+        <h1 class="text-5xl font-bold"> Godot SDF Gen </h1>
+        <div class="py-6">
+          
+          <div class="flex flex-row flex-wrap gap-4  py-2">
+            
+            <a href="https://queenofsquiggles.github.io/tags/tool/" class="btn btn-secondary rounded-box">
+              tool
+            </a>
+            
+          </div>
+          
+          
+
+          
+          <div class="join join-vertical py-2">
+
+            <div class="btn btn-outline rounded-box no-animation join-item leading-relaxed">Written - 
+Friday the 20 of May, 2022
+</div>
+
+            
+
+
+
+            
+
+          </div>
+          <div class="py-2">
+            <i> Read time is about 2 minutes </i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-md">
+    
+
+<!-- Table of contents supporting h1, h2, h3, h4, h5, h6 (or optionally reduced depth based on config) -->
+
+
+<ul class="not-prose flex menu bg-base-200 rounded-box divide-y divide-dotted md:divide-none">
+    <li class="menu-title text-xl">
+        <h1>
+            Table of Contents
+        </h1>
+    </li>
+    
+    <li>
+        <a href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/#Tool_Overview">Tool Overview</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/#Purposes">Purposes</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/#UI">UI</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/#Systems">Systems</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/#Reception">Reception</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/#Screenshots">Screenshots</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/#Widget">Widget</a>
+    </li>
+    
+        
+</ul>
+</li>
+</ul>
+
+
+
+  </div>
+
+</div>
+
+<div class="static">
+  <div class="fixed bottom-4 md:bottom-8 start-4 md:start-8 ">
+    <div class="tooltip" data-tip="Return to top">
+      <a class="btn bg-neutral aspect-square rounded-full shadow-md" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+          <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path fill="#FFFFFF"
+            d="M32 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c53 0 96-43 96-96l0-306.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 416c0 17.7-14.3 32-32 32l-96 0z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-col justify-center">
+  <article
+    class="prose prose-neutral lg:prose-xl px-2 max-w-none prose-blockquote:rounded-r-lg prose-blockquote:shadow-2xl prose-blockquote:bg-base-200 prose-blockquote:p-2">
+    <h2 id="Tool_Overview">Tool Overview</h2>
+<p>Godot SDF Gen is a small tool I made for myself and others to easily generate “Signed Distance Field” textures, which can be used to create a <a rel="noopener nofollow noreferrer" target="_blank" href="https://shaderfun.com/2018/07/01/signed-distance-fields-part-7-some-simple-effects/">variety of fun effects</a>.</p>
+<h2 id="Purposes">Purposes</h2>
+<p>I wanted to create a small, useful tool with the <a rel="noopener nofollow noreferrer" target="_blank" href="https://godotengine.org/">Godot Game Engine</a>. Although largely marketed as a <em>game</em> engine, Godot does actually provide a plethera of features beneficial to desktop and mobile tool applications. And that very distinction that the software application can be made in Godot and exported to desktop and mobile with minimal extra effort was very attractive. Given this project, a mobile version didn’t really make sense.</p>
+<h2 id="UI">UI</h2>
+<p>Godot had recently revamped their Theme designing system, which allowed for the user interface to be customized in many ways. I would say that I over did it on this project. I have a much stronger sense for code and narrative than I do for art. Colour blindness may have affected this.</p>
+<h2 id="Systems">Systems</h2>
+<p>Originally, I created it as a <a rel="noopener nofollow noreferrer" target="_blank" href="https://en.wikipedia.org/wiki/Minimum_viable_product">Minimal Viable Product (MVP)</a>. I used the built-in Godot UI systems and the scripting language, GDScript to manually read the pixels of an image in and process the kernel to determine the SDF value. After getting it to work, I ported the logic to a shader so it could utilize the GPU’s processing power. Unfortunately, setting the kernel size too high actually crashed my computer for reasons I’m still unsure. I believe it had something to do with my desktop environment, but as I said, I’m not sure. I added in a “safety lock” for keeping the kernel within a certain range. I also added a feature where you could have the program play a small notification sound once processing was completed. This was helpful for processing larger files since I was working mainly with a slower laptop at the time.</p>
+<h2 id="Reception">Reception</h2>
+<p>The tool went largely unnoticed by the public. It is available freely, but due to the niche feature, it is mostly just helpful for me and my purposes. Which is still a valuable way to spend my time.</p>
+<h2 id="Screenshots">Screenshots</h2>
+
+<div class="flex flex-row flex-wrap bg-base-200 p-2 rounded-box container mx-auto gap-4 justify-center">
+    
+    
+    
+
+    <a href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/tool_preview_1.png" target="_blank">
+
+        
+        
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="tool_preview_1.png" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="tool_preview_1.png" alt="" title="" />
+            </a>
+        </figure>
+        
+    </div>
+</div>
+
+
+    </a>
+    
+    
+
+    <a href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/tool_preview_2.png" target="_blank">
+
+        
+        
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="tool_preview_2.png" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="tool_preview_2.png" alt="" title="" />
+            </a>
+        </figure>
+        
+    </div>
+</div>
+
+
+    </a>
+    
+    
+
+    <a href="https://queenofsquiggles.github.io/tools/godot-sdf-gen/tool_preview_3.png" target="_blank">
+
+        
+        
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="tool_preview_3.png" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="tool_preview_3.png" alt="" title="" />
+            </a>
+        </figure>
+        
+    </div>
+</div>
+
+
+    </a>
+</div><h2 id="Widget">Widget</h2>
+<div class="container max-w-md">
+    <iframe src="https://itch.io/embed/1538319?dark=true" width="45%" frameborder="0">
+        <a href="https:&#x2F;&#x2F;queenofsquiggles.itch.io&#x2F;godot-sdf-gen">
+            Godot SDF Gen by QueenOfSquiggles
+        </a>
+    </iframe>
+</div>
+  </article>
+</div>
+
+<div class="flex justify-center py-2">
+  
+  <ul class="menu menu-vertical lg:menu-horizontal bg-secondary text-neutral rounded-box">
+    <li class="menu-title text-neutral">Read more with tag:</li>
+    
+    <li class="bg-secondary hover:bg-primary rounded-box">
+      <a href="https://queenofsquiggles.github.io/tags/tool/">
+        tool
+      </a>
+    </li>
+    
+  </ul>
+  
+
+</div>
+
+
+  </main>
+
+  
+  
+
+  
+  <footer class="footer bg-neutral text-neutral-content p-10 justify-center">
+    <aside>
+      
+      <a href=" mailto:thequeenofsquiggles@gmail.com">thequeenofsquiggles@gmail.com</a>
+      
+    </aside>
+    
+    <nav>
+      <h6 class="footer-title">Socials</h6>
+      <div class="grid grid-flow-col gap-4">
+        
+        <a class="flex-auto" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles"  title="Mastodon" ><i
+            class="fab fa-mastodon"></i></a>
+        
+        <a class="flex-auto" href="rss.xml"  title="RSS Feed" ><i
+            class="fas fa-rss"></i></a>
+        
+      </div>
+    </nav>
+    
+  </footer>
+  
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Queen Of Squiggles&#x27;s Blog - cpp</title>
+      <link>https://queenofsquiggles.github.io/</link>
+      <description>The personal blog for all of the Queen&#x27;s news, ramblings, portfolio stuffs, and more!</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://queenofsquiggles.github.io/tags/cpp/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Tue, 06 Feb 2024 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Blog Update Feb. 2024 - C++ Development</title>
+          <pubDate>Tue, 06 Feb 2024 00:00:00 +0000</pubDate>
+          <author>Queen Of Squiggles</author>
+          <link>https://queenofsquiggles.github.io/meta/blog-update-cpp-engine-dev/</link>
+          <guid>https://queenofsquiggles.github.io/meta/blog-update-cpp-engine-dev/</guid>
+          <description xml:base="https://queenofsquiggles.github.io/meta/blog-update-cpp-engine-dev/">&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Caution&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Hot Takes Inside!&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;General_Update&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#General_Update&quot; aria-label=&quot;Anchor link for: General_Update&quot;&gt;General Update&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Hey y’all! I haven’t been making much “Content™️” but I’ve been doing a lot of stuff otherwise! I’ve been talking with more professional game developers trying to figure out how I can break into the game development industry and actuall start a career. It’ll be one year since my graduation soon and I’d like to find some kind of employment in my field 😅&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Blog_Technical&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Blog_Technical&quot; aria-label=&quot;Anchor link for: Blog_Technical&quot;&gt;Blog Technical&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;As a technical detail, I switched the system used to create the blog. I was using Jekyll to create a static website and I switched to Hugo for doing the same. There’s a lot of benefits to switched to hugo. Writing is easier because it automatically refreshes my browser when detecting a change, manages images a lot nicer, and generally supports a much more robust website. I’m using a custom framework “HB (Hugo Bootstrap) Framework” (see the footer for links &amp;amp; details).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Resume_updates&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Resume_updates&quot; aria-label=&quot;Anchor link for: Resume_updates&quot;&gt;Resume updates&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I imagine unless you’re a tech recruiter (which if you are, why are you reading this? Hire me already!) you’re probably not watching my resume. But now after taking with several more professional developers I was able to garner some critiques on my resume. I’ve even had a recruiter say they remembered me based off of the pictures in my resume. (Go put pictures in your resume right now!)&lt;&#x2F;p&gt;
+&lt;p&gt;I added some posts for some recent games that I had forgotten to do write-ups for. But they are currently really bare-bones at best. Mostly just showing off screenshots more than anything. I’m nervous I won’t be able to write a proper write-up for these games since its been so long since I made them, and I’d have to re-learn my own code-base to remember what I was doing and why.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;C++???&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#C++???&quot; aria-label=&quot;Anchor link for: C++???&quot;&gt;C++???&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Yes! It has been a long while since I’ve done any development in C++. Mainly because I have had no reason to. I started programming with Java and made games with a pixel-raster system written in pure Java. And eventually worked up to LWJGL (which gave access to OpenGL draw calls). But for the most part, I have been doing scripting with game engines since I wanted to make games, and was less concerned with having fine-grain control over the intricacies of the runtime.&lt;&#x2F;p&gt;
+&lt;p&gt;Some people have told me that any moment I spend brushing up on my C++ is not a moment wasted, with respect towards employment in the game industry. So I wanted to make sure I am not just capable but highly proficient in C++ game development.&lt;&#x2F;p&gt;
+&lt;p&gt;I had two main project goals. One of which is complete with patches added from time to time. The other is a bit larger and I am still working through it as it is a full game written in C++.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;A_new_standard&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#A_new_standard&quot; aria-label=&quot;Anchor link for: A_new_standard&quot;&gt;A new standard&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;xkcd_standards.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;xkcd_standards.png&quot; alt=&quot;XKCD&amp;#x27;s comic &amp;#x27;Standards&amp;#x27;&quot; title=&quot;XKCD&amp;#x27;s comic &amp;#x27;Standards&amp;#x27;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                XKCD’s comic ‘Standards’
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;xkcd.com&#x2F;927&quot;&gt;XKCD reference&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I am rather picky about build systems. And one of my biggest complaints when it comes to c++ build systems is how non-opinionated (wishy-washy) they are! What I really love about a build system like rust’s &lt;code&gt;cargo build&lt;&#x2F;code&gt; or C#’s &lt;code&gt;dotnet build&lt;&#x2F;code&gt; is that they expect a particular project layout, with a specific configuration file that details exactly what the build system needs to know to prep the code into an executable state.&lt;&#x2F;p&gt;
+&lt;p&gt;When I searched for C++ build systems. The main ones that got recommended were “Make” and “CMake”.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;The_problem_with_Make&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#The_problem_with_Make&quot; aria-label=&quot;Anchor link for: The_problem_with_Make&quot;&gt;The problem with Make&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;Make is a super generic build system for linux. You define a serious of tasks and each task and list zero or more tasks that it depends on. And by chaining these with arcane combinations of symbols, you can craft a moderately usable build system. And in that sense I’d consider it only slightly more efficient than just writing a shell script for all the &lt;code&gt;g++&lt;&#x2F;code&gt; calls I want.&lt;&#x2F;p&gt;
+&lt;p&gt;The trouble as well is there is little to be said about a standard. The only standard is the name of the script file (I dare not call it a configuration file!). From there you can actually use Make to do just about anything. You could have a make-file that downloads images from a website, formats them, and exports them to a particular directory. Which is impressive. But again, that’s scripting, not necessarily a build system.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;The_problem_with_CMake&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#The_problem_with_CMake&quot; aria-label=&quot;Anchor link for: The_problem_with_CMake&quot;&gt;The problem with CMake&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;CMake, or “the build system for creating make files”. It is arguably a very robust system which enables cross platform development and coordination of large code bases with less effort than most major build systems. Additionally, it is truely not a scripting system but an actual build system. Using the incredibly odd language system you can define variables and perform processes and… I promise it’s technically not a scripting system again.&lt;&#x2F;p&gt;
+&lt;p&gt;The main detail in CMake that makes it more promising is that it doesn’t require you to write out your &lt;code&gt;g++&lt;&#x2F;code&gt; calls (since that would really break the cross platform capabilities). So all you have to do is define a project target and attach source files to that target. Simple right? Well every time you make, delete, or move a file, you need to change one &lt;strong&gt;or more&lt;&#x2F;strong&gt; &lt;code&gt;CMakeLists.txt&lt;&#x2F;code&gt; files.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;My_best_effort&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#My_best_effort&quot; aria-label=&quot;Anchor link for: My_best_effort&quot;&gt;My best effort&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;I wanted a stupid simple build system that expects a specific project layout but uses that to create a very dynamic build approach. I never really intended for it to be used by anyone but myself so I named it “SSBS”, which is an acronym for “Squiggles Stupid Build System” but also sounds like a ship name, “S.S. Bullshit”. Please clap I am very clever 😢.&lt;&#x2F;p&gt;
+&lt;p&gt;The build system itself is rather small and written in C++ for compiling C++ on linux specifically. I considered developing for cross platform. But the appeal of a simple Makefile to bootstrap the project was appealing.&lt;&#x2F;p&gt;
+&lt;p&gt;Basically what it does is searches recursively in a &lt;code&gt;src&#x2F;&lt;&#x2F;code&gt; directory for any &lt;code&gt;.c&lt;&#x2F;code&gt;, &lt;code&gt;.h&lt;&#x2F;code&gt;, &lt;code&gt;.cpp&lt;&#x2F;code&gt;, and &lt;code&gt;.hpp&lt;&#x2F;code&gt; files and adds them to a source list. It then generates &lt;code&gt;g++&lt;&#x2F;code&gt; commands for each source file and emits the objects into a similar tree structure as source in the &lt;code&gt;build&#x2F;&lt;&#x2F;code&gt; directory. Additionally, the output of the &lt;code&gt;g++&lt;&#x2F;code&gt; call is emitted to a log file. Then once the calls are complete, it reads the log files to parse out errors, warnings, and notes. (For now, I couldn’t manage to capture the actual output of the &lt;code&gt;g++&lt;&#x2F;code&gt; call and this is the best solution since linux has a piping system for commands).&lt;&#x2F;p&gt;
+&lt;p&gt;Then it prints out all of the errors, warnings, and notes (with a little bit of style using a single-header library). It also ends with a breakdown of whether it succeeded or failed and how many errors, warnings, and notes were found.&lt;&#x2F;p&gt;
+&lt;p&gt;I could probably write a lot more about SSBS. But unless literally anyone besides me finds interest in it, I might not? But I realize I might have to because it’s pretty telling for my skills and drive to create solutions for problems and easing friction of development.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;A_new_game?&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#A_new_game?&quot; aria-label=&quot;Anchor link for: A_new_game?&quot;&gt;A new game?&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;I’m still playing around with name ideas. So far I like, “Watery Wails” since it is an interesting title, gives some but not all details of the content, and is also relatively unique. (I had considered “Sunken Souls” briefly but I know people working on a game called “Sunken …” that I don’t wanna be terribly similar in name to. To avoid competition.)&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;Engine_Development&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Engine_Development&quot; aria-label=&quot;Anchor link for: Engine_Development&quot;&gt;Engine Development&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;The area of the games industry I am most excited about is engine &amp;amp; tool development. And so for that purpose, this game is mostly an excuse to make a super basic game engine. Though unlike popular game engines such as “Godot” and less important engines like “Unity” have robust scripting capabilities, a straightforward GUI, and decent scene structure systems, the engine I am making is much closer to a library or framework. Technically it is a framework but I really want to be able to say I  made a custom engine so I’m calling it an engine.&lt;&#x2F;p&gt;
+&lt;p&gt;The goal of this engine is to be highly specialized. The reason for that is the more specialized a system is, the easier it is to get it feature complete. I really like making 3D PBR horror games with as much style as I can muster.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;watery_wails_pbr_demo.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;watery_wails_pbr_demo.png&quot; alt=&quot;A demo of the PBR capabilites of the engine as of writing&quot; title=&quot;A demo of the PBR capabilites of the engine as of writing&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                A demo of the PBR capabilites of the engine as of writing
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Important note: I got this model online, I didn’t model it myself.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Here you can see a few interesting details:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The object with multiple different PBR materials attached&lt;&#x2F;li&gt;
+&lt;li&gt;Albedo, Normal, ORM mapping enabled&lt;&#x2F;li&gt;
+&lt;li&gt;ImGUI used to display basic debug information (for now!)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Some details you can’t really see here:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Resource management system (prevents loading the same file twice)&lt;&#x2F;li&gt;
+&lt;li&gt;Smart-pointer backed systems&lt;&#x2F;li&gt;
+&lt;li&gt;Render batching through single render passes for objects with a common shader program.
+&lt;ul&gt;
+&lt;li&gt;I’m toying with the idea of further sorting by material, but that would be a bit extra work and I’m not going to optimize much until I actually encounter performance issues.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Robust input action system through a TOML file specification
+&lt;ul&gt;
+&lt;li&gt;Includes gamepad support&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Game Objects&lt;&#x2F;li&gt;
+&lt;li&gt;Transform objects (position, rotation, and scale packaged together and easily loaded into model &lt;em&gt;transform&lt;&#x2F;em&gt; matrix)&lt;&#x2F;li&gt;
+&lt;li&gt;A custom GLSL &lt;code&gt;#include&lt;&#x2F;code&gt; system (which allows for shared information across many shader files).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;My goals for the engine, “Next Steps”:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Support static environment irradiance maps in the PBR rendering (to make reflections and such more realistic)&lt;&#x2F;li&gt;
+&lt;li&gt;Access mouse input from the input system (very little work, it’s just a bit lower priority than others)&lt;&#x2F;li&gt;
+&lt;li&gt;OpenAL integration for sound effects and streamed music. (My current task as of writing)&lt;&#x2F;li&gt;
+&lt;li&gt;Some kind of GUI system
+&lt;ul&gt;
+&lt;li&gt;I’m tempted to opt for ImGUI as the GUI system for the game as a whole, but I think making my own GUI system would be significantly better because it would give me skills I could translate into a UI&#x2F;UX position if that’s what gets my “foot in the door” in the game industry.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;Game_Development&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Game_Development&quot; aria-label=&quot;Anchor link for: Game_Development&quot;&gt;Game Development&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;The actual gameplay of this game is almost entirely theoretical at this moment. Since I really need a ton of engine systems in place before I’m comfortable actually building gameplay systems.&lt;&#x2F;p&gt;
+&lt;p&gt;The overall goal is to be similar to &lt;em&gt;Five Nights At Freddy’s&lt;&#x2F;em&gt; (Specifically the first game) and &lt;em&gt;I’m On Observation Duty&lt;&#x2F;em&gt; (maybe I should give my game a longer title to fit in?? More syllables == better game right?)&lt;&#x2F;p&gt;
+&lt;p&gt;The game will take place at a pool since I’m drawing on my experience when I worked as a lifeguard. I had my fair share of terrifying experiences there, and I want to try to translate the fear and axiety of literally having people’s lives in your hands into the game. And a hefty amount of frustration for the parents that would literally abandon their kids to the pool because it was cheaper than daycare. (Basically take all of the corporatism parody of later FNAF games and translate that into parody of negligent parents and I think I’m there?)&lt;&#x2F;p&gt;
+&lt;p&gt;One of my main struggles is finding ways to share what I’m making. Until I am ready to work on the game itself, any screenshots would just be “Hey look at this raw code that made such and such system more efficient!” (Imagine trying to write alt text for that!)&lt;&#x2F;p&gt;
+&lt;h5 id=&quot;Release?&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Release?&quot; aria-label=&quot;Anchor link for: Release?&quot;&gt;Release?&lt;&#x2F;a&gt;&lt;&#x2F;h5&gt;
+&lt;p&gt;I have absolutely no clue when a release date would be. But I can say that it will be available for linux and &lt;em&gt;possibly&lt;&#x2F;em&gt; windows. I need to do a bit more research into how cross compilation for MacOS is on linux, but if I have to buy a developer’s license the cost is too high for whatever meager profit I’ll be making on this game. If I somehow break $50 I’m literally going to have a party or something.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Why_this_blog_post?&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Why_this_blog_post?&quot; aria-label=&quot;Anchor link for: Why_this_blog_post?&quot;&gt;Why this blog post?&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Well I wanted to give a lot of general updates. But also I wanted to talk about my C++ development a little bit since it’s probably going to take a long while before it’s actually done.&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

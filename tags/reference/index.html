@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="synthwave">
+
+<head>
+  
+  <title>
+
+Queen Of Squiggles&#x27;s Blog - tags: reference
+
+</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  
+  <link rel="me" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles">
+  
+
+  <!-- Tailwind compiled CSS -->
+  <link rel="stylesheet" href="https://queenofsquiggles.github.io/output.css">
+  <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+
+  
+  <script defer src="https://queenofsquiggles.github.io/elasticlunr.min.js"></script>
+  <script defer src="https://queenofsquiggles.github.io/search_index.en.js"></script>
+  <script src="https://queenofsquiggles.github.io/js/search.js"></script>
+  
+
+  
+  
+  <!-- Includes the default RSS feed if enabled in configuration -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://queenofsquiggles.github.io/rss.xml">
+  
+  
+  <!-- Includes the ddefault Atom feed if enabled in configuration -->
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="https://queenofsquiggles.github.io/atom.xml" />
+  
+
+  
+  
+</head>
+
+<body>
+  <div class="navbar bg-base-200 sticky top-0 z-50">
+    <div class="navbar-center lg:navbar-start">
+      <div class="hidden lg:flex">
+        <a class="btn btn-ghost text-xl" href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Queen Of Squiggles&#x27;s Blog</a>
+      </div>
+
+      <!-- small screen navbar (drop down) -->
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          Queen Of Squiggles&#x27;s Blog
+
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-300 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-4">
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Home</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+          </li>
+          
+          
+
+          <li class="dropdown">
+            <details>
+              <summary>Theme</summary>
+
+              <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="light" value="light" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="dark" value="dark" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="synthwave" value="synthwave" />
+                </li>
+                
+
+              </ul>
+            </details>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- large screen navbar -->
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+        </li>
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+        </li>
+        
+      </ul>
+      
+
+      <div class="flex-1 gap-2">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            Theme
+          </div>
+          <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="light"
+                value="light" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="dark"
+                value="dark" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="synthwave"
+                value="synthwave" />
+            </li>
+            
+
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <div class="navbar-end hidden lg:flex">
+      <form class="form-control lg:focus-within:grow" onsubmit="return goSearch(event)">
+        <input type="text" class="input input-bordered" placeholder="Search" />
+      </form>
+    </div>
+    
+  </div>
+
+  
+  <div class="navbar flex justify-center lg:hidden pb-4">
+    <form class="form-control" onsubmit="return goSearch(event)">
+      <input type="text" class="input input-bordered" placeholder="Search" />
+    </form>
+  </div>
+  
+
+  <main class="flex flex-col container mx-auto justify-center my-2">
+    
+<div class="flex flex-col flex-wrap w-full justify-center">
+    <div class="w-full divider">
+        <h1>tags - reference</h1>
+    </div>
+    <div class="flex flex-row justify-center justify-items-center">
+        
+<div class="container mx-auto justify-center">
+  <div class="flex flex-row flex-wrap gap-4 justify-center">
+    
+    
+<div>
+  <div class="card card-compact md:card-normal w-96 flex flex-initial bg-base-300 shadow-xl rounded-box">
+
+    
+    
+    <div class="card-body">
+      <h6 class="card-title">
+        <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tech&#x2F;choreographer-design&#x2F;" rel="bookmark" title="Choreographer Design Documentation"><b>Choreographer Design Documentation</b></a>
+      </h6>
+      <div class="flex flex-wrap gap-1">
+        
+        
+        <div class="badge badge-outline"> 2023-12-09 </div>
+        
+        <small class="text px-4"> <i>Read time 10 minutes </i></small>
+      </div>
+
+      <div class="bg-base-100 rounded-box p-1 md:p-4 shadow-inner shadow-md">
+        
+<p class="text-slate text-pretty">
+  
+  
+  
+
+  <small class="prose prose-sm">Blog Post Note</p>
+<p>Update (August 24th, 2024): This effort/project has since been abandoned. However anyone wishing to take this idea further is quite welcome to!</p>
+<p>Hey, this is the same markdown that is in the choreographer git repository. And one is significantly more likely to be updated. This is the version that</small>
+</p>
+
+        <div class="flex justify-end">
+          <a class="link " href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tech&#x2F;choreographer-design&#x2F;">...read more</a>
+        </div>
+      </div>
+
+      
+      <div class="card-actions justify-end">
+        
+        <div class="badge">
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags/godot/">
+            godot
+          </a>
+        </div>
+        
+        <div class="badge">
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags/reference/">
+            reference
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+    
+    
+<div>
+  <div class="card card-compact md:card-normal w-96 flex flex-initial bg-base-300 shadow-xl rounded-box">
+
+    
+    
+    <div class="card-body">
+      <h6 class="card-title">
+        <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tech&#x2F;godot-icon-colours&#x2F;" rel="bookmark" title="Godot Engine Editor Icon Colours"><b>Godot Engine Editor Icon Colours</b></a>
+      </h6>
+      <div class="flex flex-wrap gap-1">
+        
+        
+        <div class="badge badge-outline"> 2023-11-24 </div>
+        
+        <small class="text px-4"> <i>Read time 9 minutes </i></small>
+      </div>
+
+      <div class="bg-base-100 rounded-box p-1 md:p-4 shadow-inner shadow-md">
+        
+<p class="text-slate text-pretty">
+  
+  
+  
+
+  <small class="prose prose-sm">Colours LUT
+The markdown doesn’t really support custom colours, so see below for examples. (dark reader users make sure you disable it for this website if you wanna see accurate colours!!!!)
+Hex LightHex DarkEngine Name
+#478cbf#478cbfGodot Blue
+#414042#414042Godot Gray
+#000000#bfbfbfPure black
+#ff0000#ff0000Pure red
+#00ff00#00ff00Pure green
+#0000ff#0000ffPure blue
+#808080#808080GUI disabled color
+#b3b3b3#363636GUI disabled light color
+#699ce8#699ce8GUI highlight color
+#f9f9f9#606060Scrollbar grabber highlight color
+#fc7f7f#cd3838Spatial
+#8da5f3#3d64dd2D
+#4b70ea#1a3eac2D Dark
+#8eef97#2fa139Control
+#003e7a#2b74bbSelection</small>
+</p>
+
+        <div class="flex justify-end">
+          <a class="link " href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tech&#x2F;godot-icon-colours&#x2F;">...read more</a>
+        </div>
+      </div>
+
+      
+      <div class="card-actions justify-end">
+        
+        <div class="badge">
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags/godot/">
+            godot
+          </a>
+        </div>
+        
+        <div class="badge">
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags/reference/">
+            reference
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+    
+  </div>
+</div>
+
+
+        
+
+  
+    </div>
+</div>
+
+
+  </main>
+
+  
+  
+
+  
+  <footer class="footer bg-neutral text-neutral-content p-10 justify-center">
+    <aside>
+      
+      <a href=" mailto:thequeenofsquiggles@gmail.com">thequeenofsquiggles@gmail.com</a>
+      
+    </aside>
+    
+    <nav>
+      <h6 class="footer-title">Socials</h6>
+      <div class="grid grid-flow-col gap-4">
+        
+        <a class="flex-auto" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles"  title="Mastodon" ><i
+            class="fab fa-mastodon"></i></a>
+        
+        <a class="flex-auto" href="rss.xml"  title="RSS Feed" ><i
+            class="fas fa-rss"></i></a>
+        
+      </div>
+    </nav>
+    
+  </footer>
+  
+</body>
+
+</html>

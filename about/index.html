@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="synthwave">
+
+<head>
+  
+  <title>Queen Of Squiggles&#x27;s Blog</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  
+  <link rel="me" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles">
+  
+
+  <!-- Tailwind compiled CSS -->
+  <link rel="stylesheet" href="https://queenofsquiggles.github.io/output.css">
+  <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+
+  
+  <script defer src="https://queenofsquiggles.github.io/elasticlunr.min.js"></script>
+  <script defer src="https://queenofsquiggles.github.io/search_index.en.js"></script>
+  <script src="https://queenofsquiggles.github.io/js/search.js"></script>
+  
+
+  
+  
+  <!-- Includes the default RSS feed if enabled in configuration -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://queenofsquiggles.github.io/rss.xml">
+  
+  
+  <!-- Includes the ddefault Atom feed if enabled in configuration -->
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="https://queenofsquiggles.github.io/atom.xml" />
+  
+
+  
+  
+</head>
+
+<body>
+  <div class="navbar bg-base-200 sticky top-0 z-50">
+    <div class="navbar-center lg:navbar-start">
+      <div class="hidden lg:flex">
+        <a class="btn btn-ghost text-xl" href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Queen Of Squiggles&#x27;s Blog</a>
+      </div>
+
+      <!-- small screen navbar (drop down) -->
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          Queen Of Squiggles&#x27;s Blog
+
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-300 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-4">
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Home</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+          </li>
+          
+          
+
+          <li class="dropdown">
+            <details>
+              <summary>Theme</summary>
+
+              <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="light" value="light" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="dark" value="dark" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="synthwave" value="synthwave" />
+                </li>
+                
+
+              </ul>
+            </details>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- large screen navbar -->
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+        </li>
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+        </li>
+        
+      </ul>
+      
+
+      <div class="flex-1 gap-2">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            Theme
+          </div>
+          <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="light"
+                value="light" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="dark"
+                value="dark" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="synthwave"
+                value="synthwave" />
+            </li>
+            
+
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <div class="navbar-end hidden lg:flex">
+      <form class="form-control lg:focus-within:grow" onsubmit="return goSearch(event)">
+        <input type="text" class="input input-bordered" placeholder="Search" />
+      </form>
+    </div>
+    
+  </div>
+
+  
+  <div class="navbar flex justify-center lg:hidden pb-4">
+    <form class="form-control" onsubmit="return goSearch(event)">
+      <input type="text" class="input input-bordered" placeholder="Search" />
+    </form>
+  </div>
+  
+
+  <main class="flex flex-col container mx-auto justify-center my-2">
+    
+
+
+
+<!-- Table of contents supporting h1, h2, h3, h4, h5, h6 (or optionally reduced depth based on config) -->
+
+
+<ul class="not-prose flex menu bg-base-200 rounded-box divide-y divide-dotted md:divide-none">
+    <li class="menu-title text-xl">
+        <h1>
+            Table of Contents
+        </h1>
+    </li>
+    
+    <li>
+        <a href="https://queenofsquiggles.github.io/about/#Notable_Projects">Notable Projects</a>
+    </li>
+    
+    <li>
+        <ul class="divide-y divide-dotted md:divide-none">
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/about/#Open_Source_Contributions">
+                    Open Source Contributions
+                </a>
+            </li>
+            
+            <li>
+                <ul class="divide-y divide-dotted md:divide-none">
+                    
+                    <li>
+                        <a href="https://queenofsquiggles.github.io/about/#Godot_Rust">
+                            Godot Rust
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/about/#Games">
+                    Games
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/about/#Tech_Demos">
+                    Tech Demos
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/about/#Educational">
+                    Educational
+                </a>
+            </li>
+            
+            
+        </ul>
+        
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/about/#Technology_Experience">Technology Experience</a>
+    </li>
+    
+    <li>
+        <ul class="divide-y divide-dotted md:divide-none">
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/about/#Software">
+                    Software
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/about/#Languages">
+                    Languages
+                </a>
+            </li>
+            
+            
+        </ul>
+        
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/about/#Hobbies">Hobbies</a>
+    </li>
+    
+        
+</ul>
+</li>
+</ul>
+
+
+
+
+<div class="flex flex-col justify-center">
+  <article class="prose prose-neutral lg:prose-xl prose-blockquote:{utility} px-2 max-w-none">
+    <h2 id="Notable_Projects">Notable Projects</h2>
+<h3 id="Open_Source_Contributions">Open Source Contributions</h3>
+<h4 id="Godot_Rust">Godot Rust</h4>
+<blockquote>
+<p>Godot Rust is a library that allows for writing rust code that integrates with the Godot Game Engine, whether for specific game scripting or for more general purpose tools development</p>
+</blockquote>
+<ul>
+<li>Recipes Section Documentation Guides
+<ul>
+<li><a rel="noopener nofollow noreferrer" target="_blank" href="https://godot-rust.github.io/book/recipes/custom-resources.html">Custom Resources</a></li>
+<li><a rel="noopener nofollow noreferrer" target="_blank" href="https://godot-rust.github.io/book/recipes/editor-plugin/index.html">Editor Plugins</a></li>
+<li><a rel="noopener nofollow noreferrer" target="_blank" href="https://godot-rust.github.io/book/recipes/engine-singleton.html">Engine Singletons</a></li>
+<li><a rel="noopener nofollow noreferrer" target="_blank" href="https://godot-rust.github.io/book/recipes/custom-icons.html">Custom Icons</a></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Note that some of these pages may have been updated since my last contribution</p>
+</blockquote>
+<h3 id="Games">Games</h3>
+
+
+<div class="container flex flex-row flex-wrap mx-auto gap-4 justify-center">
+    
+    
+
+<div class="not-prose flex justify-center">
+	<div class="grow card bg-base-200 shadow-xl max-w-md">
+		<figure>
+			<img src="https://queenofsquiggles.github.io/about/couch.png" />
+		</figure>
+		<div class="card-body">
+			<h2> Gruesome Claim </h2>
+			<small>
+				A short horror game with a focus on realism and advanced AI pathing techniques.
+			</small>
+			<div class="card-actions justify-end">
+				<a href="" class="btn btn-primary">Read more</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+    
+    
+
+<div class="not-prose flex justify-center">
+	<div class="grow card bg-base-200 shadow-xl max-w-md">
+		<figure>
+			<img src="https://queenofsquiggles.github.io/about/wtdl-img-5.png" />
+		</figure>
+		<div class="card-body">
+			<h2> Where The Dead Lie - January 2023 </h2>
+			<small>
+				made in roughly a week to test my skills as a game developer and the feature of the Godot 4 beta releases.
+			</small>
+			<div class="card-actions justify-end">
+				<a href="" class="btn btn-primary">Read more</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+    
+    
+
+<div class="not-prose flex justify-center">
+	<div class="grow card bg-base-200 shadow-xl max-w-md">
+		<figure>
+			<img src="https://queenofsquiggles.github.io/about/screenshots_1.png" />
+		</figure>
+		<div class="card-body">
+			<h2> This Metal Heart Still Beats - September 2022 </h2>
+			<small>
+				This game was made for Ludum Dare 51, which had the theme ‘Every 10 seconds’.
+			</small>
+			<div class="card-actions justify-end">
+				<a href="" class="btn btn-primary">Read more</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+    
+    
+
+<div class="not-prose flex justify-center">
+	<div class="grow card bg-base-200 shadow-xl max-w-md">
+		<figure>
+			<img src="https://queenofsquiggles.github.io/about/ascension_header.png" />
+		</figure>
+		<div class="card-body">
+			<h2> Ascension Of The Lamb - July 2022 </h2>
+			<small>
+				a ‘Retro PBR’ game about exploring a mysterious cult bunker
+			</small>
+			<div class="card-actions justify-end">
+				<a href="" class="btn btn-primary">Read more</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+    
+</div><h3 id="Tech_Demos">Tech Demos</h3>
+
+
+<div class="container flex flex-row flex-wrap mx-auto gap-4 justify-center">
+    
+    
+
+<div class="not-prose flex justify-center">
+	<div class="grow card bg-base-200 shadow-xl max-w-md">
+		<figure>
+			<img src="https://queenofsquiggles.github.io/about/demo_physics.gif" />
+		</figure>
+		<div class="card-body">
+			<h2> Project Furball </h2>
+			<small>
+				A tech art project and tutorial creating a simple shell fur system that reacts to movement and is highly customizable.
+			</small>
+			<div class="card-actions justify-end">
+				<a href="&#x2F;tech&#x2F;shell-fur-breakdown&#x2F;" class="btn btn-primary">Read more</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+    
+    
+
+<div class="not-prose flex justify-center">
+	<div class="grow card bg-base-200 shadow-xl max-w-md">
+		<figure>
+			<img src="https://queenofsquiggles.github.io/about/image1.png" />
+		</figure>
+		<div class="card-body">
+			<h2> Godot Lighting Demo </h2>
+			<small>
+				A small educational tool showing off how different lighting models affect the appearance of a simple scene.
+			</small>
+			<div class="card-actions justify-end">
+				<a href="&#x2F;tech&#x2F;godot-lighting-exploration&#x2F;" class="btn btn-primary">Read more</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+    
+    
+
+<div class="not-prose flex justify-center">
+	<div class="grow card bg-base-200 shadow-xl max-w-md">
+		<figure>
+			<img src="https://queenofsquiggles.github.io/about/tool_preview_1.png" />
+		</figure>
+		<div class="card-body">
+			<h2> Godot SDF Gen - May 2022 </h2>
+			<small>
+				Godot SDF Gen is a small tool I made for myself and others to easily generate ‘Signed Distance Field’ textures, which can be used to create a variety of fun effects
+			</small>
+			<div class="card-actions justify-end">
+				<a href="&#x2F;tools&#x2F;godot-sdf-gen&#x2F;" class="btn btn-primary">Read more</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+    
+</div><h3 id="Educational">Educational</h3>
+
+
+<div class="container flex flex-row flex-wrap mx-auto gap-4 justify-center">
+    
+    
+
+<div class="not-prose flex justify-center">
+	<div class="grow card bg-base-200 shadow-xl max-w-md">
+		<figure>
+			<img src="https://queenofsquiggles.github.io/about/banner-notext.jpg" />
+		</figure>
+		<div class="card-body">
+			<h2> Behaviour Trees vs State Machines </h2>
+			<small>
+				A technical edutainment breakdown of the use cases and logic behind behaviour trees and finite state machines in game development
+			</small>
+			<div class="card-actions justify-end">
+				<a href="&#x2F;guides&#x2F;fsm-vs-bt&#x2F;" class="btn btn-primary">Read more</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+    
+    
+
+<div class="not-prose flex justify-center">
+	<div class="grow card bg-base-200 shadow-xl max-w-md">
+		<figure>
+			<img src="https://queenofsquiggles.github.io/about/banner.jpg" />
+		</figure>
+		<div class="card-body">
+			<h2> Game Design using Obsidian </h2>
+			<small>
+				A guide on how to organize and plan small game development projects using the free notes app, Obsidian. Which includes relevant examples from my game project, ‘Contact Range’
+			</small>
+			<div class="card-actions justify-end">
+				<a href="&#x2F;guides&#x2F;game-design-using-obsidian&#x2F;" class="btn btn-primary">Read more</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+    
+</div><h2 id="Technology_Experience">Technology Experience</h2>
+<h3 id="Software">Software</h3>
+<table><thead><tr><th>Software</th><th>Years</th><th>Type</th></tr></thead><tbody>
+<tr><td>Godot</td><td>4</td><td>Hobby development</td></tr>
+<tr><td>Unity</td><td>3</td><td>Hobby Development</td></tr>
+<tr><td>Blender</td><td>3</td><td>3D Game art</td></tr>
+<tr><td>Krita</td><td>6</td><td>2D Game art</td></tr>
+<tr><td>Inkscape</td><td>2</td><td>Vector Art (primarily icons)</td></tr>
+<tr><td>Office Suite</td><td>9</td><td>Word processing, Sheets, Presentation, etc…</td></tr>
+</tbody></table>
+<h3 id="Languages">Languages</h3>
+<table><thead><tr><th>Web</th><th>Scripting</th><th>System/Native</th></tr></thead><tbody>
+<tr><td>C#</td><td>C#</td><td>C#</td></tr>
+<tr><td>Python</td><td>Python</td><td>Rust</td></tr>
+<tr><td>HTML</td><td>GDScript</td><td>Java</td></tr>
+<tr><td>CSS</td><td>lua</td><td>C++</td></tr>
+<tr><td>JavaScript</td><td>-</td><td>-</td></tr>
+<tr><td>TypeScript</td><td>-</td><td>-</td></tr>
+<tr><td>Shopify</td><td>-</td><td>-</td></tr>
+</tbody></table>
+<h2 id="Hobbies">Hobbies</h2>
+<p>I enjoy a variety of things including</p>
+<ul>
+<li>Cooking</li>
+<li>At home, improvised film review</li>
+<li>Spending time with my family</li>
+<li>Hiking</li>
+<li>Camping</li>
+<li>Playing games myself</li>
+</ul>
+
+  </article>
+</div>
+
+
+  </main>
+
+  
+  
+
+  
+  <footer class="footer bg-neutral text-neutral-content p-10 justify-center">
+    <aside>
+      
+      <a href=" mailto:thequeenofsquiggles@gmail.com">thequeenofsquiggles@gmail.com</a>
+      
+    </aside>
+    
+    <nav>
+      <h6 class="footer-title">Socials</h6>
+      <div class="grid grid-flow-col gap-4">
+        
+        <a class="flex-auto" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles"  title="Mastodon" ><i
+            class="fab fa-mastodon"></i></a>
+        
+        <a class="flex-auto" href="rss.xml"  title="RSS Feed" ><i
+            class="fas fa-rss"></i></a>
+        
+      </div>
+    </nav>
+    
+  </footer>
+  
+</body>
+
+</html>

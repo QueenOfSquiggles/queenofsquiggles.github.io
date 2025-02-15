@@ -1,0 +1,20 @@
+[
+    {
+        "header": "Project Furball",
+        "text": "A tech art project and tutorial creating a simple shell fur system that reacts to movement and is highly customizable.",
+        "img": "demo_physics.gif",
+        "link": "/tech/shell-fur-breakdown/"
+    },
+    {
+        "header": "Godot Lighting Demo",
+        "text": "A small educational tool showing off how different lighting models affect the appearance of a simple scene.",
+        "img": "image1.png",
+        "link": "/tech/godot-lighting-exploration/"
+    },
+    {
+        "header": "Godot SDF Gen - May 2022",
+        "text": "Godot SDF Gen is a small tool I made for myself and others to easily generate 'Signed Distance Field' textures, which can be used to create a variety of fun effects",
+        "img": "tool_preview_1.png",
+        "link": "/tools/godot-sdf-gen/"
+    }
+]

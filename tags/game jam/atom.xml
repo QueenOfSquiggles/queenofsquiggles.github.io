@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Queen Of Squiggles&#x27;s Blog - game jam</title>
+    <subtitle>The personal blog for all of the Queen&#x27;s news, ramblings, portfolio stuffs, and more!</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://queenofsquiggles.github.io/tags/game jam/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://queenofsquiggles.github.io/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-01-15T00:00:00+00:00</updated>
+    <id>https://queenofsquiggles.github.io/tags/game jam/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Ascension Of The Lamb</title>
+        <published>2024-01-15T00:00:00+00:00</published>
+        <updated>2024-01-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Queen Of Squiggles
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://queenofsquiggles.github.io/games/ascension-of-the-lamb/"/>
+        <id>https://queenofsquiggles.github.io/games/ascension-of-the-lamb/</id>
+        
+        <content type="html" xml:base="https://queenofsquiggles.github.io/games/ascension-of-the-lamb/">&lt;h2 id=&quot;Game_Overview&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Game_Overview&quot; aria-label=&quot;Anchor link for: Game_Overview&quot;&gt;Game Overview&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;em&gt;Ascension Of The Lamb&lt;&#x2F;em&gt; is a “Retro PBR” game about exploring a mysterious cult bunker.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_gallery_1.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_gallery_1.png&quot; alt=&quot;A dark, dirty tunnel illuminated by a weak flashlight&quot; title=&quot;A dark, dirty tunnel illuminated by a weak flashlight&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                A dark, dirty tunnel illuminated by a weak flashlight
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;!-- ![A dark, dirty tunnel illuminated by a weak flashlight](ascension_gallery_1.png) --&gt;
+&lt;h2 id=&quot;Story_of_the_Creation&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Story_of_the_Creation&quot; aria-label=&quot;Anchor link for: Story_of_the_Creation&quot;&gt;Story of the Creation&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I participated in the Go Godot Jam 3 (Website formerly https:&#x2F;&#x2F;gogodotjam.com&#x2F;the-jam&#x2F;, is now down and possibly no longer operated), which to save you a click is a game jam coordinated by the Godot community, specifically ‘Redefine Gamedev’, who is a fairly active member of the community. The jam was very exciting, with online social events planned for participants and hosted by various well known community members.&lt;&#x2F;p&gt;
+&lt;p&gt;I participated in the “Classic” experience, which was the easier of the two. We had roughly 9 days to make the game and were allowed to work on a team. I did end up working alone. But I was still determined to finish this game. I was excited to get working on making horror games. And for this one, I wanted to focus on setting up a proper atmosphere. Which if the feedback I got was honest, I think I succeeded there.&lt;&#x2F;p&gt;
+&lt;p&gt;The Theme for the jam was “Evolution” and I wanted to take that into an artistic interpretation of the cultists believing they would “evolve” or rather ascend into a higher form of life. The cult itself was inspired by some of the famous American cults from the 80s and 90s.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_gallery_2.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_gallery_2.png&quot; alt=&quot;A hallway with a rusting grate at the end and some strange material further past that&quot; title=&quot;A hallway with a rusting grate at the end and some strange material further past that&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                A hallway with a rusting grate at the end and some strange material further past that
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;h2 id=&quot;Gameplay&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Gameplay&quot; aria-label=&quot;Anchor link for: Gameplay&quot;&gt;Gameplay&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The game is essentially a walking simulator. There is a simple physics simulation system that I used to make some simple puzzles and encourage exploration. There are two main &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;tvtropes.org&#x2F;pmwiki&#x2F;pmwiki.php&#x2F;Main&#x2F;LockAndKeyPuzzle&quot;&gt;“lock and key”&lt;&#x2F;a&gt; puzzles which serve to stop the player and encourage them to explore the area more.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_gallery_3.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_gallery_3.png&quot; alt=&quot;Another dark hallway with a lamp on the wall illuminating the brick and plaster around it&quot; title=&quot;Another dark hallway with a lamp on the wall illuminating the brick and plaster around it&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                Another dark hallway with a lamp on the wall illuminating the brick and plaster around it
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;h2 id=&quot;Visual_Style_-_Retro_PBR&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Visual_Style_-_Retro_PBR&quot; aria-label=&quot;Anchor link for: Visual_Style_-_Retro_PBR&quot;&gt;Visual Style - Retro PBR&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;For this game, I wanted to create a Playstation-similar style. I personally don’t have any nostalgia for the Playstation, but I’ve seen a lot of other small indie horror games using the Playstation style to evoke a nostalgic feeling in the players. I wanted to add my own twist to it so I tweaked the parameters a bit. I kept the texture size of 128x128 and the dithering. But I swapped the standard blocky &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Bayer_filter&quot;&gt;bayer-matrix dithering&lt;&#x2F;a&gt; for &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;momentsingraphics.de&#x2F;BlueNoise.html&quot;&gt;blue noise dithering&lt;&#x2F;a&gt;. I used two noise textures scrolling in different directions across the screen to affect the dithering which gave every surface a almost pulsating effect. Additionally, while I was going for a Retro look, I opted to use &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Physically_based_rendering&quot;&gt;PBR textures&lt;&#x2F;a&gt;, specifically albedo, metallic, normal, and roughness.&lt;&#x2F;p&gt;
+&lt;p&gt;I got some praise for this visual effect and I’ve taken to calling it “Retro PBR” as a general way to describe Retro-similar visuals that utlize a PBR rendering pipeline.&lt;&#x2F;p&gt;
+&lt;p&gt;I did struggle a lot with &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.opengl-tutorial.org&#x2F;intermediate-tutorials&#x2F;tutorial-16-shadow-mapping&#x2F;&quot;&gt;“shadow acne”&lt;&#x2F;a&gt;. It was quite difficult because this version of Godot had some issues with the 3D rendering. It was generally considered unfit for making 3D games, but I tried anyway.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_gallery_4.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_gallery_4.png&quot; alt=&quot;A small bedroom can be seen with a side table, a book on that side table, a desk, and several motes of dust floating about&quot; title=&quot;A small bedroom can be seen with a side table, a book on that side table, a desk, and several motes of dust floating about&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                A small bedroom can be seen with a side table, a book on that side table, a desk, and several motes of dust floating about
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;h2 id=&quot;Overall_Reception&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Overall_Reception&quot; aria-label=&quot;Anchor link for: Overall_Reception&quot;&gt;Overall Reception&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The game did fairly well considering how it was made. Feedback ranged but there were a few common notes:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot; checked=&quot;&quot;&#x2F;&gt;
+Writing is very good&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot; checked=&quot;&quot;&#x2F;&gt;
+Atmosphere is well set up&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&#x2F;&gt;
+The game lacks action, which makes it less fun to play&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&#x2F;&gt;
+Some players suggested adding jumpscares to make more of a haunted house experience&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_gallery_5.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_gallery_5.png&quot; alt=&quot;A messy kitchen with wretched substances in pots as well as a plethora of scattered cans&quot; title=&quot;A messy kitchen with wretched substances in pots as well as a plethora of scattered cans&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                A messy kitchen with wretched substances in pots as well as a plethora of scattered cans
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_gallery_6.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_gallery_6.png&quot; alt=&quot;A cold brick staircase descending into the darkness&quot; title=&quot;A cold brick staircase descending into the darkness&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                A cold brick staircase descending into the darkness
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;h2 id=&quot;My_comments_on_the_game&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#My_comments_on_the_game&quot; aria-label=&quot;Anchor link for: My_comments_on_the_game&quot;&gt;My comments on the game&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I feel that this game was a success for where I was at my experience level for the time. I had some specific goals and I accomplished them. Because I went for an artistic interpretation of the jam theme, it did not do very well. Likewise, I encountered several issues with my workflow such as a lack of experience in Blender, which I used for creating the level geometry, as well as struggling with the 3D capabilities of Godot 3, which uses a fairly outdated &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.khronos.org&#x2F;opengles&#x2F;&quot;&gt;OpenGL ES 3&lt;&#x2F;a&gt; based rendering engine.&lt;&#x2F;p&gt;
+&lt;p&gt;I think like many of my projects, this game served as an opportunity for me to learn. The feedback I got for this game really helped me hone my craft and I am incredibly grateful to everyone involved in the jam for helping me grow.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_gallery_7.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_gallery_7.png&quot; alt=&quot;A barely illuminated playroom with weak lamps in different sections. There are a few blocks on the ground as well as a rubix cube on the shelf by a book and a small lamp&quot; title=&quot;A barely illuminated playroom with weak lamps in different sections. There are a few blocks on the ground as well as a rubix cube on the shelf by a book and a small lamp&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                A barely illuminated playroom with weak lamps in different sections. There are a few blocks on the ground as well as a rubix cube on the shelf by a book and a small lamp
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_gallery_8.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_gallery_8.png&quot; alt=&quot;A sitting room with a radio and a couch with a book resting on the cushions is illuminated by a weak wall lamp&quot; title=&quot;A sitting room with a radio and a couch with a book resting on the cushions is illuminated by a weak wall lamp&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                A sitting room with a radio and a couch with a book resting on the cushions is illuminated by a weak wall lamp
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;h2 id=&quot;Widget&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Widget&quot; aria-label=&quot;Anchor link for: Widget&quot;&gt;Widget&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;div class=&quot;container max-w-md&quot;&gt;
+    &lt;iframe src=&quot;https:&#x2F;&#x2F;itch.io&#x2F;embed&#x2F;1562397?dark=true&quot; width=&quot;45%&quot; frameborder=&quot;0&quot;&gt;
+        &lt;a href=&quot;https:&amp;#x2F;&amp;#x2F;queenofsquiggles.itch.io&amp;#x2F;the-ascension-of-the-lamb&quot;&gt;
+            The Ascension Of The Lamb by QueenOfSquiggles
+        &lt;&#x2F;a&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;&lt;h1 id=&quot;Gallery&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Gallery&quot; aria-label=&quot;Anchor link for: Gallery&quot;&gt;Gallery&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+
+&lt;div class=&quot;flex flex-row flex-wrap bg-base-200 p-2 rounded-box container mx-auto gap-4 justify-center&quot;&gt;
+    
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;ascension-of-the-lamb&#x2F;ascension_header.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_header.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_header.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;ascension-of-the-lamb&#x2F;ascension_gallery_1.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_gallery_1.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_gallery_1.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;ascension-of-the-lamb&#x2F;ascension_gallery_2.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_gallery_2.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_gallery_2.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;ascension-of-the-lamb&#x2F;ascension_gallery_3.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_gallery_3.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_gallery_3.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;ascension-of-the-lamb&#x2F;ascension_gallery_4.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_gallery_4.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_gallery_4.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;ascension-of-the-lamb&#x2F;ascension_gallery_5.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_gallery_5.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_gallery_5.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;ascension-of-the-lamb&#x2F;ascension_gallery_6.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_gallery_6.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_gallery_6.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;ascension-of-the-lamb&#x2F;ascension_gallery_7.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_gallery_7.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_gallery_7.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;ascension-of-the-lamb&#x2F;ascension_gallery_8.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;ascension_gallery_8.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;ascension_gallery_8.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+&lt;&#x2F;div&gt;</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Contact Range</title>
+        <published>2024-01-15T00:00:00+00:00</published>
+        <updated>2024-01-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Queen Of Squiggles
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://queenofsquiggles.github.io/games/contact-range/"/>
+        <id>https://queenofsquiggles.github.io/games/contact-range/</id>
+        
+        <content type="html" xml:base="https://queenofsquiggles.github.io/games/contact-range/">&lt;h2 id=&quot;Release_Trailer&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Release_Trailer&quot; aria-label=&quot;Anchor link for: Release_Trailer&quot;&gt;Release Trailer&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;div class=&quot;not-prose container mx-auto justify-center&quot;&gt;
+    &lt;iframe class=&quot;w-full aspect-video&quot; height=&quot;auto&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;7z3I9_15p2w&quot;
+        webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Trailer is made from 100% in-game footage&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+
+&lt;div class=&quot;flex flex-row flex-wrap bg-base-200 p-2 rounded-box container mx-auto gap-4 justify-center&quot;&gt;
+    
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;contact-range&#x2F;sensor_array.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;sensor_array.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;sensor_array.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;contact-range&#x2F;pilot.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;pilot.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;pilot.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;contact-range&#x2F;captain.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;captain.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;captain.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;contact-range&#x2F;wrench.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;wrench.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;wrench.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+&lt;&#x2F;div&gt;</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>This Metal Heart Still Beats</title>
+        <published>2024-01-15T00:00:00+00:00</published>
+        <updated>2024-01-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Queen Of Squiggles
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://queenofsquiggles.github.io/games/this-metal-heart-still-beats/"/>
+        <id>https://queenofsquiggles.github.io/games/this-metal-heart-still-beats/</id>
+        
+        <content type="html" xml:base="https://queenofsquiggles.github.io/games/this-metal-heart-still-beats/">&lt;h2 id=&quot;Game_Overview&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Game_Overview&quot; aria-label=&quot;Anchor link for: Game_Overview&quot;&gt;Game Overview&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;This game was made for Ludum Dare 51, which had the theme “Every 10 seconds”.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Story&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Story&quot; aria-label=&quot;Anchor link for: Story&quot;&gt;Story&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I made the game a story of a person and their robotic partner, Ava, who has short circuited. You as the player have to try to fix their wiring while they are in a ‘sleep mode’ that ticks their circuits every ten seconds. The game is mostly a puzzle game of having Ava clean up some trash. The circuits are intentionally similar to &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;dev.epicgames.com&#x2F;documentation&#x2F;en-us&#x2F;unreal-engine&#x2F;blueprints-visual-scripting-in-unreal-engine?application_version=5.1&quot;&gt;Unreal’s Blueprints&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Technical_Information&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Technical_Information&quot; aria-label=&quot;Anchor link for: Technical_Information&quot;&gt;Technical Information&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;At the time of development, the Godot Engine Development Team had announced they would be sunsetting the “Visual Script” language for Godot. It was a visual scripting language option similar to Blueprints, but lacking in many ways, which led to the sunsetting. There were many flaws with it, one of the key flaws was that it was slower to make functionality in Visual Script than it was to write it in GDScript. And the logical flow of Visual Script was nearly identical to GDScript.&lt;&#x2F;p&gt;
+&lt;p&gt;Thinking of these problems, and often referencing Unreal Engine’s documentation on Blueprints, I decided to try to make a small programming puzzle game. I made sure to focus on “macro level” functions. So instead of smaller components I worked on specific actions and sequencing.&lt;&#x2F;p&gt;
+&lt;p&gt;I used an &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;dzone.com&#x2F;articles&#x2F;design-patterns-event-bus&quot;&gt;Event Bus&lt;&#x2F;a&gt; to decouple the different interlocked systems. Mainly I used the Event Bus to push events for each of the node actions.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: in this case “node” is referring to the nodes in the visual scripting system within the game. However it is worth noting that Godot’s basic elements of structure are also called “node” because the structure of a program in Godot is in a &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.godotengine.org&#x2F;en&#x2F;stable&#x2F;tutorials&#x2F;scripting&#x2F;scene_tree.html&quot;&gt;Tree of Nodes&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;There were several subscribers to these events. The logging system would print out information about what actions are being taken, or if a sensor event is going unhandled. Ava would listen to the action events and perform them in sequence with a small time delay and some smooting to make the actions more appealing. However, because they used an Event Bus and neither depended on each other, I was able to insert events manually and debug each component on its own, which saved valuable time in the game jam.&lt;&#x2F;p&gt;
+&lt;p&gt;Surprisingly enough, Godot’s UI system has the structure for a basic node and sockets GUI. I customized them with a custom theme and worked to make sure they were usable for the game.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Technical_Failings&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Technical_Failings&quot; aria-label=&quot;Anchor link for: Technical_Failings&quot;&gt;Technical Failings&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;Missing_Failure_State&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Missing_Failure_State&quot; aria-label=&quot;Anchor link for: Missing_Failure_State&quot;&gt;Missing Failure State&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;I originally wanted the tension of the game to come from making a mistake. I planned on having the fail state be when Ava’s circuits tick while the circuits are being manipulated, or are in an invalid configuration. However, I didn’t finish this system, and I put too much effort to prevent the players from creating an invalid configuration.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;Event_System&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Event_System&quot; aria-label=&quot;Anchor link for: Event_System&quot;&gt;Event System&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;Events were scripted in GDScript, which largely relies on &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Duck_typing&quot;&gt;Duck Typing&lt;&#x2F;a&gt; over &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Nominal_type_system&quot;&gt;nominative typing&lt;&#x2F;a&gt;. As such using specific Event classes to differentiate and encapsulate the event data didn’t make a lot of sense. Or at least would have been too cumbersome in that paradigm. So I opted for a string serialization, which can be seen in the log. Ava’s actions are printing the unedited event string. This event string had to be constructed and subsequently parsed by each subscriber. In this case there were only two subscribers and a very short list of possible events. So handling this was relatively simple. But since working on this game, I’ve opted to use C# over GDScript in order to make more coherent Event Bus structures using delegates and C# events. C# is available as an optional scripting language for Godot, and there has been talk of making it included in the “standard build” of Godot 4, but as of writing this is not the case.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;Free_Movement&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Free_Movement&quot; aria-label=&quot;Anchor link for: Free_Movement&quot;&gt;Free Movement&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;Despite forcing an integer based movement system, and a 2D tile based world, the motion is actually in pixels and not in tiles. So if someone tells Ava to move 3 units to the left, they will slide 3 pixels to the left instead of 3 tiles, which was generally expected of a puzzle game of this nature.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Reception&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Reception&quot; aria-label=&quot;Anchor link for: Reception&quot;&gt;Reception&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The game was made for the “Compo” version of the jam, which is 48 hours long instead of 72 hours. It ranked 142nd out of 2421 submitted projects (623 of which were in the Compo). This places it in the top 6% of games submitted in the competition. If you are interested in more information about Ludum Dare 51, the host has created an interesting &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;ldjam.com&#x2F;events&#x2F;ludum-dare&#x2F;51&#x2F;stats&quot;&gt;Statistics Page&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Widget&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Widget&quot; aria-label=&quot;Anchor link for: Widget&quot;&gt;Widget&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;div class=&quot;container max-w-md&quot;&gt;
+    &lt;iframe src=&quot;https:&#x2F;&#x2F;itch.io&#x2F;embed&#x2F;1726321?dark=true&quot; width=&quot;45%&quot; frameborder=&quot;0&quot;&gt;
+        &lt;a href=&quot;https:&amp;#x2F;&amp;#x2F;queenofsquiggles.itch.io&amp;#x2F;this-metal-heart-still-beats&quot;&gt;
+            This Metal Heart Still Beats by QueenOfSquiggles
+        &lt;&#x2F;a&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;&lt;h2 id=&quot;Gallery&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Gallery&quot; aria-label=&quot;Anchor link for: Gallery&quot;&gt;Gallery&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+
+&lt;div class=&quot;flex flex-row flex-wrap bg-base-200 p-2 rounded-box container mx-auto gap-4 justify-center&quot;&gt;
+    
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;this-metal-heart-still-beats&#x2F;screenshots_1.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;screenshots_1.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;screenshots_1.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;this-metal-heart-still-beats&#x2F;screenshots_2.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;screenshots_2.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;screenshots_2.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;this-metal-heart-still-beats&#x2F;screenshots_4.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;screenshots_4.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;screenshots_4.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+    
+    
+
+    &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;games&#x2F;this-metal-heart-still-beats&#x2F;screenshots_3.png&quot; target=&quot;_blank&quot;&gt;
+
+        
+        
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;screenshots_3.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;screenshots_3.png&quot; alt=&quot;&quot; title=&quot;&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+
+    &lt;&#x2F;a&gt;
+&lt;&#x2F;div&gt;</content>
+        
+    </entry>
+</feed>

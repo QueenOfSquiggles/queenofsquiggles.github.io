@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="synthwave">
+
+<head>
+  
+  <title>
+
+Godot Engine Editor Icon Colours | Queen Of Squiggles&#x27;s Blog
+
+</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  
+  <link rel="me" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles">
+  
+
+  <!-- Tailwind compiled CSS -->
+  <link rel="stylesheet" href="https://queenofsquiggles.github.io/output.css">
+  <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+
+  
+  <script defer src="https://queenofsquiggles.github.io/elasticlunr.min.js"></script>
+  <script defer src="https://queenofsquiggles.github.io/search_index.en.js"></script>
+  <script src="https://queenofsquiggles.github.io/js/search.js"></script>
+  
+
+  
+  
+  <!-- Includes the default RSS feed if enabled in configuration -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://queenofsquiggles.github.io/rss.xml">
+  
+  
+  <!-- Includes the ddefault Atom feed if enabled in configuration -->
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="https://queenofsquiggles.github.io/atom.xml" />
+  
+
+  
+  
+</head>
+
+<body>
+  <div class="navbar bg-base-200 sticky top-0 z-50">
+    <div class="navbar-center lg:navbar-start">
+      <div class="hidden lg:flex">
+        <a class="btn btn-ghost text-xl" href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Queen Of Squiggles&#x27;s Blog</a>
+      </div>
+
+      <!-- small screen navbar (drop down) -->
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          Queen Of Squiggles&#x27;s Blog
+
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-300 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-4">
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Home</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+          </li>
+          
+          
+
+          <li class="dropdown">
+            <details>
+              <summary>Theme</summary>
+
+              <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="light" value="light" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="dark" value="dark" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="synthwave" value="synthwave" />
+                </li>
+                
+
+              </ul>
+            </details>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- large screen navbar -->
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+        </li>
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+        </li>
+        
+      </ul>
+      
+
+      <div class="flex-1 gap-2">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            Theme
+          </div>
+          <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="light"
+                value="light" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="dark"
+                value="dark" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="synthwave"
+                value="synthwave" />
+            </li>
+            
+
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <div class="navbar-end hidden lg:flex">
+      <form class="form-control lg:focus-within:grow" onsubmit="return goSearch(event)">
+        <input type="text" class="input input-bordered" placeholder="Search" />
+      </form>
+    </div>
+    
+  </div>
+
+  
+  <div class="navbar flex justify-center lg:hidden pb-4">
+    <form class="form-control" onsubmit="return goSearch(event)">
+      <input type="text" class="input input-bordered" placeholder="Search" />
+    </form>
+  </div>
+  
+
+  <main class="flex flex-col container mx-auto justify-center my-2">
+    
+<div class="flex flex-row flex-wrap lg:flex-nowrap w-full justify-center gap-1 py-2">
+  <div class=" hero container mx-auto bg-base-200 rounded-box">
+    <div class="hero-content flex-col lg:flex-col">
+      
+      <div>
+        <h1 class="text-5xl font-bold"> Godot Engine Editor Icon Colours </h1>
+        <div class="py-6">
+          
+          <div class="flex flex-row flex-wrap gap-4  py-2">
+            
+            <a href="https://queenofsquiggles.github.io/tags/godot/" class="btn btn-secondary rounded-box">
+              godot
+            </a>
+            
+            <a href="https://queenofsquiggles.github.io/tags/reference/" class="btn btn-secondary rounded-box">
+              reference
+            </a>
+            
+          </div>
+          
+          
+
+          
+          <div class="join join-vertical py-2">
+
+            <div class="btn btn-outline rounded-box no-animation join-item leading-relaxed">Written - 
+Friday the 24 of November, 2023
+</div>
+
+            
+
+
+
+            
+
+          </div>
+          <div class="py-2">
+            <i> Read time is about 9 minutes </i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-md">
+    
+
+<!-- Table of contents supporting h1, h2, h3, h4, h5, h6 (or optionally reduced depth based on config) -->
+
+
+<ul class="not-prose flex menu bg-base-200 rounded-box divide-y divide-dotted md:divide-none">
+    <li class="menu-title text-xl">
+        <h1>
+            Table of Contents
+        </h1>
+    </li>
+    
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Colours_LUT">Colours LUT</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Colour_Details">Colour Details</a>
+    </li>
+    
+    <li>
+        <ul class="divide-y divide-dotted md:divide-none">
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Godot_Blue">
+                    Godot Blue
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Godot_Gray">
+                    Godot Gray
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Pure_black">
+                    Pure black
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Pure_red">
+                    Pure red
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Pure_green">
+                    Pure green
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Pure_blue">
+                    Pure blue
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#GUI_disabled_color">
+                    GUI disabled color
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#GUI_disabled_light_color">
+                    GUI disabled light color
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#GUI_highlight_color">
+                    GUI highlight color
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Scrollbar_grabber_highlight_color">
+                    Scrollbar grabber highlight color
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Spatial">
+                    Spatial
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#2D">
+                    2D
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#2D_Dark">
+                    2D Dark
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Control">
+                    Control
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Selection_(darker_blue)">
+                    Selection (darker blue)
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Gizmo_(yellow)">
+                    Gizmo (yellow)
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Green">
+                    Green
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Aqua">
+                    Aqua
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Blue">
+                    Blue
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Purple">
+                    Purple
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Pink">
+                    Pink
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Frozen_gradient_middle">
+                    Frozen gradient middle
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Frozen_gradient_bottom">
+                    Frozen gradient bottom
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Color_track_orange">
+                    Color track orange
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Color_track_yellow">
+                    Color track yellow
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Color_track_green">
+                    Color track green
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Shape_resource_(light_blue)">
+                    Shape resource (light blue)
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#3D_Position_track">
+                    3D Position track
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#3D_Rotation_track">
+                    3D Rotation track
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#3D_Scale_track">
+                    3D Scale track
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Call_Method_track">
+                    Call Method track
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Bezier_Curve_track">
+                    Bezier Curve track
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Audio_Playback_track">
+                    Audio Playback track
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Animation_Playback_track">
+                    Animation Playback track
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Blend_Shape_track">
+                    Blend Shape track
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Border_part">
+                    Border part
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#New_Atlas">
+                    New Atlas
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#int">
+                    int
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#float">
+                    float
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#String">
+                    String
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Vector2">
+                    Vector2
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Rect2">
+                    Rect2
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Vector3">
+                    Vector3
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Transform2D">
+                    Transform2D
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Plane">
+                    Plane
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Quaternion">
+                    Quaternion
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#AABB">
+                    AABB
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Basis">
+                    Basis
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Transform3D">
+                    Transform3D
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#NodePath">
+                    NodePath
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#RID">
+                    RID
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Object">
+                    Object
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Dictionary">
+                    Dictionary
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Functions_and_expressions">
+                    Functions and expressions
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Textures_and_cubemaps">
+                    Textures and cubemaps
+                </a>
+            </li>
+            
+            
+        </ul>
+        
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#Why_does_this_exist?">Why does this exist?</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/tech/godot-icon-colours/#How_to_use_this">How to use this</a>
+    </li>
+    
+        
+</ul>
+</li>
+</ul>
+
+
+
+  </div>
+
+</div>
+
+<div class="static">
+  <div class="fixed bottom-4 md:bottom-8 start-4 md:start-8 ">
+    <div class="tooltip" data-tip="Return to top">
+      <a class="btn bg-neutral aspect-square rounded-full shadow-md" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+          <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path fill="#FFFFFF"
+            d="M32 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c53 0 96-43 96-96l0-306.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 416c0 17.7-14.3 32-32 32l-96 0z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-col justify-center">
+  <article
+    class="prose prose-neutral lg:prose-xl px-2 max-w-none prose-blockquote:rounded-r-lg prose-blockquote:shadow-2xl prose-blockquote:bg-base-200 prose-blockquote:p-2">
+    <h2 id="Colours_LUT"><a class="zola-anchor" href="#Colours_LUT" aria-label="Anchor link for: Colours_LUT">Colours LUT</a></h2>
+<p>The markdown doesn’t really support custom colours, so see below for examples. (dark reader users make sure you disable it for this website if you wanna see accurate colours!!!!)</p>
+<table><thead><tr><th style="text-align: center">Hex Light</th><th style="text-align: center">Hex Dark</th><th style="text-align: left">Engine Name</th></tr></thead><tbody>
+<tr><td style="text-align: center">#478cbf</td><td style="text-align: center">#478cbf</td><td style="text-align: left">Godot Blue</td></tr>
+<tr><td style="text-align: center">#414042</td><td style="text-align: center">#414042</td><td style="text-align: left">Godot Gray</td></tr>
+<tr><td style="text-align: center">#000000</td><td style="text-align: center">#bfbfbf</td><td style="text-align: left">Pure black</td></tr>
+<tr><td style="text-align: center">#ff0000</td><td style="text-align: center">#ff0000</td><td style="text-align: left">Pure red</td></tr>
+<tr><td style="text-align: center">#00ff00</td><td style="text-align: center">#00ff00</td><td style="text-align: left">Pure green</td></tr>
+<tr><td style="text-align: center">#0000ff</td><td style="text-align: center">#0000ff</td><td style="text-align: left">Pure blue</td></tr>
+<tr><td style="text-align: center">#808080</td><td style="text-align: center">#808080</td><td style="text-align: left">GUI disabled color</td></tr>
+<tr><td style="text-align: center">#b3b3b3</td><td style="text-align: center">#363636</td><td style="text-align: left">GUI disabled light color</td></tr>
+<tr><td style="text-align: center">#699ce8</td><td style="text-align: center">#699ce8</td><td style="text-align: left">GUI highlight color</td></tr>
+<tr><td style="text-align: center">#f9f9f9</td><td style="text-align: center">#606060</td><td style="text-align: left">Scrollbar grabber highlight color</td></tr>
+<tr><td style="text-align: center">#fc7f7f</td><td style="text-align: center">#cd3838</td><td style="text-align: left">Spatial</td></tr>
+<tr><td style="text-align: center">#8da5f3</td><td style="text-align: center">#3d64dd</td><td style="text-align: left">2D</td></tr>
+<tr><td style="text-align: center">#4b70ea</td><td style="text-align: center">#1a3eac</td><td style="text-align: left">2D Dark</td></tr>
+<tr><td style="text-align: center">#8eef97</td><td style="text-align: center">#2fa139</td><td style="text-align: left">Control</td></tr>
+<tr><td style="text-align: center">#003e7a</td><td style="text-align: center">#2b74bb</td><td style="text-align: left">Selection (darker blue)</td></tr>
+<tr><td style="text-align: center">#f7f5cf</td><td style="text-align: center">#615f3a</td><td style="text-align: left">Gizmo (yellow)</td></tr>
+<tr><td style="text-align: center">#80ff45</td><td style="text-align: center">#74ff34</td><td style="text-align: left">Green</td></tr>
+<tr><td style="text-align: center">#45ffa2</td><td style="text-align: center">#2cff98</td><td style="text-align: left">Aqua</td></tr>
+<tr><td style="text-align: center">#45d7ff</td><td style="text-align: center">#22ccff</td><td style="text-align: left">Blue</td></tr>
+<tr><td style="text-align: center">#8045ff</td><td style="text-align: center">#702aff</td><td style="text-align: left">Purple</td></tr>
+<tr><td style="text-align: center">#ff4596</td><td style="text-align: center">#ff2781</td><td style="text-align: left">Pink</td></tr>
+<tr><td style="text-align: center">#75d1e6</td><td style="text-align: center">#41acc5</td><td style="text-align: left">Frozen gradient middle</td></tr>
+<tr><td style="text-align: center">#84ffee</td><td style="text-align: center">#49ccba</td><td style="text-align: left">Frozen gradient bottom</td></tr>
+<tr><td style="text-align: center">#eec315</td><td style="text-align: center">#d58c0b</td><td style="text-align: left">Color track orange</td></tr>
+<tr><td style="text-align: center">#dbee15</td><td style="text-align: center">#b7d10a</td><td style="text-align: left">Color track yellow</td></tr>
+<tr><td style="text-align: center">#288027</td><td style="text-align: center">#218309</td><td style="text-align: left">Color track green</td></tr>
+<tr><td style="text-align: center">#a2d2ff</td><td style="text-align: center">#4998e3</td><td style="text-align: left">Shape resource (light blue)</td></tr>
+<tr><td style="text-align: center">#ea7940</td><td style="text-align: center">#bd5e2c</td><td style="text-align: left">3D Position track</td></tr>
+<tr><td style="text-align: center">#ff2b88</td><td style="text-align: center">#bd165f</td><td style="text-align: left">3D Rotation track</td></tr>
+<tr><td style="text-align: center">#eac840</td><td style="text-align: center">#bd9d1f</td><td style="text-align: left">3D Scale track</td></tr>
+<tr><td style="text-align: center">#3cf34e</td><td style="text-align: center">#16a827</td><td style="text-align: left">Call Method track</td></tr>
+<tr><td style="text-align: center">#2877f6</td><td style="text-align: center">#236be6</td><td style="text-align: left">Bezier Curve track</td></tr>
+<tr><td style="text-align: center">#eae440</td><td style="text-align: center">#9f9722</td><td style="text-align: left">Audio Playback track</td></tr>
+<tr><td style="text-align: center">#a448f0</td><td style="text-align: center">#9853ce</td><td style="text-align: left">Animation Playback track</td></tr>
+<tr><td style="text-align: center">#5ad5c4</td><td style="text-align: center">#0a9c88</td><td style="text-align: left">Blend Shape track</td></tr>
+<tr><td style="text-align: center">#919191</td><td style="text-align: center">#6e6e6e</td><td style="text-align: left">Border part</td></tr>
+<tr><td style="text-align: center">#c6ced4</td><td style="text-align: center">#828f9b</td><td style="text-align: left">New Atlas</td></tr>
+<tr><td style="text-align: center">#5abbef</td><td style="text-align: center">#4fb2e9</td><td style="text-align: left">int</td></tr>
+<tr><td style="text-align: center">#35d4f4</td><td style="text-align: center">#27ccf0</td><td style="text-align: left">float</td></tr>
+<tr><td style="text-align: center">#4593ec</td><td style="text-align: center">#4690e7</td><td style="text-align: left">String</td></tr>
+<tr><td style="text-align: center">#ac73f1</td><td style="text-align: center">#ad76ee</td><td style="text-align: left">Vector2</td></tr>
+<tr><td style="text-align: center">#f1738f</td><td style="text-align: center">#ee758e</td><td style="text-align: left">Rect2</td></tr>
+<tr><td style="text-align: center">#de66f0</td><td style="text-align: center">#dc6aed</td><td style="text-align: left">Vector3</td></tr>
+<tr><td style="text-align: center">#b9ec41</td><td style="text-align: center">#96ce1a</td><td style="text-align: left">Transform2D</td></tr>
+<tr><td style="text-align: center">#f74949</td><td style="text-align: center">#f77070</td><td style="text-align: left">Plane</td></tr>
+<tr><td style="text-align: center">#ec418e</td><td style="text-align: center">#ec69a3</td><td style="text-align: left">Quaternion</td></tr>
+<tr><td style="text-align: center">#ee5677</td><td style="text-align: center">#ee7991</td><td style="text-align: left">AABB</td></tr>
+<tr><td style="text-align: center">#e1ec41</td><td style="text-align: center">#b2bb19</td><td style="text-align: left">Basis</td></tr>
+<tr><td style="text-align: center">#f68f45</td><td style="text-align: center">#f49047</td><td style="text-align: left">Transform3D</td></tr>
+<tr><td style="text-align: center">#417aec</td><td style="text-align: center">#6993ec</td><td style="text-align: left">NodePath</td></tr>
+<tr><td style="text-align: center">#41ec80</td><td style="text-align: center">#2ce573</td><td style="text-align: left">RID</td></tr>
+<tr><td style="text-align: center">#55f3e3</td><td style="text-align: center">#12d5c3</td><td style="text-align: left">Object</td></tr>
+<tr><td style="text-align: center">#54ed9e</td><td style="text-align: center">#57e99f</td><td style="text-align: left">Dictionary</td></tr>
+<tr><td style="text-align: center">#cf68ea</td><td style="text-align: center">#c050dd</td><td style="text-align: left">Functions and expressions</td></tr>
+<tr><td style="text-align: center">#eac968</td><td style="text-align: center">#d9b64f</td><td style="text-align: left">Textures and cubemaps</td></tr>
+</tbody></table>
+<h2 id="Colour_Details"><a class="zola-anchor" href="#Colour_Details" aria-label="Anchor link for: Colour_Details">Colour Details</a></h2>
+<p>Here’s all the colours. First colour is the light theme, second is dark. Then some text in each colour to show what it looks like.</p>
+<h3 id="Godot_Blue"><a class="zola-anchor" href="#Godot_Blue" aria-label="Anchor link for: Godot_Blue">Godot Blue</a></h3>
+<p>478cbf –&gt; 478cbf</p>
+<p style="color: #478cbf;"> Example Light &#9608; </p>
+<p style="color: #478cbf;"> Example Dark &#9608; </p>
+<h3 id="Godot_Gray"><a class="zola-anchor" href="#Godot_Gray" aria-label="Anchor link for: Godot_Gray">Godot Gray</a></h3>
+<p>414042 –&gt; 414042</p>
+<p style="color: #414042;"> Example Light &#9608; </p>
+<p style="color: #414042;"> Example Dark &#9608; </p>
+<h3 id="Pure_black"><a class="zola-anchor" href="#Pure_black" aria-label="Anchor link for: Pure_black">Pure black</a></h3>
+<p>000000 –&gt; bfbfbf</p>
+<p style="color: #000000;"> Example Light &#9608; </p>
+<p style="color: #bfbfbf;"> Example Dark &#9608; </p>
+<h3 id="Pure_red"><a class="zola-anchor" href="#Pure_red" aria-label="Anchor link for: Pure_red">Pure red</a></h3>
+<p>ff0000 –&gt; ff0000</p>
+<p style="color: #ff0000;"> Example Light &#9608; </p>
+<p style="color: #ff0000;"> Example Dark &#9608; </p>
+<h3 id="Pure_green"><a class="zola-anchor" href="#Pure_green" aria-label="Anchor link for: Pure_green">Pure green</a></h3>
+<p>00ff00 –&gt; 00ff00</p>
+<p style="color: #00ff00;"> Example Light &#9608; </p>
+<p style="color: #00ff00;"> Example Dark &#9608; </p>
+<h3 id="Pure_blue"><a class="zola-anchor" href="#Pure_blue" aria-label="Anchor link for: Pure_blue">Pure blue</a></h3>
+<p>0000ff –&gt; 0000ff</p>
+<p style="color: #0000ff;"> Example Light &#9608; </p>
+<p style="color: #0000ff;"> Example Dark &#9608; </p>
+<h3 id="GUI_disabled_color"><a class="zola-anchor" href="#GUI_disabled_color" aria-label="Anchor link for: GUI_disabled_color">GUI disabled color</a></h3>
+<p>808080 –&gt; 808080</p>
+<p style="color: #808080;"> Example Light &#9608; </p>
+<p style="color: #808080;"> Example Dark &#9608; </p>
+<h3 id="GUI_disabled_light_color"><a class="zola-anchor" href="#GUI_disabled_light_color" aria-label="Anchor link for: GUI_disabled_light_color">GUI disabled light color</a></h3>
+<p>b3b3b3 –&gt; 363636</p>
+<p style="color: #b3b3b3;"> Example Light &#9608; </p>
+<p style="color: #363636;"> Example Dark &#9608; </p>
+<h3 id="GUI_highlight_color"><a class="zola-anchor" href="#GUI_highlight_color" aria-label="Anchor link for: GUI_highlight_color">GUI highlight color</a></h3>
+<p>699ce8 –&gt; 699ce8</p>
+<p style="color: #699ce8;"> Example Light &#9608; </p>
+<p style="color: #699ce8;"> Example Dark &#9608; </p>
+<h3 id="Scrollbar_grabber_highlight_color"><a class="zola-anchor" href="#Scrollbar_grabber_highlight_color" aria-label="Anchor link for: Scrollbar_grabber_highlight_color">Scrollbar grabber highlight color</a></h3>
+<p>f9f9f9 –&gt; 606060</p>
+<p style="color: #f9f9f9;"> Example Light &#9608; </p>
+<p style="color: #606060;"> Example Dark &#9608; </p>
+<h3 id="Spatial"><a class="zola-anchor" href="#Spatial" aria-label="Anchor link for: Spatial">Spatial</a></h3>
+<p>fc7f7f –&gt; cd3838</p>
+<p style="color: #fc7f7f;"> Example Light &#9608; </p>
+<p style="color: #cd3838;"> Example Dark &#9608; </p>
+<h3 id="2D"><a class="zola-anchor" href="#2D" aria-label="Anchor link for: 2D">2D</a></h3>
+<p>8da5f3 –&gt; 3d64dd</p>
+<p style="color: #8da5f3;"> Example Light &#9608; </p>
+<p style="color: #3d64dd;"> Example Dark &#9608; </p>
+<h3 id="2D_Dark"><a class="zola-anchor" href="#2D_Dark" aria-label="Anchor link for: 2D_Dark">2D Dark</a></h3>
+<p>4b70ea –&gt; 1a3eac</p>
+<p style="color: #4b70ea;"> Example Light &#9608; </p>
+<p style="color: #1a3eac;"> Example Dark &#9608; </p>
+<h3 id="Control"><a class="zola-anchor" href="#Control" aria-label="Anchor link for: Control">Control</a></h3>
+<p>8eef97 –&gt; 2fa139</p>
+<p style="color: #8eef97;"> Example Light &#9608; </p>
+<p style="color: #2fa139;"> Example Dark &#9608; </p>
+<h3 id="Selection_(darker_blue)"><a class="zola-anchor" href="#Selection_(darker_blue)" aria-label="Anchor link for: Selection_(darker_blue)">Selection (darker blue)</a></h3>
+<p>003e7a –&gt; 2b74bb</p>
+<p style="color: #003e7a;"> Example Light &#9608; </p>
+<p style="color: #2b74bb;"> Example Dark &#9608; </p>
+<h3 id="Gizmo_(yellow)"><a class="zola-anchor" href="#Gizmo_(yellow)" aria-label="Anchor link for: Gizmo_(yellow)">Gizmo (yellow)</a></h3>
+<p>f7f5cf –&gt; 615f3a</p>
+<p style="color: #f7f5cf;"> Example Light &#9608; </p>
+<p style="color: #615f3a;"> Example Dark &#9608; </p>
+<h3 id="Green"><a class="zola-anchor" href="#Green" aria-label="Anchor link for: Green">Green</a></h3>
+<p>80ff45 –&gt; 74ff34</p>
+<p style="color: #80ff45;"> Example Light &#9608; </p>
+<p style="color: #74ff34;"> Example Dark &#9608; </p>
+<h3 id="Aqua"><a class="zola-anchor" href="#Aqua" aria-label="Anchor link for: Aqua">Aqua</a></h3>
+<p>45ffa2 –&gt; 2cff98</p>
+<p style="color: #45ffa2;"> Example Light &#9608; </p>
+<p style="color: #2cff98;"> Example Dark &#9608; </p>
+<h3 id="Blue"><a class="zola-anchor" href="#Blue" aria-label="Anchor link for: Blue">Blue</a></h3>
+<p>45d7ff –&gt; 22ccff</p>
+<p style="color: #45d7ff;"> Example Light &#9608; </p>
+<p style="color: #22ccff;"> Example Dark &#9608; </p>
+<h3 id="Purple"><a class="zola-anchor" href="#Purple" aria-label="Anchor link for: Purple">Purple</a></h3>
+<p>8045ff –&gt; 702aff</p>
+<p style="color: #8045ff;"> Example Light &#9608; </p>
+<p style="color: #702aff;"> Example Dark &#9608; </p>
+<h3 id="Pink"><a class="zola-anchor" href="#Pink" aria-label="Anchor link for: Pink">Pink</a></h3>
+<p>ff4596 –&gt; ff2781</p>
+<p style="color: #ff4596;"> Example Light &#9608; </p>
+<p style="color: #ff2781;"> Example Dark &#9608; </p>
+<h3 id="Frozen_gradient_middle"><a class="zola-anchor" href="#Frozen_gradient_middle" aria-label="Anchor link for: Frozen_gradient_middle">Frozen gradient middle</a></h3>
+<p>75d1e6 –&gt; 41acc5</p>
+<p style="color: #75d1e6;"> Example Light &#9608; </p>
+<p style="color: #41acc5;"> Example Dark &#9608; </p>
+<h3 id="Frozen_gradient_bottom"><a class="zola-anchor" href="#Frozen_gradient_bottom" aria-label="Anchor link for: Frozen_gradient_bottom">Frozen gradient bottom</a></h3>
+<p>84ffee –&gt; 49ccba</p>
+<p style="color: #84ffee;"> Example Light &#9608; </p>
+<p style="color: #49ccba;"> Example Dark &#9608; </p>
+<h3 id="Color_track_orange"><a class="zola-anchor" href="#Color_track_orange" aria-label="Anchor link for: Color_track_orange">Color track orange</a></h3>
+<p>eec315 –&gt; d58c0b</p>
+<p style="color: #eec315;"> Example Light &#9608; </p>
+<p style="color: #d58c0b;"> Example Dark &#9608; </p>
+<h3 id="Color_track_yellow"><a class="zola-anchor" href="#Color_track_yellow" aria-label="Anchor link for: Color_track_yellow">Color track yellow</a></h3>
+<p>dbee15 –&gt; b7d10a</p>
+<p style="color: #dbee15;"> Example Light &#9608; </p>
+<p style="color: #b7d10a;"> Example Dark &#9608; </p>
+<h3 id="Color_track_green"><a class="zola-anchor" href="#Color_track_green" aria-label="Anchor link for: Color_track_green">Color track green</a></h3>
+<p>288027 –&gt; 218309</p>
+<p style="color: #288027;"> Example Light &#9608; </p>
+<p style="color: #218309;"> Example Dark &#9608; </p>
+<h3 id="Shape_resource_(light_blue)"><a class="zola-anchor" href="#Shape_resource_(light_blue)" aria-label="Anchor link for: Shape_resource_(light_blue)">Shape resource (light blue)</a></h3>
+<p>a2d2ff –&gt; 4998e3</p>
+<p style="color: #a2d2ff;"> Example Light &#9608; </p>
+<p style="color: #4998e3;"> Example Dark &#9608; </p>
+<h3 id="3D_Position_track"><a class="zola-anchor" href="#3D_Position_track" aria-label="Anchor link for: 3D_Position_track">3D Position track</a></h3>
+<p>ea7940 –&gt; bd5e2c</p>
+<p style="color: #ea7940;"> Example Light &#9608; </p>
+<p style="color: #bd5e2c;"> Example Dark &#9608; </p>
+<h3 id="3D_Rotation_track"><a class="zola-anchor" href="#3D_Rotation_track" aria-label="Anchor link for: 3D_Rotation_track">3D Rotation track</a></h3>
+<p>ff2b88 –&gt; bd165f</p>
+<p style="color: #ff2b88;"> Example Light &#9608; </p>
+<p style="color: #bd165f;"> Example Dark &#9608; </p>
+<h3 id="3D_Scale_track"><a class="zola-anchor" href="#3D_Scale_track" aria-label="Anchor link for: 3D_Scale_track">3D Scale track</a></h3>
+<p>eac840 –&gt; bd9d1f</p>
+<p style="color: #eac840;"> Example Light &#9608; </p>
+<p style="color: #bd9d1f;"> Example Dark &#9608; </p>
+<h3 id="Call_Method_track"><a class="zola-anchor" href="#Call_Method_track" aria-label="Anchor link for: Call_Method_track">Call Method track</a></h3>
+<p>3cf34e –&gt; 16a827</p>
+<p style="color: #3cf34e;"> Example Light &#9608; </p>
+<p style="color: #16a827;"> Example Dark &#9608; </p>
+<h3 id="Bezier_Curve_track"><a class="zola-anchor" href="#Bezier_Curve_track" aria-label="Anchor link for: Bezier_Curve_track">Bezier Curve track</a></h3>
+<p>2877f6 –&gt; 236be6</p>
+<p style="color: #2877f6;"> Example Light &#9608; </p>
+<p style="color: #236be6;"> Example Dark &#9608; </p>
+<h3 id="Audio_Playback_track"><a class="zola-anchor" href="#Audio_Playback_track" aria-label="Anchor link for: Audio_Playback_track">Audio Playback track</a></h3>
+<p>eae440 –&gt; 9f9722</p>
+<p style="color: #eae440;"> Example Light &#9608; </p>
+<p style="color: #9f9722;"> Example Dark &#9608; </p>
+<h3 id="Animation_Playback_track"><a class="zola-anchor" href="#Animation_Playback_track" aria-label="Anchor link for: Animation_Playback_track">Animation Playback track</a></h3>
+<p>a448f0 –&gt; 9853ce</p>
+<p style="color: #a448f0;"> Example Light &#9608; </p>
+<p style="color: #9853ce;"> Example Dark &#9608; </p>
+<h3 id="Blend_Shape_track"><a class="zola-anchor" href="#Blend_Shape_track" aria-label="Anchor link for: Blend_Shape_track">Blend Shape track</a></h3>
+<p>5ad5c4 –&gt; 0a9c88</p>
+<p style="color: #5ad5c4;"> Example Light &#9608; </p>
+<p style="color: #0a9c88;"> Example Dark &#9608; </p>
+<h3 id="Border_part"><a class="zola-anchor" href="#Border_part" aria-label="Anchor link for: Border_part">Border part</a></h3>
+<p>919191 –&gt; 6e6e6e</p>
+<p style="color: #919191;"> Example Light &#9608; </p>
+<p style="color: #6e6e6e;"> Example Dark &#9608; </p>
+<h3 id="New_Atlas"><a class="zola-anchor" href="#New_Atlas" aria-label="Anchor link for: New_Atlas">New Atlas</a></h3>
+<p>c6ced4 –&gt; 828f9b</p>
+<p style="color: #c6ced4;"> Example Light &#9608; </p>
+<p style="color: #828f9b;"> Example Dark &#9608; </p>
+<h3 id="int"><a class="zola-anchor" href="#int" aria-label="Anchor link for: int">int</a></h3>
+<p>5abbef –&gt; 4fb2e9</p>
+<p style="color: #5abbef;"> Example Light &#9608; </p>
+<p style="color: #4fb2e9;"> Example Dark &#9608; </p>
+<h3 id="float"><a class="zola-anchor" href="#float" aria-label="Anchor link for: float">float</a></h3>
+<p>35d4f4 –&gt; 27ccf0</p>
+<p style="color: #35d4f4;"> Example Light &#9608; </p>
+<p style="color: #27ccf0;"> Example Dark &#9608; </p>
+<h3 id="String"><a class="zola-anchor" href="#String" aria-label="Anchor link for: String">String</a></h3>
+<p>4593ec –&gt; 4690e7</p>
+<p style="color: #4593ec;"> Example Light &#9608; </p>
+<p style="color: #4690e7;"> Example Dark &#9608; </p>
+<h3 id="Vector2"><a class="zola-anchor" href="#Vector2" aria-label="Anchor link for: Vector2">Vector2</a></h3>
+<p>ac73f1 –&gt; ad76ee</p>
+<p style="color: #ac73f1;"> Example Light &#9608; </p>
+<p style="color: #ad76ee;"> Example Dark &#9608; </p>
+<h3 id="Rect2"><a class="zola-anchor" href="#Rect2" aria-label="Anchor link for: Rect2">Rect2</a></h3>
+<p>f1738f –&gt; ee758e</p>
+<p style="color: #f1738f;"> Example Light &#9608; </p>
+<p style="color: #ee758e;"> Example Dark &#9608; </p>
+<h3 id="Vector3"><a class="zola-anchor" href="#Vector3" aria-label="Anchor link for: Vector3">Vector3</a></h3>
+<p>de66f0 –&gt; dc6aed</p>
+<p style="color: #de66f0;"> Example Light &#9608; </p>
+<p style="color: #dc6aed;"> Example Dark &#9608; </p>
+<h3 id="Transform2D"><a class="zola-anchor" href="#Transform2D" aria-label="Anchor link for: Transform2D">Transform2D</a></h3>
+<p>b9ec41 –&gt; 96ce1a</p>
+<p style="color: #b9ec41;"> Example Light &#9608; </p>
+<p style="color: #96ce1a;"> Example Dark &#9608; </p>
+<h3 id="Plane"><a class="zola-anchor" href="#Plane" aria-label="Anchor link for: Plane">Plane</a></h3>
+<p>f74949 –&gt; f77070</p>
+<p style="color: #f74949;"> Example Light &#9608; </p>
+<p style="color: #f77070;"> Example Dark &#9608; </p>
+<h3 id="Quaternion"><a class="zola-anchor" href="#Quaternion" aria-label="Anchor link for: Quaternion">Quaternion</a></h3>
+<p>ec418e –&gt; ec69a3</p>
+<p style="color: #ec418e;"> Example Light &#9608; </p>
+<p style="color: #ec69a3;"> Example Dark &#9608; </p>
+<h3 id="AABB"><a class="zola-anchor" href="#AABB" aria-label="Anchor link for: AABB">AABB</a></h3>
+<p>ee5677 –&gt; ee7991</p>
+<p style="color: #ee5677;"> Example Light &#9608; </p>
+<p style="color: #ee7991;"> Example Dark &#9608; </p>
+<h3 id="Basis"><a class="zola-anchor" href="#Basis" aria-label="Anchor link for: Basis">Basis</a></h3>
+<p>e1ec41 –&gt; b2bb19</p>
+<p style="color: #e1ec41;"> Example Light &#9608; </p>
+<p style="color: #b2bb19;"> Example Dark &#9608; </p>
+<h3 id="Transform3D"><a class="zola-anchor" href="#Transform3D" aria-label="Anchor link for: Transform3D">Transform3D</a></h3>
+<p>f68f45 –&gt; f49047</p>
+<p style="color: #f68f45;"> Example Light &#9608; </p>
+<p style="color: #f49047;"> Example Dark &#9608; </p>
+<h3 id="NodePath"><a class="zola-anchor" href="#NodePath" aria-label="Anchor link for: NodePath">NodePath</a></h3>
+<p>417aec –&gt; 6993ec</p>
+<p style="color: #417aec;"> Example Light &#9608; </p>
+<p style="color: #6993ec;"> Example Dark &#9608; </p>
+<h3 id="RID"><a class="zola-anchor" href="#RID" aria-label="Anchor link for: RID">RID</a></h3>
+<p>41ec80 –&gt; 2ce573</p>
+<p style="color: #41ec80;"> Example Light &#9608; </p>
+<p style="color: #2ce573;"> Example Dark &#9608; </p>
+<h3 id="Object"><a class="zola-anchor" href="#Object" aria-label="Anchor link for: Object">Object</a></h3>
+<p>55f3e3 –&gt; 12d5c3</p>
+<p style="color: #55f3e3;"> Example Light &#9608; </p>
+<p style="color: #12d5c3;"> Example Dark &#9608; </p>
+<h3 id="Dictionary"><a class="zola-anchor" href="#Dictionary" aria-label="Anchor link for: Dictionary">Dictionary</a></h3>
+<p>54ed9e –&gt; 57e99f</p>
+<p style="color: #54ed9e;"> Example Light &#9608; </p>
+<p style="color: #57e99f;"> Example Dark &#9608; </p>
+<h3 id="Functions_and_expressions"><a class="zola-anchor" href="#Functions_and_expressions" aria-label="Anchor link for: Functions_and_expressions">Functions and expressions</a></h3>
+<p>cf68ea –&gt; c050dd</p>
+<p style="color: #cf68ea;"> Example Light &#9608; </p>
+<p style="color: #c050dd;"> Example Dark &#9608; </p>
+<h3 id="Textures_and_cubemaps"><a class="zola-anchor" href="#Textures_and_cubemaps" aria-label="Anchor link for: Textures_and_cubemaps">Textures and cubemaps</a></h3>
+<p>eac968 –&gt; d9b64f</p>
+<p style="color: #eac968;"> Example Light &#9608; </p>
+<p style="color: #d9b64f;"> Example Dark &#9608; </p>
+<h2 id="Why_does_this_exist?"><a class="zola-anchor" href="#Why_does_this_exist?" aria-label="Anchor link for: Why_does_this_exist?">Why does this exist?</a></h2>
+<p>I really like to make my SVG icons for tools and such to be reactive to light/dark theme colouration swapping. The godot engine has a massive look up table (LUT) for hex codes that it will swap when going from light to dark themes. So long as you use these colours as a palette for your icons, they will look good in both light and dark themes. This page is mainly a reference page for the various colour codes</p>
+<h2 id="How_to_use_this"><a class="zola-anchor" href="#How_to_use_this" aria-label="Anchor link for: How_to_use_this">How to use this</a></h2>
+<p>This reference page is mainly intended for people who want to make editor icons for Godot. However you can assign custom icons for any global class you desire. If you are creating a plugin or some kind of code-base to be distributed to third party developers, it is highly recommended that you use these palette swapping colours so the icon will have a greater chance of having a decent contrast against the background. If not please ensure that your icon has enough internal contrast to be clearly visible. Also please be sure that your icon is not completely reliant on colour for users who may be colour blind. (A main example of this is how <code>Node</code>, <code>Control</code>, <code>Node2D</code>, and <code>Node3D</code> are all the exact same shape but differentiated by colour. That’s a bad practice in general).</p>
+<p>If you want more resources on how to author meaningful and efficiently loaded icons, please refer to <a rel="noopener nofollow noreferrer" target="_blank" href="https://docs.godotengine.org/en/stable/contributing/development/editor/creating_icons.html">the official godot documentation on this subject</a></p>
+
+  </article>
+</div>
+
+<div class="flex justify-center py-2">
+  
+  <ul class="menu menu-vertical lg:menu-horizontal bg-secondary text-neutral rounded-box">
+    <li class="menu-title text-neutral">Read more with tag:</li>
+    
+    <li class="bg-secondary hover:bg-primary rounded-box">
+      <a href="https://queenofsquiggles.github.io/tags/godot/">
+        godot
+      </a>
+    </li>
+    
+    <li class="bg-secondary hover:bg-primary rounded-box">
+      <a href="https://queenofsquiggles.github.io/tags/reference/">
+        reference
+      </a>
+    </li>
+    
+  </ul>
+  
+
+</div>
+
+
+  </main>
+
+  
+  
+
+  
+  <footer class="footer bg-neutral text-neutral-content p-10 justify-center">
+    <aside>
+      
+      <a href=" mailto:thequeenofsquiggles@gmail.com">thequeenofsquiggles@gmail.com</a>
+      
+    </aside>
+    
+    <nav>
+      <h6 class="footer-title">Socials</h6>
+      <div class="grid grid-flow-col gap-4">
+        
+        <a class="flex-auto" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles"  title="Mastodon" ><i
+            class="fab fa-mastodon"></i></a>
+        
+        <a class="flex-auto" href="rss.xml"  title="RSS Feed" ><i
+            class="fas fa-rss"></i></a>
+        
+      </div>
+    </nav>
+    
+  </footer>
+  
+</body>
+
+</html>

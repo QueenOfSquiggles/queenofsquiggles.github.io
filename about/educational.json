@@ -1,0 +1,14 @@
+[
+    {
+        "header": "Behaviour Trees vs State Machines",
+        "text": "A technical edutainment breakdown of the use cases and logic behind behaviour trees and finite state machines in game development",
+        "img": "banner-notext.jpg",
+        "link": "/guides/fsm-vs-bt/"
+    },
+    {
+        "header": "Game Design using Obsidian",
+        "text": "A guide on how to organize and plan small game development projects using the free notes app, Obsidian. Which includes relevant examples from my game project, 'Contact Range'",
+        "img": "banner.jpg",
+        "link": "/guides/game-design-using-obsidian/"
+    }
+]
