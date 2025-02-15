@@ -44,7 +44,7 @@ extra:
 
 ## Story of the Creation
 
-I participated in the [Go Godot Jam 3](https://gogodotjam.com/the-jam/), which to save you a click is a game jam coordinated by the Godot community, specifically 'Redefine Gamedev', who is a fairly active member of the community. The jam was very exciting, with online social events planned for participants and hosted by various well known community members.
+I participated in the Go Godot Jam 3 (Website formerly https://gogodotjam.com/the-jam/, is now down and possibly no longer operated), which to save you a click is a game jam coordinated by the Godot community, specifically 'Redefine Gamedev', who is a fairly active member of the community. The jam was very exciting, with online social events planned for participants and hosted by various well known community members.
 
 I participated in the "Classic" experience, which was the easier of the two. We had roughly 9 days to make the game and were allowed to work on a team. I did end up working alone. But I was still determined to finish this game. I was excited to get working on making horror games. And for this one, I wanted to focus on setting up a proper atmosphere. Which if the feedback I got was honest, I think I succeeded there.
 

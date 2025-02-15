@@ -141,7 +141,11 @@ For my purposes I made every room, item, and 'quest action' into a node. Then I 
 
 So with your ideas put together and some rough (or maybe not so rough) sequencing figured out, now you need to break it down into manageable and--most importantly--actionable tasks. This is where "Project Management" (PM) rears its ugly head. Most of PM work is not exceptionally difficult in theory, but almost always is difficult in practice. There are so many different methods for organizing tasks into small chunks that can be assigned to individual team members. My favourite is a [Kanban Board](https://en.wikipedia.org/wiki/Kanban). It's a fairly simple process. You organize tasks into "cards" that describe the task and maybe some additional meta-data like who's assigned to it and/or what category of task it is (art, code, sfx, etc...). For me, I usually skip the assignment step since it's usually all me.
 
-![A Kanban Board of my personal life tasks](/images/game-design-using-obsidian/personal-todo-kanban.jpg)
+
+{{ img(
+  src="personal-todo-kanban.jpg",
+  alt="A Kanban Board of my personal life tasks"
+)}}
 
 Here's an example of a kanban board. Specifically one I use to organize my personal life tasks. Once something makes it to the "Done" channel I like to archive it so it doesn't clutter up the view. If you are perceptive, you probably noticed that I'm still using Obsidian. There is a "Community Plugin" (not maintained by the Obsidian Devs) called "Kanban" by "mgmeyers" that I use almost religiously. It adds a type of note that is a Kanban board which allows you to specify which lanes you want. There is also tools for things like due dates, tagging, and styles. You can even make styles react to the tags or date proximity on the card. For example, when I used this for school I made green, orange, and red colour styles based on how urgently the task needed to be done (based on 7+ days out, 3+ days out, or less than 3 days away, respectively)
 
