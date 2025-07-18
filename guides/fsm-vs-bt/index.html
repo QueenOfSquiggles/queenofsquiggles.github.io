@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="synthwave">
+
+<head>
+  
+  <title>
+
+Behaviour Trees versus State Machines | Queen Of Squiggles&#x27;s Blog
+
+</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  
+  <link rel="me" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles">
+  
+
+  <!-- Tailwind compiled CSS -->
+  <link rel="stylesheet" href="https://queenofsquiggles.github.io/output.css">
+  <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+
+  
+  <script defer src="https://queenofsquiggles.github.io/elasticlunr.min.js"></script>
+  <script defer src="https://queenofsquiggles.github.io/search_index.en.js"></script>
+  <script src="https://queenofsquiggles.github.io/js/search.js"></script>
+  
+
+  
+  
+  <!-- Includes the default RSS feed if enabled in configuration -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://queenofsquiggles.github.io/rss.xml">
+  
+  
+  <!-- Includes the ddefault Atom feed if enabled in configuration -->
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="https://queenofsquiggles.github.io/atom.xml" />
+  
+
+  
+  
+</head>
+
+<body>
+  <div class="navbar bg-base-200 sticky top-0 z-50">
+    <div class="navbar-center lg:navbar-start">
+      <div class="hidden lg:flex">
+        <a class="btn btn-ghost text-xl" href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Queen Of Squiggles&#x27;s Blog</a>
+      </div>
+
+      <!-- small screen navbar (drop down) -->
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          Queen Of Squiggles&#x27;s Blog
+
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-300 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-4">
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Home</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+          </li>
+          
+          
+
+          <li class="dropdown">
+            <details>
+              <summary>Theme</summary>
+
+              <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="light" value="light" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="dark" value="dark" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="synthwave" value="synthwave" />
+                </li>
+                
+
+              </ul>
+            </details>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- large screen navbar -->
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+        </li>
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+        </li>
+        
+      </ul>
+      
+
+      <div class="flex-1 gap-2">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            Theme
+          </div>
+          <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="light"
+                value="light" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="dark"
+                value="dark" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="synthwave"
+                value="synthwave" />
+            </li>
+            
+
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <div class="navbar-end hidden lg:flex">
+      <form class="form-control lg:focus-within:grow" onsubmit="return goSearch(event)">
+        <input type="text" class="input input-bordered" placeholder="Search" />
+      </form>
+    </div>
+    
+  </div>
+
+  
+  <div class="navbar flex justify-center lg:hidden pb-4">
+    <form class="form-control" onsubmit="return goSearch(event)">
+      <input type="text" class="input input-bordered" placeholder="Search" />
+    </form>
+  </div>
+  
+
+  <main class="flex flex-col container mx-auto justify-center my-2">
+    
+
+
+
+<div class="flex flex-row flex-wrap lg:flex-nowrap w-full justify-center gap-1 py-2">
+  <div class=" hero container mx-auto bg-base-200 rounded-box">
+    <div class="hero-content flex-col lg:flex-col">
+      
+      <div>
+        <h1 class="text-5xl font-bold"> Behaviour Trees versus State Machines </h1>
+        <div class="py-6">
+          
+          <div class="flex flex-row flex-wrap gap-4  py-2">
+            
+            <a href="https://queenofsquiggles.github.io/tags/tech discussion/" class="btn btn-secondary rounded-box">
+              tech discussion
+            </a>
+            
+            <a href="https://queenofsquiggles.github.io/tags/guide/" class="btn btn-secondary rounded-box">
+              guide
+            </a>
+            
+            <a href="https://queenofsquiggles.github.io/tags/tool/" class="btn btn-secondary rounded-box">
+              tool
+            </a>
+            
+            <a href="https://queenofsquiggles.github.io/tags/ai/" class="btn btn-secondary rounded-box">
+              ai
+            </a>
+            
+          </div>
+          
+          
+
+          
+          <div class="join join-vertical py-2">
+
+            <div class="btn btn-outline rounded-box no-animation join-item leading-relaxed">Written - 
+Wednesday the 11 of October, 2023
+</div>
+
+            
+
+
+
+            
+
+          </div>
+          <div class="py-2">
+            <i> Read time is about 15 minutes </i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-md">
+    
+
+<!-- Table of contents supporting h1, h2, h3, h4, h5, h6 (or optionally reduced depth based on config) -->
+
+
+<ul class="not-prose flex menu bg-base-200 rounded-box divide-y divide-dotted md:divide-none">
+    <li class="menu-title text-xl">
+        <h1>
+            Table of Contents
+        </h1>
+    </li>
+    
+    <li>
+        <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Wait…AI??">Wait…AI??</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#AI_and_Games_🤖">AI and Games 🤖</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Behaviour_Trees_my_beloved_💕">Behaviour Trees my beloved 💕</a>
+    </li>
+    
+    <li>
+        <ul class="divide-y divide-dotted md:divide-none">
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#What_is_a_tree?_(In_programming_at_least)">
+                    What is a tree? (In programming at least)
+                </a>
+            </li>
+            
+            
+        </ul>
+        
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Back_to_Behaviour_Trees">Back to Behaviour Trees</a>
+    </li>
+    
+    <li>
+        <ul class="divide-y divide-dotted md:divide-none">
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Queries/Conditions">
+                    Queries&#x2F;Conditions
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Actions">
+                    Actions
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Compsitors">
+                    Compsitors
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Decorators">
+                    Decorators
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Putting_it_all_together">
+                    Putting it all together
+                </a>
+            </li>
+            
+            <li>
+                <ul class="divide-y divide-dotted md:divide-none">
+                    
+                    <li>
+                        <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Jump_Branch">
+                            Jump Branch
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Idle_Branch">
+                            Idle Branch
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#More_complexity?">
+                    More complexity?
+                </a>
+            </li>
+            
+            
+        </ul>
+        
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Finally_talking_about_State_Machines">Finally talking about State Machines</a>
+    </li>
+    
+    <li>
+        <ul class="divide-y divide-dotted md:divide-none">
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Adding_completixity_to_FSMs">
+                    Adding completixity to FSMs
+                </a>
+            </li>
+            
+            
+        </ul>
+        
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Pros_and_Cons">Pros and Cons</a>
+    </li>
+    
+    <li>
+        <ul class="divide-y divide-dotted md:divide-none">
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Behaviour_Tree_Pros">
+                    Behaviour Tree Pros
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#State_Machine_(FSM/HFSM)_Pros">
+                    State Machine (FSM&#x2F;HFSM) Pros
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Behaviour_Tree_Cons">
+                    Behaviour Tree Cons
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#State_Machine_(FSM/HFSM)_Cons">
+                    State Machine (FSM&#x2F;HFSM) Cons
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Conclusion">
+                    Conclusion
+                </a>
+            </li>
+            
+            
+        </ul>
+        
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#So_you_want_to_learn_more?">So you want to learn more?</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/#Bonus!_You_like_memes?">Bonus! You like memes?</a>
+    </li>
+    
+        
+</ul>
+</li>
+</ul>
+
+
+
+  </div>
+
+</div>
+
+<div class="static">
+  <div class="fixed bottom-4 md:bottom-8 start-4 md:start-8 ">
+    <div class="tooltip" data-tip="Return to top">
+      <a class="btn bg-neutral aspect-square rounded-full shadow-md" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+          <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path fill="#FFFFFF"
+            d="M32 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c53 0 96-43 96-96l0-306.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 416c0 17.7-14.3 32-32 32l-96 0z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container mx-auto bg-base-200 rounded-box py-6 px-4">
+  <h1 class="prose prose-accent text-5xl font-bold">
+    Hey guess what! This blog has moved from being hosted on Github to being hosted on Codeberg. 
+    <a href="https://queenofsquiggles.codeberg.page&#x2F;guides&#x2F;fsm-vs-bt&#x2F;" target="_blank" rel="noopener noreferrer">
+      [[Click here]]
+    </a> to read this page on the new blog
+  </h1>
+</div>
+
+<div class="container mx-auto py-6 px-4"></div>
+
+<div class="flex flex-col justify-center">
+  <article
+    class="prose prose-neutral lg:prose-xl px-2 max-w-none prose-blockquote:rounded-r-lg prose-blockquote:shadow-2xl prose-blockquote:bg-base-200 prose-blockquote:p-2">
+    <!-- 
+ Hey hey! this is hard-coded for my-kofi to ensure the classes get injected into tailwind. 
+ You'll need to make an overriding shortcode in your `templates/shortcodes` called `kofi.html
+ Just do your best to copy this styling if you want the same as I have. Else use Kofi's style
+-->
+
+<div class="flex not-prose container mx-auto justify-center">
+    <div class="bg-accent p-2 rounded-box shadow-2xl">
+        <a class="flex flex-col flex-wrap justify-center" href='https://ko-fi.com/G2G3AP0TR' target='_blank'
+            rel="noopener noreferrer">
+            <img class="rounded-full shadow-md" src='https://storage.ko-fi.com/cdn/kofi4.png?v=3'
+                alt='Buy Me a Coffee at ko-fi.com' />
+        </a>
+    </div>
+</div>
+<blockquote>
+<p>I’m trying out a different layout for this post so the text is easier to read. it looked super dense in the typical layout. Let me know what you think! If this style is ugly I might just change it back</p>
+</blockquote>
+<blockquote>
+<p>I also activated full <a rel="noopener nofollow noreferrer" target="_blank" href="https://en.wikipedia.org/wiki/Weeb_(disambiguation)">“weeb”</a> mode for this post. I can remove it if it detracts from people’s enjoyment, but I’m hoping it makes reading this <em>even more enjoyable</em>.</p>
+</blockquote>
+<blockquote>
+<p>update: the GIF inclusion can break <em>some</em> rss feeds. If you have the option to “load full text” that should fix it. Otherwise the actual website should work too.</p>
+</blockquote>
+<h2 id="Wait…AI??"><a class="zola-anchor" href="#Wait…AI??" aria-label="Anchor link for: Wait…AI??">Wait…AI??</a></h2>
+<p>First to dismiss anyone who came in here thinking I was going to talk about <em>ChatGPT</em> or <em>Midjourney</em>. While those are also referred generally as “AI”, the term itself is infinitely more general than “Large Language Model used for generating arbitrary content while also violating every license known to humanity.” This article is focusing on a different sector of artificial intelligence. Specifically one of the more “smoke and mirrors” type of intelligence, which is really where games development thrives!</p>
+<h2 id="AI_and_Games_🤖"><a class="zola-anchor" href="#AI_and_Games_🤖" aria-label="Anchor link for: AI_and_Games_🤖">AI and Games 🤖</a></h2>
+<p>Generally, it is easiest to think of AI in games to be primarily used for creating interesting hostile enemies such as the guards in <em>Metal Gear Solid</em> games or the Alien (Xenomorph) in <em>Alien: Isolation</em>. However they are also used for the cute characters in the <em>Animal Crossing</em> games, or the slimes in <em>Slime Rancher</em>. But then getting even past tangible characters, there is “The Director” in <em>Left For Dead 2</em>, which is an AI solution that dynamically adjusts the game based on current conditions.</p>
+<p>Hopefully I’m getting across the idea that AI in games is significantly more simple than the “AIs” that are sweeping public consciousness right now. In fact they can get so simple that there’s really only two kinds that I’ve ever used. That isn’t to say there <strong>aren’t</strong> other kinds. But that I’ve never had a problem that needed a different solution than either one or the other.</p>
+<h2 id="Behaviour_Trees_my_beloved_💕"><a class="zola-anchor" href="#Behaviour_Trees_my_beloved_💕" aria-label="Anchor link for: Behaviour_Trees_my_beloved_💕">Behaviour Trees my beloved 💕</a></h2>
+<p>Behaviour Trees were my first love. They are absolutely incredible and I would argue that they are functional enough to do some basic scripting with them should the need arise. Now to actually talk about them 😅</p>
+<p>Behaviour Trees are closest to a <a rel="noopener nofollow noreferrer" target="_blank" href="https://en.wikipedia.org/wiki/Flowchart">“Flow Chart”</a>, which is probably the best way to think about them if you’re just getting started.</p>
+<h3 id="What_is_a_tree?_(In_programming_at_least)"><a class="zola-anchor" href="#What_is_a_tree?_(In_programming_at_least)" aria-label="Anchor link for: What_is_a_tree?_(In_programming_at_least)">What is a tree? (In programming at least)</a></h3>
+<p>A tree is a generic data structure that is used to hold “nodes” (which generally have some kind of data associated with them), and their relationships between each other. Now technically that description would be called a “Graph”, which is a less restrictive type of data structure.</p>
+<p>Trees have some particular rules that each node can have children , which is a one-way relationship where the parent knows its children but the children do not know their parent. Additionally each node can only have a single parent. If you are used to Godot, the “Scene Tree” is a type of tree.</p>
+<p>Technically some extra flavour is added such that child nodes <em>can</em> access their parent nodes, but this is distinctly against recommended workflow. You might have heard “Call down; Signal Up”. This is a method that preserves the Tree rules by ensuring that only parent nodes need to know about their child nodes. And never the other way around.</p>
+<h2 id="Back_to_Behaviour_Trees"><a class="zola-anchor" href="#Back_to_Behaviour_Trees" aria-label="Anchor link for: Back_to_Behaviour_Trees">Back to Behaviour Trees</a></h2>
+<p>So knowing that it is a tree data structure used to model some kind of “behaviour”, you might already have some ideas. The nodes available come in a few key types that serve specific purposes:</p>
+<ul>
+<li>root (in some cases isn’t technically a node)</li>
+<li>compositor</li>
+<li>decorator</li>
+<li>query/condition</li>
+<li>action</li>
+</ul>
+<p>The root is fairly boring because all it does is call down whatever child node it has (only one is usually allowed).</p>
+<p>All nodes in a behaviour tree use a “tick” (or otherwise named) method to perform their own logic, and then return a state value for that node. Usually “Success”, “Failure”, or “Running” (for when it takes multiple ticks to accomplish the task).</p>
+<h3 id="Queries/Conditions"><a class="zola-anchor" href="#Queries&#x2F;Conditions" aria-label="Anchor link for: Queries&#x2F;Conditions">Queries/Conditions</a></h3>
+<p>A query node simply checks against some logical condition and returns “Success” if true and “Failure” if false. Specifically the positive affirmation leaning is helpful such that we don’t use “Is thing not true” conditions, since those can get messy.</p>
+<h3 id="Actions"><a class="zola-anchor" href="#Actions" aria-label="Anchor link for: Actions">Actions</a></h3>
+<p>An action node tries to do something. Ideally some kind of transformation that creates an external effect. Like applying a force to the character or triggering a VFX. Returns “Success” when completed, “Running” while processing, and “Failure” if something goes wrong.</p>
+<h3 id="Compsitors"><a class="zola-anchor" href="#Compsitors" aria-label="Anchor link for: Compsitors">Compsitors</a></h3>
+<p>A compositor is a node that can have one or more children. Based on the type of compositor (typically two core types), the way the children are iterated through is different.</p>
+<table><thead><tr><th style="text-align: left">Type</th><th style="text-align: center">Result</th></tr></thead><tbody>
+<tr><td style="text-align: left">Sequence</td><td style="text-align: center">Children are iterated through until the first child that returns “Failure”</td></tr>
+<tr><td style="text-align: left">Select</td><td style="text-align: center">Children are iterated through until the first child that returns “Success”</td></tr>
+</tbody></table>
+<p>Sequences are really useful for prefixing with conditions in order to have pre-requisites for a particular action. That way you can determine under what condition an action (or actions!) is/are taken.</p>
+<h3 id="Decorators"><a class="zola-anchor" href="#Decorators" aria-label="Anchor link for: Decorators">Decorators</a></h3>
+<p>Decorators are nodes that can only have a single child node. They “decorate” the result of their child node by transforming it in some way. There are a few key types that are generally useful:</p>
+<table><thead><tr><th style="text-align: center">Type</th><th style="text-align: left">Result</th></tr></thead><tbody>
+<tr><td style="text-align: center">Succeeder</td><td style="text-align: left">Returns “Success” always (except for when child returns “Running”)</td></tr>
+<tr><td style="text-align: center">Failer</td><td style="text-align: left">Returns “Failure” always (except for when child returns “Running”)</td></tr>
+<tr><td style="text-align: center">Inverter</td><td style="text-align: left">Returns the opposite of the childs result (except for when child returns “Running”)</td></tr>
+<tr><td style="text-align: center">Limiter</td><td style="text-align: left">Returns the child’s result the first time (or a customizable number of times) and then always returns “Failure” without calling the child node</td></tr>
+<tr><td style="text-align: center">Timer</td><td style="text-align: left">Returns the child’s result at first, then uses a countdown timer to determine the next time to use the child node’s result. If not time yet, returns “Failure”</td></tr>
+</tbody></table>
+<p>Decorators are pretty fun to apply a logical transformation for results. Remember how conditions are supposed to be positive affirmations? Inverters are where you can check for negative affirmations. ( <em>Don’t tell your therapist about this!</em> 😏 )</p>
+<h3 id="Putting_it_all_together"><a class="zola-anchor" href="#Putting_it_all_together" aria-label="Anchor link for: Putting_it_all_together">Putting it all together</a></h3>
+
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="behaviour_tree_example.jpg" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="behaviour_tree_example.jpg" alt="An example of a behaviour tree" title="An example of a behaviour tree" />
+            </a>
+        </figure>
+        
+        <div class="card-body">
+            <p class="prose">
+                An example of a behaviour tree
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+<p>Here’s a behaviour tree example I mocked up in Obsidian.</p>
+<p>You can see the “root” node connects to a “Sequence” which then has two children which are also “sequence” nodes. In certain contexts, it’s usually helpful to name different branches based on what they are supposed to accomplish in totality. So if we read through the tree, it goes through these steps:</p>
+<h4 id="Jump_Branch"><a class="zola-anchor" href="#Jump_Branch" aria-label="Anchor link for: Jump_Branch">Jump Branch</a></h4>
+<ol>
+<li>Checking if it’s on the ground</li>
+<li>Checking if the “JUMP” input is pressed</li>
+<li>Passing both checks, applying a positive Y force.</li>
+</ol>
+<h4 id="Idle_Branch"><a class="zola-anchor" href="#Idle_Branch" aria-label="Anchor link for: Idle_Branch">Idle Branch</a></h4>
+<ol>
+<li>Invert result of
+<ul>
+<li>Checking if the actors velocity vector length (speed technically) is greater than zero</li>
+</ul>
+</li>
+<li>Passing the check, requesting the animation “IDLE” to play</li>
+</ol>
+<h3 id="More_complexity?"><a class="zola-anchor" href="#More_complexity?" aria-label="Anchor link for: More_complexity?">More complexity?</a></h3>
+<p>The awesome thing about behaviuour trees is that the same core nodes apply no matter what scale your tree operates at. There are some more advanced solutions for incredibly massive behaviour trees like in for the enemies in recent <em>Far Cry</em> games. But the same core logic is always being applied.</p>
+<p>Also I didn’t even get into the concept of the “Blackboard”, which is basically a <code>Dictionary</code> of values (<code>Variant</code> would be a good choice for Godot) that is accessible to all nodes in the tree when they perform their tick process. The blackboard is used to communicate information across nodes. Such as caching a particular jump strength based on a condition, then using that jump strength in the “Jump Branch”.</p>
+<p>Complex logic is pretty easy to do, once you get over the hurdle of the boiler plate. I promise I’m getting to the pros and cons, but first I gotta talk about State Machines!</p>
+<h2 id="Finally_talking_about_State_Machines"><a class="zola-anchor" href="#Finally_talking_about_State_Machines" aria-label="Anchor link for: Finally_talking_about_State_Machines">Finally talking about State Machines</a></h2>
+<p>State Machines are so incredibly old compared to all of the kinds of AI available to use in games. They are originally a concept from Electrical Engineering. Specifically in the <a rel="noopener nofollow noreferrer" target="_blank" href="https://en.wikipedia.org/wiki/Moore_machine">“Moore”</a> and <a rel="noopener nofollow noreferrer" target="_blank" href="https://en.wikipedia.org/wiki/Mealy_machine">“Mealy”</a> machines. Those two types of state machines are pretty much the end of what was stolen from electrical engineering and robotics. From there, we added a bit of our own <em>spice</em> to make things more fun.</p>
+<p>State machines are actually incredibly simple when we get down to it. Though there are some implementations that are more robust than others. We usually refer to them as “Finite State Machines” because there is a limited (finite) number of states the “machine” can be in. And specifically the machine can only ever be in one state at a single time.</p>
+<p>Here an example image first might be more helpful:</p>
+
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="fsm_example.jpg" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="fsm_example.jpg" alt="An example Finite State Machine" title="An example Finite State Machine" />
+            </a>
+        </figure>
+        
+        <div class="card-body">
+            <p class="prose">
+                An example Finite State Machine
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+<p>Each state handles it’s own logic as if it was completely independant of the other states. Which should be super familiar for you if you have programming experience. Essentially, if you are using a long <code>if...elseif...elseif...elseif...else</code> chain, or a super massive <code>switch</code> statement, then you might benefit from extracting each clause into a state definition.</p>
+<p>In the above example we can see three core states, and the conditions by which they transition to the particular state. It is imporant to note those transitions are one-way directional. States themselves are actually incredibly simple. The complexity comes in when we need to orchestrate transitions based on conditions. A very Godot approach is to use signals, and then have a parent node connect those signals to state change calls. <em>Which is exactly what I did in Squiggles Core 4X (SC4X)</em></p>
+<pre data-lang="cs" style="background-color:#2b303b;color:#c0c5ce;" class="language-cs "><code class="language-cs" data-lang="cs"><span>
+</span><span style="color:#b48ead;">public </span><span>override </span><span style="color:#bf616a;">void _Ready</span><span>(</span><span style="background-color:#bf616a;color:#2b303b;">)</span><span> {
+</span><span>    </span><span style="color:#bf616a;">_stateCutscene</span><span>.</span><span style="color:#bf616a;">OnStateFinished </span><span>+= () </span><span style="color:#b48ead;">=&gt; </span><span style="color:#bf616a;">_fsm</span><span>.</span><span style="color:#bf616a;">ChangeState</span><span>(</span><span style="color:#bf616a;">_stateMoving</span><span>);
+</span><span>    </span><span style="color:#bf616a;">_stateMoving</span><span>.</span><span style="color:#bf616a;">OnStateFinished </span><span>+= () </span><span style="color:#b48ead;">=&gt; </span><span style="color:#bf616a;">_fsm</span><span>.</span><span style="color:#bf616a;">ChangeState</span><span>(</span><span style="color:#bf616a;">_stateCutscene</span><span>);
+</span><span>}
+</span><span>
+</span></code></pre>
+<p>In case you aren’t super familiar with C# code, the above code is connecting the <code>OnStateFinished</code> signal from the two types of states available to a lambda expression that calls the <code>_fsm</code> (an instance of <code>FiniteStateMachine</code>) to change the state to a new state. The signals are emitted from the state when they detect a condition where they need to exit and the orchestating node (in this case a “Player Controller”) defines how those are handled. Additionally, we can use external triggers to force a switch if we like. And subclasses of <code>State</code> can even define their own signals to allow multiple types of transitions out.</p>
+<p>So we have it working great! A small number of states and the transtions handled by an orchestrating node. Now imagine we have 9 possible states with 16 total transitions! That sounds like a whole lot! How would we even begin to create a solution to that, let alone an <em>elegant</em> one!?</p>
+<h3 id="Adding_completixity_to_FSMs"><a class="zola-anchor" href="#Adding_completixity_to_FSMs" aria-label="Anchor link for: Adding_completixity_to_FSMs">Adding completixity to FSMs</a></h3>
+
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="hfsm_example.jpg" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="hfsm_example.jpg" alt="An example of an HFSM" title="An example of an HFSM" />
+            </a>
+        </figure>
+        
+        <div class="card-body">
+            <p class="prose">
+                An example of an HFSM
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+<p>So this is what would be called a “Hierarchical Finite State Machine” (HFSM). Bascially the solution to complexity is just layering more and more states on top. In the example the “top level states” would be:</p>
+<ul>
+<li>State Overworld</li>
+<li>State Cutscene</li>
+<li>State Fishing Minigame</li>
+</ul>
+<p>Then “Overworld” and “Fishing Minigame” each have their own sub-FSMs for controlling logic within that state. An essential guide is that for any state implementation, if you are asking it to store more state information and changing behaviour based on that, you should extract that into multiple states. And if those multiple states are closely tied as a coherent group, group them in a sub-state machine (<em>kinky</em> /j).</p>
+<p>That hierarchy of state machines embedded into state machines is why it is called “Hierarchical.” As far as my experience goes, HFSMs are best used for more complex AI problems. For example, the above example is for a player controller which allows the game to react to the current game state and handle the player’s actions based on that. So the mini-games are just another top-level state (with sub-space). In fact if the game requires <em>many</em> mini-games each with their own needed controls, it may be prudent to make a new top-level state for all mini-games and then have a sub-level for each game state and then another sub-level for the individual action states for those mini-games.</p>
+<p>Which, I would argue is rather <em><strong>elegant</strong></em></p>
+<!--
+Embeds a GIF from tenor with some styling to ensure it looks good while not dominating the page
+===
+data_postid: id of the post on tenor (take from embed code)
+data_aspect_ratio: the aspect ratio of the gif (take from embed code)
+url: embed url (take from embed code)
+width: a standard CSS width value to determine how big to display the gif at. (50% usually looks good)
+caption (optional): a text caption that will display below the image and serve as a link to the image. Supports markdown!
+===
+Example Data:
+data_postid="8246706" 
+data_aspect_ratio="1.43103" 
+url='https://tenor.com/view/anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706' 
+caption="Goku from Dragon Ball Z power up to 'super saiyin'" 
+fallback="https://media.tenor.com/XfrqyR_-jzIAAAAC/anime-goku.gif"
+
+-->
+<div class="flex justify-center">
+    <div class="not-prose card bg-base-200 max-w-md">
+        <noscript>
+            <figure>
+                <img src="https:&#x2F;&#x2F;media.tenor.com&#x2F;MWuIYnle2BsAAAAd&#x2F;spy-x-family-elegant.gif" />
+            </figure>
+        </noscript>
+        <div class="card-body mx-2">
+            <div class="tenor-gif-embed" data-postid="3561089886890940443" data-share-method="host"
+                data-aspect-ratio="1.56604" data-width="100%">
+            </div>
+            <script type="text/javascript" async src="https://tenor.com/embed.js">
+            </script>
+            <div class="prose px-2 md:px-4">
+                <noscript>
+                    <p class="bg-info text-neutral not-prose rounded-box py-2 text-center">
+                        <i class="fas fa-solid fa-info"></i>
+                        <b>GIF embed fallback in use.</b>
+                        <a class="link" href="https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;spy-x-family-elegant-elegance-gif-3561089886890940443">
+                            Open remote
+                        </a>
+                    </p>
+                </noscript>
+                <p>Spy X Family character shouting ‘elegant!’</p>
+
+            </div>
+        </div>
+    </div>
+</div><h2 id="Pros_and_Cons"><a class="zola-anchor" href="#Pros_and_Cons" aria-label="Anchor link for: Pros_and_Cons">Pros and Cons</a></h2>
+<p>Let’s look at the two now that we’ve gone over how they each work!</p>
+<h3 id="Behaviour_Tree_Pros"><a class="zola-anchor" href="#Behaviour_Tree_Pros" aria-label="Anchor link for: Behaviour_Tree_Pros">Behaviour Tree Pros</a></h3>
+<p>Behaviour trees are absolutely incredible at modelling more complex behaviours and interactions. A lot of enemy AIs in recent years that felt “alive” are because of super-charged behaviour trees. (As well as incredibly smart AI designers!!!) This structure is incredibly powerful for organizing behaviours and conditions in a way that can react to dynamic alterations to the structure. Yeah you can hot-swap branches at runtime and Behaviour Trees will shrug it off like a light rain (when done correctly).</p>
+<!--
+Embeds a GIF from tenor with some styling to ensure it looks good while not dominating the page
+===
+data_postid: id of the post on tenor (take from embed code)
+data_aspect_ratio: the aspect ratio of the gif (take from embed code)
+url: embed url (take from embed code)
+width: a standard CSS width value to determine how big to display the gif at. (50% usually looks good)
+caption (optional): a text caption that will display below the image and serve as a link to the image. Supports markdown!
+===
+Example Data:
+data_postid="8246706" 
+data_aspect_ratio="1.43103" 
+url='https://tenor.com/view/anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706' 
+caption="Goku from Dragon Ball Z power up to 'super saiyin'" 
+fallback="https://media.tenor.com/XfrqyR_-jzIAAAAC/anime-goku.gif"
+
+-->
+<div class="flex justify-center">
+    <div class="not-prose card bg-base-200 max-w-md">
+        <noscript>
+            <figure>
+                <img src="https:&#x2F;&#x2F;media.tenor.com&#x2F;mBgSW3COdJUAAAAd&#x2F;yor-forger-spy-x-family.gif" />
+            </figure>
+        </noscript>
+        <div class="card-body mx-2">
+            <div class="tenor-gif-embed" data-postid="26816185" data-share-method="host"
+                data-aspect-ratio="1.77778" data-width="100%">
+            </div>
+            <script type="text/javascript" async src="https://tenor.com/embed.js">
+            </script>
+            <div class="prose px-2 md:px-4">
+                <noscript>
+                    <p class="bg-info text-neutral not-prose rounded-box py-2 text-center">
+                        <i class="fas fa-solid fa-info"></i>
+                        <b>GIF embed fallback in use.</b>
+                        <a class="link" href="https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;yor-forger-spy-x-family-spy-x-family-season2-spy-x-family-part2-yor-gif-26816185">
+                            Open remote
+                        </a>
+                    </p>
+                </noscript>
+                <p>Yor from Spy X Family spinning a blade in a dark forest. It ends with her catching a falling flower at the very tip of the blade.</p>
+
+            </div>
+        </div>
+    </div>
+</div><h3 id="State_Machine_(FSM/HFSM)_Pros"><a class="zola-anchor" href="#State_Machine_(FSM&#x2F;HFSM)_Pros" aria-label="Anchor link for: State_Machine_(FSM&#x2F;HFSM)_Pros">State Machine (FSM/HFSM) Pros</a></h3>
+<p>FSMs are incredibly simple to build from scratch, and can re-use existing code if you are going through a refactor. Additionally, you can extract them into HFSMs if the need arises. They are incredibly powerful at handling logic when you know a discrete number of states you want the AI to be in, and you have very specific transitions between them.</p>
+<h3 id="Behaviour_Tree_Cons"><a class="zola-anchor" href="#Behaviour_Tree_Cons" aria-label="Anchor link for: Behaviour_Tree_Cons">Behaviour Tree Cons</a></h3>
+<p>There is <strong>so much boilerplate</strong> to get a behaviour tree system up and running. As well as needing to write custom nodes for each unique type of action that you want. If you have a lot of smaller actions that you want various different entities to be able to do slightly differently, that would be a use case, but it is still going to be a huge pain assuming you even are able to overcome the steep learning curve of thinking in trees!</p>
+<!--
+Embeds a GIF from tenor with some styling to ensure it looks good while not dominating the page
+===
+data_postid: id of the post on tenor (take from embed code)
+data_aspect_ratio: the aspect ratio of the gif (take from embed code)
+url: embed url (take from embed code)
+width: a standard CSS width value to determine how big to display the gif at. (50% usually looks good)
+caption (optional): a text caption that will display below the image and serve as a link to the image. Supports markdown!
+===
+Example Data:
+data_postid="8246706" 
+data_aspect_ratio="1.43103" 
+url='https://tenor.com/view/anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706' 
+caption="Goku from Dragon Ball Z power up to 'super saiyin'" 
+fallback="https://media.tenor.com/XfrqyR_-jzIAAAAC/anime-goku.gif"
+
+-->
+<div class="flex justify-center">
+    <div class="not-prose card bg-base-200 max-w-md">
+        <noscript>
+            <figure>
+                <img src="https:&#x2F;&#x2F;media.tenor.com&#x2F;A2ihJ4zvpOkAAAAC&#x2F;anya-anya-forger.gif" />
+            </figure>
+        </noscript>
+        <div class="card-body mx-2">
+            <div class="tenor-gif-embed" data-postid="245623370932004073" data-share-method="host"
+                data-aspect-ratio="0.854839" data-width="100%">
+            </div>
+            <script type="text/javascript" async src="https://tenor.com/embed.js">
+            </script>
+            <div class="prose px-2 md:px-4">
+                <noscript>
+                    <p class="bg-info text-neutral not-prose rounded-box py-2 text-center">
+                        <i class="fas fa-solid fa-info"></i>
+                        <b>GIF embed fallback in use.</b>
+                        <a class="link" href="https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;anya-anya-forger-spy-x-family-brain-fried-gif-245623370932004073">
+                            Open remote
+                        </a>
+                    </p>
+                </noscript>
+                <p>Anya from Spy X Family looking confused and burnt out</p>
+
+            </div>
+        </div>
+    </div>
+</div><h3 id="State_Machine_(FSM/HFSM)_Cons"><a class="zola-anchor" href="#State_Machine_(FSM&#x2F;HFSM)_Cons" aria-label="Anchor link for: State_Machine_(FSM&#x2F;HFSM)_Cons">State Machine (FSM/HFSM) Cons</a></h3>
+<p>State Machines are much less resiliant to run-time changes because a run-time change would necessitate a re-orchestration of all of the transitions. And if that is something you are doing, you should <em>really</em> make sure you wouldn’t rather use an HFSM for the same solution.</p>
+<h3 id="Conclusion"><a class="zola-anchor" href="#Conclusion" aria-label="Anchor link for: Conclusion">Conclusion</a></h3>
+<p>I really wish I could just tell you, “X is better than Y and Z, so just use that for everything.” But that’s not how this works. <em>Nothing is ever easy</em>. The lesson I hope you are taking from this article is that you need to find the right <em><strong>tool</strong></em> for the <em><strong>job</strong></em>.</p>
+<!--
+Embeds a GIF from tenor with some styling to ensure it looks good while not dominating the page
+===
+data_postid: id of the post on tenor (take from embed code)
+data_aspect_ratio: the aspect ratio of the gif (take from embed code)
+url: embed url (take from embed code)
+width: a standard CSS width value to determine how big to display the gif at. (50% usually looks good)
+caption (optional): a text caption that will display below the image and serve as a link to the image. Supports markdown!
+===
+Example Data:
+data_postid="8246706" 
+data_aspect_ratio="1.43103" 
+url='https://tenor.com/view/anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706' 
+caption="Goku from Dragon Ball Z power up to 'super saiyin'" 
+fallback="https://media.tenor.com/XfrqyR_-jzIAAAAC/anime-goku.gif"
+
+-->
+<div class="flex justify-center">
+    <div class="not-prose card bg-base-200 max-w-md">
+        <noscript>
+            <figure>
+                <img src="https:&#x2F;&#x2F;media1.tenor.com&#x2F;m&#x2F;7W75SiCsuJUAAAAC&#x2F;tails-speech-bubble.gif" />
+            </figure>
+        </noscript>
+        <div class="card-body mx-2">
+            <div class="tenor-gif-embed" data-postid="26158321" data-share-method="host"
+                data-aspect-ratio="1" data-width="100%">
+            </div>
+            <script type="text/javascript" async src="https://tenor.com/embed.js">
+            </script>
+            <div class="prose px-2 md:px-4">
+                <noscript>
+                    <p class="bg-info text-neutral not-prose rounded-box py-2 text-center">
+                        <i class="fas fa-solid fa-info"></i>
+                        <b>GIF embed fallback in use.</b>
+                        <a class="link" href="https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;tails-speech-bubble-soup-gif-26158321">
+                            Open remote
+                        </a>
+                    </p>
+                </noscript>
+                <p>Tails from Sonic Boom trying to eat soup with a fork and laughing</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<blockquote>
+<p>In case you haven’t noticed, I have emojis now! Thanks to a <a rel="noopener nofollow noreferrer" target="_blank" href="https://github.com/jekyll/jemoji">jekyll plugin</a>.</p>
+<p>Note: this is actually a clever lie now that I’m no longer using Jekyll, or even the next SSG (Static Site Generator) that I used after. I’m onto Zola, which just has emoji shortcode support out of the box. Leaving the link though in case anyone in the future wants to add the feature to their jekyll based blog</p>
+</blockquote>
+<h2 id="So_you_want_to_learn_more?"><a class="zola-anchor" href="#So_you_want_to_learn_more?" aria-label="Anchor link for: So_you_want_to_learn_more?">So you want to learn more?</a></h2>
+<p>Here’s some resources to learn more about particular AIs in games and how to use them in interesting ways. Lotta youtube links because gamedev youtube is my <em>addiction</em> ❤️</p>
+<table><thead><tr><th style="text-align: center">Link</th><th style="text-align: left">Description</th></tr></thead><tbody>
+<tr><td style="text-align: center"><a rel="noopener nofollow noreferrer" target="_blank" href="https://www.youtube.com/user/tthompso">‘AI &amp; Games’ (Tommy Thompson) YouTube channel</a></td><td style="text-align: left">Tommy is an excellent resource for learning about cutting edge AI techniques used in gaming, primarily focused on AAA solutions. But my entry to the subject was his channel which went into deep dives on different topics.</td></tr>
+<tr><td style="text-align: center"><a rel="noopener nofollow noreferrer" target="_blank" href="https://youtu.be/qwOM3v8T33Q">Heartbeast’s Amazing FSM Tutorial (GDscript)</a></td><td style="text-align: left">A super straightforward approach to implementing a basic Finite State Machine in Godot 4 using GDScript. I used it as a guide for the State Machine implementation in <a rel="noopener nofollow noreferrer" target="_blank" href="https://github.com/QueenOfSquiggles/Squiggles-Core-4X">Squiggles Core 4X</a></td></tr>
+<tr><td style="text-align: center"><a rel="noopener nofollow noreferrer" target="_blank" href="https://github.com/bitbrain/beehave">BitBrain’s Behaviour Tree Addon “Beehave” (GDscript)(MIT)</a></td><td style="text-align: left">A super amazing behaviour tree implementation that uses a few extra node types to make the trees more robust. Comes with debugging tools so you can inspect what the tree is doing at any given time (even in real-time!!!)</td></tr>
+</tbody></table>
+<h2 id="Bonus!_You_like_memes?"><a class="zola-anchor" href="#Bonus!_You_like_memes?" aria-label="Anchor link for: Bonus!_You_like_memes?">Bonus! You like memes?</a></h2>
+<p>You might have noticed the GIFs I used in this post. I made a custom “include” type that I can use for my posts that specifically embeds any tenor GIF with a particular width and then centers it and adds a border. Optionally it can add a caption to the gif as well since I’m not sure how well tenor embedded gifs support captions. Plus that way if it fails to load, the meaning is still there. You can refer to my <a href="https://queenofsquiggles.github.io/guides/embedding-gifs/">Embedding GIFs</a> page for details.</p>
+<!-- 
+ Hey hey! this is hard-coded for my-kofi to ensure the classes get injected into tailwind. 
+ You'll need to make an overriding shortcode in your `templates/shortcodes` called `kofi.html
+ Just do your best to copy this styling if you want the same as I have. Else use Kofi's style
+-->
+
+<div class="flex not-prose container mx-auto justify-center">
+    <div class="bg-accent p-2 rounded-box shadow-2xl">
+        <a class="flex flex-col flex-wrap justify-center" href='https://ko-fi.com/G2G3AP0TR' target='_blank'
+            rel="noopener noreferrer">
+            <img class="rounded-full shadow-md" src='https://storage.ko-fi.com/cdn/kofi4.png?v=3'
+                alt='Buy Me a Coffee at ko-fi.com' />
+        </a>
+    </div>
+</div>
+  </article>
+</div>
+
+<div class="flex justify-center py-2">
+  
+  <ul class="menu menu-vertical lg:menu-horizontal bg-secondary text-neutral rounded-box">
+    <li class="menu-title text-neutral">Read more with tag:</li>
+    
+    <li class="bg-secondary hover:bg-primary rounded-box">
+      <a href="https://queenofsquiggles.github.io/tags/tech discussion/">
+        tech discussion
+      </a>
+    </li>
+    
+    <li class="bg-secondary hover:bg-primary rounded-box">
+      <a href="https://queenofsquiggles.github.io/tags/guide/">
+        guide
+      </a>
+    </li>
+    
+    <li class="bg-secondary hover:bg-primary rounded-box">
+      <a href="https://queenofsquiggles.github.io/tags/tool/">
+        tool
+      </a>
+    </li>
+    
+    <li class="bg-secondary hover:bg-primary rounded-box">
+      <a href="https://queenofsquiggles.github.io/tags/ai/">
+        ai
+      </a>
+    </li>
+    
+  </ul>
+  
+
+</div>
+
+
+  </main>
+
+  
+  
+
+  
+  <footer class="footer bg-neutral text-neutral-content p-10 justify-center">
+    <aside>
+      
+      <a href=" mailto:thequeenofsquiggles@gmail.com">thequeenofsquiggles@gmail.com</a>
+      
+    </aside>
+    
+    <nav>
+      <h6 class="footer-title">Socials</h6>
+      <div class="grid grid-flow-col gap-4">
+        
+        <a class="flex-auto" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles"  title="Mastodon" ><i
+            class="fab fa-mastodon"></i></a>
+        
+        <a class="flex-auto" href="rss.xml"  title="RSS Feed" ><i
+            class="fas fa-rss"></i></a>
+        
+      </div>
+    </nav>
+    
+  </footer>
+  
+</body>
+
+</html>

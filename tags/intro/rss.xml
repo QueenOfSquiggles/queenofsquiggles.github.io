@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Queen Of Squiggles&#x27;s Blog - intro</title>
+      <link>https://queenofsquiggles.github.io/</link>
+      <description>The personal blog for all of the Queen&#x27;s news, ramblings, portfolio stuffs, and more!</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://queenofsquiggles.github.io/tags/intro/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Thu, 09 Feb 2023 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Blog Introduction</title>
+          <pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate>
+          <author>Queen Of Squiggles</author>
+          <link>https://queenofsquiggles.github.io/meta/blog-intro/</link>
+          <guid>https://queenofsquiggles.github.io/meta/blog-intro/</guid>
+          <description xml:base="https://queenofsquiggles.github.io/meta/blog-intro/">&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Introduction&quot; aria-label=&quot;Anchor link for: Introduction&quot;&gt;Introduction&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Hello hello! This is the blog introduction. I’m porting over from a hand-crafted HTML website to a Github Pages Jekyll generated static website. This change allows me to have a much more visually appealing website with a fraction of the effort, which leaves me more time to focus on what I love, which is making games!&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Notable_Tech_Changes&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Notable_Tech_Changes&quot; aria-label=&quot;Anchor link for: Notable_Tech_Changes&quot;&gt;Notable Tech Changes&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;Blog&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Blog&quot; aria-label=&quot;Anchor link for: Blog&quot;&gt;Blog&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;Due to the change, I took the opportunity to switch over to a blog style website. This will allow me to manage individual posts on their own pages without needing to sift through a massive &lt;code&gt;index.html&lt;&#x2F;code&gt; file.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;RSS&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#RSS&quot; aria-label=&quot;Anchor link for: RSS&quot;&gt;RSS&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;Because of using Jekyll to generate a blog, this website &lt;em&gt;should&lt;&#x2F;em&gt; support RSS feeds, and possibly Atom feeds as well. Although as of writing I haven’t tested that. I’m trying to have the bare-bones of the website put together before pushing it to production.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;Portfolio&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Portfolio&quot; aria-label=&quot;Anchor link for: Portfolio&quot;&gt;Portfolio&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;I am using this website not just as a blog but also as a portfolio&#x2F;CV. Because of this the about page is going to be more fomal information about my projects. And I’ll try to share some more technical information about making the games and non-game projects. I’m not entirely sure if this website will help me make it into the game development industry, but at the very least, I’ll have a nice place to make cool posts about my games. Also people more interested in my process can read what I write here, since Mastodon’s microblogging system doesn’t work for the longer posts I want to make.&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

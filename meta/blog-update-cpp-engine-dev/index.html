@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="synthwave">
+
+<head>
+  
+  <title>
+
+Blog Update Feb. 2024 - C++ Development | Queen Of Squiggles&#x27;s Blog
+
+</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  
+  <link rel="me" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles">
+  
+
+  <!-- Tailwind compiled CSS -->
+  <link rel="stylesheet" href="https://queenofsquiggles.github.io/output.css">
+  <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+
+  
+  <script defer src="https://queenofsquiggles.github.io/elasticlunr.min.js"></script>
+  <script defer src="https://queenofsquiggles.github.io/search_index.en.js"></script>
+  <script src="https://queenofsquiggles.github.io/js/search.js"></script>
+  
+
+  
+  
+  <!-- Includes the default RSS feed if enabled in configuration -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://queenofsquiggles.github.io/rss.xml">
+  
+  
+  <!-- Includes the ddefault Atom feed if enabled in configuration -->
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="https://queenofsquiggles.github.io/atom.xml" />
+  
+
+  
+  
+</head>
+
+<body>
+  <div class="navbar bg-base-200 sticky top-0 z-50">
+    <div class="navbar-center lg:navbar-start">
+      <div class="hidden lg:flex">
+        <a class="btn btn-ghost text-xl" href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Queen Of Squiggles&#x27;s Blog</a>
+      </div>
+
+      <!-- small screen navbar (drop down) -->
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          Queen Of Squiggles&#x27;s Blog
+
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-300 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-4">
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Home</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+          </li>
+          
+          
+
+          <li class="dropdown">
+            <details>
+              <summary>Theme</summary>
+
+              <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="light" value="light" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="dark" value="dark" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="synthwave" value="synthwave" />
+                </li>
+                
+
+              </ul>
+            </details>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- large screen navbar -->
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+        </li>
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+        </li>
+        
+      </ul>
+      
+
+      <div class="flex-1 gap-2">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            Theme
+          </div>
+          <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="light"
+                value="light" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="dark"
+                value="dark" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="synthwave"
+                value="synthwave" />
+            </li>
+            
+
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <div class="navbar-end hidden lg:flex">
+      <form class="form-control lg:focus-within:grow" onsubmit="return goSearch(event)">
+        <input type="text" class="input input-bordered" placeholder="Search" />
+      </form>
+    </div>
+    
+  </div>
+
+  
+  <div class="navbar flex justify-center lg:hidden pb-4">
+    <form class="form-control" onsubmit="return goSearch(event)">
+      <input type="text" class="input input-bordered" placeholder="Search" />
+    </form>
+  </div>
+  
+
+  <main class="flex flex-col container mx-auto justify-center my-2">
+    
+
+
+
+<div class="flex flex-row flex-wrap lg:flex-nowrap w-full justify-center gap-1 py-2">
+  <div class=" hero container mx-auto bg-base-200 rounded-box">
+    <div class="hero-content flex-col lg:flex-col">
+      
+      
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="watery_wails_pbr_demo.png" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="watery_wails_pbr_demo.png" alt="" title="" />
+            </a>
+        </figure>
+        
+    </div>
+</div>
+
+
+      
+      <div>
+        <h1 class="text-5xl font-bold"> Blog Update Feb. 2024 - C++ Development </h1>
+        <div class="py-6">
+          
+          <div class="flex flex-row flex-wrap gap-4  py-2">
+            
+            <a href="https://queenofsquiggles.github.io/tags/blog meta/" class="btn btn-secondary rounded-box">
+              blog meta
+            </a>
+            
+            <a href="https://queenofsquiggles.github.io/tags/cpp/" class="btn btn-secondary rounded-box">
+              cpp
+            </a>
+            
+          </div>
+          
+          
+
+          
+          <div class="join join-vertical py-2">
+
+            <div class="btn btn-outline rounded-box no-animation join-item leading-relaxed">Written - 
+Tuesday the  6 of February, 2024
+</div>
+
+            
+
+
+
+            
+
+          </div>
+          <div class="py-2">
+            <i> Read time is about 11 minutes </i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-md">
+    
+
+<!-- Table of contents supporting h1, h2, h3, h4, h5, h6 (or optionally reduced depth based on config) -->
+
+
+<ul class="not-prose flex menu bg-base-200 rounded-box divide-y divide-dotted md:divide-none">
+    <li class="menu-title text-xl">
+        <h1>
+            Table of Contents
+        </h1>
+    </li>
+    
+    <li>
+        <a href="https://queenofsquiggles.github.io/meta/blog-update-cpp-engine-dev/#General_Update">General Update</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/meta/blog-update-cpp-engine-dev/#Blog_Technical">Blog Technical</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/meta/blog-update-cpp-engine-dev/#Resume_updates">Resume updates</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/meta/blog-update-cpp-engine-dev/#C++???">C++???</a>
+    </li>
+    
+    <li>
+        <ul class="divide-y divide-dotted md:divide-none">
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/meta/blog-update-cpp-engine-dev/#A_new_standard">
+                    A new standard
+                </a>
+            </li>
+            
+            <li>
+                <ul class="divide-y divide-dotted md:divide-none">
+                    
+                    <li>
+                        <a href="https://queenofsquiggles.github.io/meta/blog-update-cpp-engine-dev/#The_problem_with_Make">
+                            The problem with Make
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://queenofsquiggles.github.io/meta/blog-update-cpp-engine-dev/#The_problem_with_CMake">
+                            The problem with CMake
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://queenofsquiggles.github.io/meta/blog-update-cpp-engine-dev/#My_best_effort">
+                            My best effort
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/meta/blog-update-cpp-engine-dev/#A_new_game?">
+                    A new game?
+                </a>
+            </li>
+            
+            <li>
+                <ul class="divide-y divide-dotted md:divide-none">
+                    
+                    <li>
+                        <a href="https://queenofsquiggles.github.io/meta/blog-update-cpp-engine-dev/#Engine_Development">
+                            Engine Development
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://queenofsquiggles.github.io/meta/blog-update-cpp-engine-dev/#Game_Development">
+                            Game Development
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <ul class="divide-y divide-dotted md:divide-none">
+                            
+                            <li>
+                                <a href="https://queenofsquiggles.github.io/meta/blog-update-cpp-engine-dev/#Release?">
+                                    Release?
+                                </a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+        </ul>
+        
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/meta/blog-update-cpp-engine-dev/#Why_this_blog_post?">Why this blog post?</a>
+    </li>
+    
+        
+</ul>
+</li>
+</ul>
+
+
+
+  </div>
+
+</div>
+
+<div class="static">
+  <div class="fixed bottom-4 md:bottom-8 start-4 md:start-8 ">
+    <div class="tooltip" data-tip="Return to top">
+      <a class="btn bg-neutral aspect-square rounded-full shadow-md" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+          <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path fill="#FFFFFF"
+            d="M32 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c53 0 96-43 96-96l0-306.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 416c0 17.7-14.3 32-32 32l-96 0z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container mx-auto bg-base-200 rounded-box py-6 px-4">
+  <h1 class="prose prose-accent text-5xl font-bold">
+    Hey guess what! This blog has moved from being hosted on Github to being hosted on Codeberg. 
+    <a href="https://queenofsquiggles.codeberg.page&#x2F;meta&#x2F;blog-update-cpp-engine-dev&#x2F;" target="_blank" rel="noopener noreferrer">
+      [[Click here]]
+    </a> to read this page on the new blog
+  </h1>
+</div>
+
+<div class="container mx-auto py-6 px-4"></div>
+
+<div class="flex flex-col justify-center">
+  <article
+    class="prose prose-neutral lg:prose-xl px-2 max-w-none prose-blockquote:rounded-r-lg prose-blockquote:shadow-2xl prose-blockquote:bg-base-200 prose-blockquote:p-2">
+    <blockquote>
+<p><em><strong>Caution</strong></em></p>
+<p>Hot Takes Inside!</p>
+</blockquote>
+<h2 id="General_Update"><a class="zola-anchor" href="#General_Update" aria-label="Anchor link for: General_Update">General Update</a></h2>
+<p>Hey y’all! I haven’t been making much “Content™️” but I’ve been doing a lot of stuff otherwise! I’ve been talking with more professional game developers trying to figure out how I can break into the game development industry and actuall start a career. It’ll be one year since my graduation soon and I’d like to find some kind of employment in my field 😅</p>
+<h2 id="Blog_Technical"><a class="zola-anchor" href="#Blog_Technical" aria-label="Anchor link for: Blog_Technical">Blog Technical</a></h2>
+<p>As a technical detail, I switched the system used to create the blog. I was using Jekyll to create a static website and I switched to Hugo for doing the same. There’s a lot of benefits to switched to hugo. Writing is easier because it automatically refreshes my browser when detecting a change, manages images a lot nicer, and generally supports a much more robust website. I’m using a custom framework “HB (Hugo Bootstrap) Framework” (see the footer for links &amp; details).</p>
+<h2 id="Resume_updates"><a class="zola-anchor" href="#Resume_updates" aria-label="Anchor link for: Resume_updates">Resume updates</a></h2>
+<p>I imagine unless you’re a tech recruiter (which if you are, why are you reading this? Hire me already!) you’re probably not watching my resume. But now after taking with several more professional developers I was able to garner some critiques on my resume. I’ve even had a recruiter say they remembered me based off of the pictures in my resume. (Go put pictures in your resume right now!)</p>
+<p>I added some posts for some recent games that I had forgotten to do write-ups for. But they are currently really bare-bones at best. Mostly just showing off screenshots more than anything. I’m nervous I won’t be able to write a proper write-up for these games since its been so long since I made them, and I’d have to re-learn my own code-base to remember what I was doing and why.</p>
+<h2 id="C++???"><a class="zola-anchor" href="#C++???" aria-label="Anchor link for: C++???">C++???</a></h2>
+<p>Yes! It has been a long while since I’ve done any development in C++. Mainly because I have had no reason to. I started programming with Java and made games with a pixel-raster system written in pure Java. And eventually worked up to LWJGL (which gave access to OpenGL draw calls). But for the most part, I have been doing scripting with game engines since I wanted to make games, and was less concerned with having fine-grain control over the intricacies of the runtime.</p>
+<p>Some people have told me that any moment I spend brushing up on my C++ is not a moment wasted, with respect towards employment in the game industry. So I wanted to make sure I am not just capable but highly proficient in C++ game development.</p>
+<p>I had two main project goals. One of which is complete with patches added from time to time. The other is a bit larger and I am still working through it as it is a full game written in C++.</p>
+<h3 id="A_new_standard"><a class="zola-anchor" href="#A_new_standard" aria-label="Anchor link for: A_new_standard">A new standard</a></h3>
+
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="xkcd_standards.png" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="xkcd_standards.png" alt="XKCD&#x27;s comic &#x27;Standards&#x27;" title="XKCD&#x27;s comic &#x27;Standards&#x27;" />
+            </a>
+        </figure>
+        
+        <div class="card-body">
+            <p class="prose">
+                XKCD’s comic ‘Standards’
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+<p><a rel="noopener nofollow noreferrer" target="_blank" href="https://xkcd.com/927">XKCD reference</a></p>
+<p>I am rather picky about build systems. And one of my biggest complaints when it comes to c++ build systems is how non-opinionated (wishy-washy) they are! What I really love about a build system like rust’s <code>cargo build</code> or C#’s <code>dotnet build</code> is that they expect a particular project layout, with a specific configuration file that details exactly what the build system needs to know to prep the code into an executable state.</p>
+<p>When I searched for C++ build systems. The main ones that got recommended were “Make” and “CMake”.</p>
+<h4 id="The_problem_with_Make"><a class="zola-anchor" href="#The_problem_with_Make" aria-label="Anchor link for: The_problem_with_Make">The problem with Make</a></h4>
+<p>Make is a super generic build system for linux. You define a serious of tasks and each task and list zero or more tasks that it depends on. And by chaining these with arcane combinations of symbols, you can craft a moderately usable build system. And in that sense I’d consider it only slightly more efficient than just writing a shell script for all the <code>g++</code> calls I want.</p>
+<p>The trouble as well is there is little to be said about a standard. The only standard is the name of the script file (I dare not call it a configuration file!). From there you can actually use Make to do just about anything. You could have a make-file that downloads images from a website, formats them, and exports them to a particular directory. Which is impressive. But again, that’s scripting, not necessarily a build system.</p>
+<h4 id="The_problem_with_CMake"><a class="zola-anchor" href="#The_problem_with_CMake" aria-label="Anchor link for: The_problem_with_CMake">The problem with CMake</a></h4>
+<p>CMake, or “the build system for creating make files”. It is arguably a very robust system which enables cross platform development and coordination of large code bases with less effort than most major build systems. Additionally, it is truely not a scripting system but an actual build system. Using the incredibly odd language system you can define variables and perform processes and… I promise it’s technically not a scripting system again.</p>
+<p>The main detail in CMake that makes it more promising is that it doesn’t require you to write out your <code>g++</code> calls (since that would really break the cross platform capabilities). So all you have to do is define a project target and attach source files to that target. Simple right? Well every time you make, delete, or move a file, you need to change one <strong>or more</strong> <code>CMakeLists.txt</code> files.</p>
+<h4 id="My_best_effort"><a class="zola-anchor" href="#My_best_effort" aria-label="Anchor link for: My_best_effort">My best effort</a></h4>
+<p>I wanted a stupid simple build system that expects a specific project layout but uses that to create a very dynamic build approach. I never really intended for it to be used by anyone but myself so I named it “SSBS”, which is an acronym for “Squiggles Stupid Build System” but also sounds like a ship name, “S.S. Bullshit”. Please clap I am very clever 😢.</p>
+<p>The build system itself is rather small and written in C++ for compiling C++ on linux specifically. I considered developing for cross platform. But the appeal of a simple Makefile to bootstrap the project was appealing.</p>
+<p>Basically what it does is searches recursively in a <code>src/</code> directory for any <code>.c</code>, <code>.h</code>, <code>.cpp</code>, and <code>.hpp</code> files and adds them to a source list. It then generates <code>g++</code> commands for each source file and emits the objects into a similar tree structure as source in the <code>build/</code> directory. Additionally, the output of the <code>g++</code> call is emitted to a log file. Then once the calls are complete, it reads the log files to parse out errors, warnings, and notes. (For now, I couldn’t manage to capture the actual output of the <code>g++</code> call and this is the best solution since linux has a piping system for commands).</p>
+<p>Then it prints out all of the errors, warnings, and notes (with a little bit of style using a single-header library). It also ends with a breakdown of whether it succeeded or failed and how many errors, warnings, and notes were found.</p>
+<p>I could probably write a lot more about SSBS. But unless literally anyone besides me finds interest in it, I might not? But I realize I might have to because it’s pretty telling for my skills and drive to create solutions for problems and easing friction of development.</p>
+<h3 id="A_new_game?"><a class="zola-anchor" href="#A_new_game?" aria-label="Anchor link for: A_new_game?">A new game?</a></h3>
+<p>I’m still playing around with name ideas. So far I like, “Watery Wails” since it is an interesting title, gives some but not all details of the content, and is also relatively unique. (I had considered “Sunken Souls” briefly but I know people working on a game called “Sunken …” that I don’t wanna be terribly similar in name to. To avoid competition.)</p>
+<h4 id="Engine_Development"><a class="zola-anchor" href="#Engine_Development" aria-label="Anchor link for: Engine_Development">Engine Development</a></h4>
+<p>The area of the games industry I am most excited about is engine &amp; tool development. And so for that purpose, this game is mostly an excuse to make a super basic game engine. Though unlike popular game engines such as “Godot” and less important engines like “Unity” have robust scripting capabilities, a straightforward GUI, and decent scene structure systems, the engine I am making is much closer to a library or framework. Technically it is a framework but I really want to be able to say I  made a custom engine so I’m calling it an engine.</p>
+<p>The goal of this engine is to be highly specialized. The reason for that is the more specialized a system is, the easier it is to get it feature complete. I really like making 3D PBR horror games with as much style as I can muster.</p>
+
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="watery_wails_pbr_demo.png" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="watery_wails_pbr_demo.png" alt="A demo of the PBR capabilites of the engine as of writing" title="A demo of the PBR capabilites of the engine as of writing" />
+            </a>
+        </figure>
+        
+        <div class="card-body">
+            <p class="prose">
+                A demo of the PBR capabilites of the engine as of writing
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+<blockquote>
+<p>Important note: I got this model online, I didn’t model it myself.</p>
+</blockquote>
+<p>Here you can see a few interesting details:</p>
+<ul>
+<li>The object with multiple different PBR materials attached</li>
+<li>Albedo, Normal, ORM mapping enabled</li>
+<li>ImGUI used to display basic debug information (for now!)</li>
+</ul>
+<p>Some details you can’t really see here:</p>
+<ul>
+<li>Resource management system (prevents loading the same file twice)</li>
+<li>Smart-pointer backed systems</li>
+<li>Render batching through single render passes for objects with a common shader program.
+<ul>
+<li>I’m toying with the idea of further sorting by material, but that would be a bit extra work and I’m not going to optimize much until I actually encounter performance issues.</li>
+</ul>
+</li>
+<li>Robust input action system through a TOML file specification
+<ul>
+<li>Includes gamepad support</li>
+</ul>
+</li>
+<li>Game Objects</li>
+<li>Transform objects (position, rotation, and scale packaged together and easily loaded into model <em>transform</em> matrix)</li>
+<li>A custom GLSL <code>#include</code> system (which allows for shared information across many shader files).</li>
+</ul>
+<p>My goals for the engine, “Next Steps”:</p>
+<ul>
+<li>Support static environment irradiance maps in the PBR rendering (to make reflections and such more realistic)</li>
+<li>Access mouse input from the input system (very little work, it’s just a bit lower priority than others)</li>
+<li>OpenAL integration for sound effects and streamed music. (My current task as of writing)</li>
+<li>Some kind of GUI system
+<ul>
+<li>I’m tempted to opt for ImGUI as the GUI system for the game as a whole, but I think making my own GUI system would be significantly better because it would give me skills I could translate into a UI/UX position if that’s what gets my “foot in the door” in the game industry.</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h4 id="Game_Development"><a class="zola-anchor" href="#Game_Development" aria-label="Anchor link for: Game_Development">Game Development</a></h4>
+<p>The actual gameplay of this game is almost entirely theoretical at this moment. Since I really need a ton of engine systems in place before I’m comfortable actually building gameplay systems.</p>
+<p>The overall goal is to be similar to <em>Five Nights At Freddy’s</em> (Specifically the first game) and <em>I’m On Observation Duty</em> (maybe I should give my game a longer title to fit in?? More syllables == better game right?)</p>
+<p>The game will take place at a pool since I’m drawing on my experience when I worked as a lifeguard. I had my fair share of terrifying experiences there, and I want to try to translate the fear and axiety of literally having people’s lives in your hands into the game. And a hefty amount of frustration for the parents that would literally abandon their kids to the pool because it was cheaper than daycare. (Basically take all of the corporatism parody of later FNAF games and translate that into parody of negligent parents and I think I’m there?)</p>
+<p>One of my main struggles is finding ways to share what I’m making. Until I am ready to work on the game itself, any screenshots would just be “Hey look at this raw code that made such and such system more efficient!” (Imagine trying to write alt text for that!)</p>
+<h5 id="Release?"><a class="zola-anchor" href="#Release?" aria-label="Anchor link for: Release?">Release?</a></h5>
+<p>I have absolutely no clue when a release date would be. But I can say that it will be available for linux and <em>possibly</em> windows. I need to do a bit more research into how cross compilation for MacOS is on linux, but if I have to buy a developer’s license the cost is too high for whatever meager profit I’ll be making on this game. If I somehow break $50 I’m literally going to have a party or something.</p>
+<h2 id="Why_this_blog_post?"><a class="zola-anchor" href="#Why_this_blog_post?" aria-label="Anchor link for: Why_this_blog_post?">Why this blog post?</a></h2>
+<p>Well I wanted to give a lot of general updates. But also I wanted to talk about my C++ development a little bit since it’s probably going to take a long while before it’s actually done.</p>
+
+  </article>
+</div>
+
+<div class="flex justify-center py-2">
+  
+  <ul class="menu menu-vertical lg:menu-horizontal bg-secondary text-neutral rounded-box">
+    <li class="menu-title text-neutral">Read more with tag:</li>
+    
+    <li class="bg-secondary hover:bg-primary rounded-box">
+      <a href="https://queenofsquiggles.github.io/tags/blog meta/">
+        blog meta
+      </a>
+    </li>
+    
+    <li class="bg-secondary hover:bg-primary rounded-box">
+      <a href="https://queenofsquiggles.github.io/tags/cpp/">
+        cpp
+      </a>
+    </li>
+    
+  </ul>
+  
+
+</div>
+
+
+  </main>
+
+  
+  
+
+  
+  <footer class="footer bg-neutral text-neutral-content p-10 justify-center">
+    <aside>
+      
+      <a href=" mailto:thequeenofsquiggles@gmail.com">thequeenofsquiggles@gmail.com</a>
+      
+    </aside>
+    
+    <nav>
+      <h6 class="footer-title">Socials</h6>
+      <div class="grid grid-flow-col gap-4">
+        
+        <a class="flex-auto" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles"  title="Mastodon" ><i
+            class="fab fa-mastodon"></i></a>
+        
+        <a class="flex-auto" href="rss.xml"  title="RSS Feed" ><i
+            class="fas fa-rss"></i></a>
+        
+      </div>
+    </nav>
+    
+  </footer>
+  
+</body>
+
+</html>

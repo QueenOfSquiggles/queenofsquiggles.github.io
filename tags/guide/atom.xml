@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Queen Of Squiggles&#x27;s Blog - guide</title>
+    <subtitle>The personal blog for all of the Queen&#x27;s news, ramblings, portfolio stuffs, and more!</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://queenofsquiggles.github.io/tags/guide/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://queenofsquiggles.github.io/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-10-18T00:00:00+00:00</updated>
+    <id>https://queenofsquiggles.github.io/tags/guide/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Embedding GIFs</title>
+        <published>2024-08-24T00:00:00+00:00</published>
+        <updated>2024-08-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Queen Of Squiggles
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://queenofsquiggles.github.io/guides/embedding-gifs/"/>
+        <id>https://queenofsquiggles.github.io/guides/embedding-gifs/</id>
+        
+        <content type="html" xml:base="https://queenofsquiggles.github.io/guides/embedding-gifs/">&lt;h2 id=&quot;Hey_look!_A_new_post&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Hey_look!_A_new_post&quot; aria-label=&quot;Anchor link for: Hey_look!_A_new_post&quot;&gt;Hey look! A new post&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Yeah I’m moving the discussion about how I embed tenor GIFs out of the &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;guides&#x2F;fsm-vs-bt&#x2F;&quot;&gt;FSMs versus Behaviour Trees&lt;&#x2F;a&gt; page to make that page more readable and make a coherent page for different approaches to embedding gifs easily. As of writing, I’m adding a third recipe here so hopefully this is appreciated.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;GIF_Embedding&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#GIF_Embedding&quot; aria-label=&quot;Anchor link for: GIF_Embedding&quot;&gt;GIF Embedding&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;In_Jekyll&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#In_Jekyll&quot; aria-label=&quot;Anchor link for: In_Jekyll&quot;&gt;In Jekyll&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;code&gt;_includes&#x2F;tenor.html&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;style&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;margin: auto; width: {{ include.width }}; border: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;3px &lt;&#x2F;span&gt;&lt;span&gt;solid black; padding: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;10px&lt;&#x2F;span&gt;&lt;span&gt;;&amp;quot;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div 
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;class&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;tenor-gif-embed&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; 
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;data_postid&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{{ include.data_postid }}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; 
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;data-share-method&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;host&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; 
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;data_aspect_ratio&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{{ include.data_aspect_ratio }}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; 
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;data-width&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;100%&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt; &amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;a &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;href&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{{ include.url }}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&#x2F;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;script &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;text&#x2F;javascript&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;async src&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;tenor.com&#x2F;embed.js&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;script&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    {% if include.caption %}}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt; &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;i&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt; {{ include.caption }} &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;i&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt; {% endif %}
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Then in any article (or page) I can just use:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;markdown&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-markdown &quot;&gt;&lt;code class=&quot;language-markdown&quot; data-lang=&quot;markdown&quot;&gt;&lt;span&gt;{% include tenor.html data_postid=&amp;quot;THE-POST-ID&amp;quot; data_aspect_ratio=&amp;quot;ASPECT&amp;quot; width=&amp;quot;DESIRED-WIDTH&amp;quot; url=&amp;#39;EMBED-URL&amp;#39; caption=&amp;quot;OPTIONAL-CAPTION&amp;quot; %}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;the three values are stripped from the embed code for the gif: &lt;code&gt;data_postid&lt;&#x2F;code&gt;, &lt;code&gt;data_aspect_ratio&lt;&#x2F;code&gt;, and &lt;code&gt;url&lt;&#x2F;code&gt;. Those ensure the image is actually loaded. Then &lt;code&gt;width&lt;&#x2F;code&gt; controls how wide on the screen they are. I prefer &lt;code&gt;50%&lt;&#x2F;code&gt; for my gifs in this article. The the &lt;code&gt;caption&lt;&#x2F;code&gt; is an optional tag that will add some text below the gif.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;In_Hugo&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#In_Hugo&quot; aria-label=&quot;Anchor link for: In_Hugo&quot;&gt;In Hugo&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;For Hugo you need to use shortcodes. Which are not terribly different from Jekyll’s includes.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;&#x2F;layouts&#x2F;shortcodes&#x2F;tenor.html&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;style&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;margin: auto; width: {{ .Get &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;width&lt;&#x2F;span&gt;&lt;span style=&quot;background-color:#bf616a;color:#2b303b;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;}}; border: 3px solid black; padding: 10px;&lt;&#x2F;span&gt;&lt;span style=&quot;background-color:#bf616a;color:#2b303b;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt; &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;class&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;tenor-gif-embed&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;data_postid&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{{ .Get &lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;data_postid&lt;&#x2F;span&gt;&lt;span style=&quot;background-color:#bf616a;color:#2b303b;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;}}&lt;&#x2F;span&gt;&lt;span style=&quot;background-color:#bf616a;color:#2b303b;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;data-share-method&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;host&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;data_aspect_ratio&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{{ .Get &lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;data_aspect_ratio&lt;&#x2F;span&gt;&lt;span style=&quot;background-color:#bf616a;color:#2b303b;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;}}&lt;&#x2F;span&gt;&lt;span style=&quot;background-color:#bf616a;color:#2b303b;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;data-width&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;100%&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt; &amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;a &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;href&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{{ .Get &lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span style=&quot;background-color:#bf616a;color:#2b303b;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;}}&lt;&#x2F;span&gt;&lt;span style=&quot;background-color:#bf616a;color:#2b303b;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;a&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt; &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt; &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;script &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;text&#x2F;javascript&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;async src&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;tenor.com&#x2F;embed.js&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&#x2F;&amp;gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;script&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt; &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;noscript&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;{{ if .Get &amp;quot;fallback&amp;quot; }}
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;img &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;src&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{{ .Get &lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;fallback&lt;&#x2F;span&gt;&lt;span style=&quot;background-color:#bf616a;color:#2b303b;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;}}&lt;&#x2F;span&gt;&lt;span style=&quot;background-color:#bf616a;color:#2b303b;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;{{ else }}
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;i&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;No fallback provided!&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;i&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;br&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;{{ end }}
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;GIF embed failed. &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;a &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;href&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{{ .Get &lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span style=&quot;background-color:#bf616a;color:#2b303b;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;}}&lt;&#x2F;span&gt;&lt;span style=&quot;background-color:#bf616a;color:#2b303b;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;Click to view source.&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;a&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt; &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;noscript&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;{{ if .Get &amp;quot;caption&amp;quot; }}
+&lt;&#x2F;span&gt;&lt;span&gt; &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;br&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt; &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;Caption: &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt; &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;i&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt; {{ .Get &amp;quot;caption&amp;quot; }} &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;i&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;{{ end }}
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;br&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;And loading the shortcode can be done in different ways (line breaks are ignored with Hugo’s shortcodes). Note that a space between &lt;code&gt;{{&lt;&#x2F;code&gt; and &lt;code&gt;&amp;lt;&lt;&#x2F;code&gt; is only present because it would otherwise be rendered as normal in this page.&lt;&#x2F;p&gt;
+&lt;p&gt;Easier to read:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;markdown&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-markdown &quot;&gt;&lt;code class=&quot;language-markdown&quot; data-lang=&quot;markdown&quot;&gt;&lt;span&gt;{{ &amp;lt; tenor 
+&lt;&#x2F;span&gt;&lt;span&gt; data_postid=&amp;quot;8246706&amp;quot; 
+&lt;&#x2F;span&gt;&lt;span&gt; data_aspect_ratio=&amp;quot;1.43103&amp;quot; 
+&lt;&#x2F;span&gt;&lt;span&gt; width=&amp;quot;50%&amp;quot; 
+&lt;&#x2F;span&gt;&lt;span&gt; url=&amp;#39;https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706&amp;#39; 
+&lt;&#x2F;span&gt;&lt;span&gt; caption=&amp;quot;Goku from Dragon Ball Z power up to &amp;#39;super saiyin&amp;#39;&amp;quot; 
+&lt;&#x2F;span&gt;&lt;span&gt; fallback=&amp;quot;https:&#x2F;&#x2F;media.tenor.com&#x2F;XfrqyR_-jzIAAAAC&#x2F;anime-goku.gif&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;&amp;gt;}}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Shorter:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;markdown&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-markdown &quot;&gt;&lt;code class=&quot;language-markdown&quot; data-lang=&quot;markdown&quot;&gt;&lt;span&gt;{{ &amp;lt; tenor data_postid=&amp;quot;8246706&amp;quot; data_aspect_ratio=&amp;quot;1.43103&amp;quot; width=&amp;quot;50%&amp;quot; url=&amp;#39;https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706&amp;#39; caption=&amp;quot;Goku from Dragon Ball Z power up to &amp;#39;super saiyin&amp;#39;&amp;quot; fallback=&amp;quot;https:&#x2F;&#x2F;media.tenor.com&#x2F;XfrqyR_-jzIAAAAC&#x2F;anime-goku.gif&amp;quot; &amp;gt;}}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;In_Zola&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#In_Zola&quot; aria-label=&quot;Anchor link for: In_Zola&quot;&gt;In Zola&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Yet another update to this. Zola has a templating system much more similar to Jekyll than hugo. One step forwards; two steps back 😅&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;&#x2F;templates&#x2F;shortcodes&#x2F;tenor.html&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;style&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;display: flex; flex-direction: column; justify-items: center; align-items: center; &amp;quot;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;class&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{% if background %} bg-{{background}} {% else %} bg-secondary {% endif %} rounded&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;style&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;width: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;50%&lt;&#x2F;span&gt;&lt;span&gt;; padding: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;.5rem&lt;&#x2F;span&gt;&lt;span&gt;;&amp;quot;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;class&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;tenor-gif-embed&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;data-postid&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{{ data_postid }}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;data-share-method&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;host&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;data-aspect-ratio&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{{ data_aspect_ratio }}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;data-width&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;100%&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;script &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;text&#x2F;javascript&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;async src&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;tenor.com&#x2F;embed.js&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;script&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;noscript&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;            &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;img &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;src&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{{ fallback }}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &#x2F;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;            &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;                &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;a &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;href&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{{ url }}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;                    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;GIF embed fallback in use. &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;                &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;a&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;            &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;noscript&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;class&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{% if background %} btn-{{background}} {% else %} btn-secondary {% endif %} rounded-bottom&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;style&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;padding: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;.5rem&lt;&#x2F;span&gt;&lt;span&gt;; max-width: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;45%&lt;&#x2F;span&gt;&lt;span&gt;;&amp;quot;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;Caption: &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;i&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;{{ caption }}&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;i&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;br &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Indie Game Design Using Obsidian</title>
+        <published>2024-01-15T00:00:00+00:00</published>
+        <updated>2024-10-18T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Queen Of Squiggles
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://queenofsquiggles.github.io/guides/game-design-using-obsidian/"/>
+        <id>https://queenofsquiggles.github.io/guides/game-design-using-obsidian/</id>
+        
+        <content type="html" xml:base="https://queenofsquiggles.github.io/guides/game-design-using-obsidian/">&lt;blockquote&gt;
+&lt;p&gt;This guide is primarily aimed at game developers who may not have explored options for project organization and management. If that’s not you, enjoy learning about my personal workflow&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;Obsidian,_a_note-taking_app_with_(mostly)_good_features&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Obsidian,_a_note-taking_app_with_(mostly)_good_features&quot; aria-label=&quot;Anchor link for: Obsidian,_a_note-taking_app_with_(mostly)_good_features&quot;&gt;Obsidian, a note-taking app with (mostly) good features&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;As much as I do love FOSS (Free and Open Source Software), &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;obsidian.md&#x2F;&quot;&gt;Obsidian&lt;&#x2F;a&gt; is my favourite app to use for notes and organizing my ideas. I’ve used it for everything from project management, sequence planning, personal to-do lists, notes for a story I’m writing, and even school notes!&lt;&#x2F;p&gt;
+&lt;p&gt;One of the most valuable uses I’ve found is organizing my thoughts for game design!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Scaffolding_Ideas&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Scaffolding_Ideas&quot; aria-label=&quot;Anchor link for: Scaffolding_Ideas&quot;&gt;Scaffolding Ideas&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Obsidian uses a superset of Markdown, which is a pretty nifty language for formatting text. (I’m even using it for formatting this blog!)&lt;&#x2F;p&gt;
+&lt;p&gt;Because of this, the text is pretty quick to format without needing to leave your keyboard.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;contact-range-notes.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;contact-range-notes.png&quot; alt=&quot;An example of a page in Obsidian&quot; title=&quot;An example of a page in Obsidian&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                An example of a page in Obsidian
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;h3 id=&quot;Callouts_in_Obsidian&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Callouts_in_Obsidian&quot; aria-label=&quot;Anchor link for: Callouts_in_Obsidian&quot;&gt;Callouts in Obsidian&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;You can see in the picture above that I’m using a “callout” to mark some useful resources for developing &lt;em&gt;Contact Range&lt;&#x2F;em&gt;. I didn’t end up using all of them to be fair. But the callouts can be super helpful for specific ideas and there’s a few different kinds of them with associated colours and names.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the syntax I used above. Note that it acts as an extension of the ‘quote’ formatting that uses &lt;code&gt;&amp;gt;&lt;&#x2F;code&gt; prefix to each line. The heading is specified by square brackets (&lt;code&gt;[]&lt;&#x2F;code&gt;), and an exclamation point (&lt;code&gt;!&lt;&#x2F;code&gt;) prefixed key-word.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;Markdown&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-Markdown &quot;&gt;&lt;code class=&quot;language-Markdown&quot; data-lang=&quot;Markdown&quot;&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;&amp;gt;[!hint]+ Useful Resources
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;&amp;gt; ... text ...
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Also if you note that the square brackets are ended by &lt;code&gt;+&lt;&#x2F;code&gt;, that’s a collapse notation. It tells Obsidian that we want to be able to collapse the callout down to the header, but by default we want it to display as full. For defaulting to collapsed, you would rather use &lt;code&gt;-&lt;&#x2F;code&gt;. Following that is the title of the callout. If you omit it, the keyword default title will be used as a heading. For example &lt;code&gt;!help&lt;&#x2F;code&gt; would become “Help”&lt;&#x2F;p&gt;
+&lt;p&gt;My most used key-words are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;hint&lt;&#x2F;li&gt;
+&lt;li&gt;help&lt;&#x2F;li&gt;
+&lt;li&gt;info&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This is usually because my notes focus on expressing information. And so the callouts are extra information that would be used.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Headings&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Headings&quot; aria-label=&quot;Anchor link for: Headings&quot;&gt;Headings&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Headings in any text document are incredibly useful. In obsidian, they are automatically built into a table of contents on the right pane.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;contact-range-notes-toc.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;contact-range-notes-toc.png&quot; alt=&quot;The table of contents for the Contact Range document&quot; title=&quot;The table of contents for the Contact Range document&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                The table of contents for the Contact Range document
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;p&gt;This pane is collapseable for when you really want to focus, but is super helpful for larger documents.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Super-charged_Links&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Super-charged_Links&quot; aria-label=&quot;Anchor link for: Super-charged_Links&quot;&gt;Super-charged Links&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Remember what I said about Obsidian using a &lt;em&gt;superset&lt;&#x2F;em&gt; of Markdown. Here’s where that matters. So links work just like regular markdown, even for images. To review, the format is:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;Markdown&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-Markdown &quot;&gt;&lt;code class=&quot;language-Markdown&quot; data-lang=&quot;Markdown&quot;&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;[Link Text](https:&#x2F;&#x2F;www.your-link.net)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;![Image Alt-Text](&#x2F;path&#x2F;to&#x2F;your&#x2F;image.jpg)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Obsidian introduces a new type of link called a “Note Link”. It allows you to reference other note pages you have written which helps to connect different elements that each have their own concise pages. I use this more for writing stories, so each character, faction, location, etc… will get their own page with links connecting everything where relevant.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;Markdown&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-Markdown &quot;&gt;&lt;code class=&quot;language-Markdown&quot; data-lang=&quot;Markdown&quot;&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[[Full Name Of The Note You Want To Link]]
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Important to note:&lt;&#x2F;strong&gt; the page name will provide auto-complete suggestions, but it is most helpful when your pages uses unique names across the “vault” (obsidian’s currently scoped directory).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Let’s_Make_a_Game&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Let’s_Make_a_Game&quot; aria-label=&quot;Anchor link for: Let’s_Make_a_Game&quot;&gt;Let’s Make a Game&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Now that you’re equipped with a basic understanding of how to write effective notes in Obsidian, let’s look at how that relates to game development and design.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Putting_Down_Ideas&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Putting_Down_Ideas&quot; aria-label=&quot;Anchor link for: Putting_Down_Ideas&quot;&gt;Putting Down Ideas&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;You will probably want to start with a document where you just “brain dump” on the page. Text notes are good. All you are doing at this phase is getting ideas on ‘paper’, or page perhaps. Once it’s all written down you can start to review what you wrote and see if any ideas coalesce. If you are working as part of a team, sharing the document and reviewing it together could be better. But most of my experience is solo dev, so &lt;em&gt;it’s just me babyyyy&lt;&#x2F;em&gt;!&lt;&#x2F;p&gt;
+&lt;p&gt;After getting the ideas organized and cleaned up, you can start working on the next few phases.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Organizing_Sequences&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Organizing_Sequences&quot; aria-label=&quot;Anchor link for: Organizing_Sequences&quot;&gt;Organizing Sequences&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;So you’ve got a game idea now and you want the player to do X, Y, Z, using items Alpha, Beta, Gamma, and talking to NPCs 1, 2, and 3. How do we organize that!?!?&lt;&#x2F;p&gt;
+&lt;p&gt;My solution is to use a “core plugin” called “canvas”.&lt;&#x2F;p&gt;
+&lt;p&gt;To setup canvas you need to open the settings menu with the cog icon in the bottom left corner. Then go to “Core Plugins” and enable “Canvas”. Optionally, you can fiddle with the options for Canvas using the cog button on the same line, or in the left pane under the “Core Plugins” header. My preferred change is to set “Default location for new canvas files” to “Same folder as current file”. By default they drop to the vault’s root directory.&lt;&#x2F;p&gt;
+&lt;p&gt;A canvas is a generic node graphing tool that you can use to make &lt;em&gt;beautiful spaghetti&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;contact-range-canvas.png&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;contact-range-canvas.png&quot; alt=&quot;The beautiful spaghetti of a node graph I made for Contact Range&quot; title=&quot;The beautiful spaghetti of a node graph I made for Contact Range&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                The beautiful spaghetti of a node graph I made for Contact Range
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;p&gt;You might want to open that image in a separate tab if you want to be able to read the text. Otherwise, just trust that I’m being truthful.&lt;&#x2F;p&gt;
+&lt;p&gt;There are three main types of nodes allowed:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Generic Text&lt;&#x2F;li&gt;
+&lt;li&gt;Note&lt;&#x2F;li&gt;
+&lt;li&gt;Picture&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Generic text is just a block that you can put text into and style it how you like. If you look closely I used headers in some nodes to mark the “quest lines”. Note Nodes allow you to link an existing notes into the canvas as a resizable node. You can even scroll through the entire document from the canvas if you like. Finally Image Nodes are as expected, an embedded image. Combined with the ability to create connections between nodes, assign directional arrows, colours for node blocks and connections, and a theoretically infinite canvas, organizing structures of information is definitely possible.&lt;&#x2F;p&gt;
+&lt;p&gt;For my purposes I made every room, item, and ‘quest action’ into a node. Then I connected them to help me map the players progress through the ship. I wanted to ensure they spent time in all of the rooms since the aliens were going to spread throughout the ship and attack the player in any of the rooms.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you are reading through the canvas above and have played Contact Range, you might have noticed that not everything from the canvas was implemented. Sorry about that! That’s what happens during game jams, ruthless feature cutting&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h3 id=&quot;Managing_the_Project&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Managing_the_Project&quot; aria-label=&quot;Anchor link for: Managing_the_Project&quot;&gt;Managing the Project&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you have experience with DevOps you’re probably good to skip this. Unless you wanna help me find any mistakes I made &amp;lt;3&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;So with your ideas put together and some rough (or maybe not so rough) sequencing figured out, now you need to break it down into manageable and–most importantly–actionable tasks. This is where “Project Management” (PM) rears its ugly head. Most of PM work is not exceptionally difficult in theory, but almost always is difficult in practice. There are so many different methods for organizing tasks into small chunks that can be assigned to individual team members. My favourite is a &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Kanban&quot;&gt;Kanban Board&lt;&#x2F;a&gt;. It’s a fairly simple process. You organize tasks into “cards” that describe the task and maybe some additional meta-data like who’s assigned to it and&#x2F;or what category of task it is (art, code, sfx, etc…). For me, I usually skip the assignment step since it’s usually all me.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;personal-todo-kanban.jpg&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;personal-todo-kanban.jpg&quot; alt=&quot;A Kanban Board of my personal life tasks&quot; title=&quot;A Kanban Board of my personal life tasks&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                A Kanban Board of my personal life tasks
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;p&gt;Here’s an example of a kanban board. Specifically one I use to organize my personal life tasks. Once something makes it to the “Done” channel I like to archive it so it doesn’t clutter up the view. If you are perceptive, you probably noticed that I’m still using Obsidian. There is a “Community Plugin” (not maintained by the Obsidian Devs) called “Kanban” by “mgmeyers” that I use almost religiously. It adds a type of note that is a Kanban board which allows you to specify which lanes you want. There is also tools for things like due dates, tagging, and styles. You can even make styles react to the tags or date proximity on the card. For example, when I used this for school I made green, orange, and red colour styles based on how urgently the task needed to be done (based on 7+ days out, 3+ days out, or less than 3 days away, respectively)&lt;&#x2F;p&gt;
+&lt;p&gt;You can even add styling specific to a single Kanban board or have those settings globally. Which is super powerful.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;Endless_Cards&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Endless_Cards&quot; aria-label=&quot;Anchor link for: Endless_Cards&quot;&gt;Endless Cards&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;p&gt;A simple approach is to make a card for each “thing” you need to do. So for each asset to make, it gets a card. For every system that needs code, that’s a card. For every QA work done at a step in the process, that’s another card! And when the moon hits your eye like a big pizza pie, that’s &lt;del&gt;another card&lt;&#x2F;del&gt; &lt;em&gt;amore!&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;There’s a ton of solutions for figuring out how to organize your cards. In my experience the solution that’s best is &lt;em&gt;the one that works for you and your needs&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;One such solution that I use for projects larger than a game jam are &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;scrumandkanban.co.uk&#x2F;theme-epic-story-task&#x2F;&quot;&gt;“Epic Cards”&lt;&#x2F;a&gt;. It’s a way to create a hierarchy of tasks and categorize them into a particular order. I’ve seen many people use Epics almost like versioning. So once that “Epic” is complete that’s 0.1 more version points. (For clarity, I mean a project at version 1.2 would go to 1.3 after the 1.3.X epic is compeleted. And subversions, 1.2.X, would increment as stable changes are made.)&lt;&#x2F;p&gt;
+&lt;p&gt;Of course that’s not the only way to organize your tasks. I highly recommend looking into modern technique of project management if you are more interested in this. Without being more familiar with what industry standards look like, I’m hesitant to make a particular recommendation.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Building_to_Completion&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Building_to_Completion&quot; aria-label=&quot;Anchor link for: Building_to_Completion&quot;&gt;Building to Completion&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Now you’ve got your idea, the sequences, and your tasks all organized. That was the easy part. Your next steps are to make it all happen. This is where you “get your hands dirty” and work on the code&#x2F;art&#x2F;model&#x2F;shader&#x2F;SFX&#x2F;music&#x2F;VFX&#x2F;API&#x2F;etc… necessary for your project!&lt;&#x2F;p&gt;
+&lt;p&gt;From here I can’t quite help you. Or rather, I can’t in this article. Obsidian is an excellent tool for organizing all of the game design components. But once you transition to the development, Obsidian is mostly useful as a refernce. Best of luck. I hope you have an enjoyable project! Or at least an &lt;em&gt;interesting&lt;&#x2F;em&gt; one!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Behaviour Trees versus State Machines</title>
+        <published>2023-10-11T00:00:00+00:00</published>
+        <updated>2023-10-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Queen Of Squiggles
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://queenofsquiggles.github.io/guides/fsm-vs-bt/"/>
+        <id>https://queenofsquiggles.github.io/guides/fsm-vs-bt/</id>
+        
+        <content type="html" xml:base="https://queenofsquiggles.github.io/guides/fsm-vs-bt/">&lt;!-- 
+ Hey hey! this is hard-coded for my-kofi to ensure the classes get injected into tailwind. 
+ You&#x27;ll need to make an overriding shortcode in your `templates&#x2F;shortcodes` called `kofi.html
+ Just do your best to copy this styling if you want the same as I have. Else use Kofi&#x27;s style
+--&gt;
+
+&lt;div class=&quot;flex not-prose container mx-auto justify-center&quot;&gt;
+    &lt;div class=&quot;bg-accent p-2 rounded-box shadow-2xl&quot;&gt;
+        &lt;a class=&quot;flex flex-col flex-wrap justify-center&quot; href=&#x27;https:&#x2F;&#x2F;ko-fi.com&#x2F;G2G3AP0TR&#x27; target=&#x27;_blank&#x27;
+            rel=&quot;noopener noreferrer&quot;&gt;
+            &lt;img class=&quot;rounded-full shadow-md&quot; src=&#x27;https:&#x2F;&#x2F;storage.ko-fi.com&#x2F;cdn&#x2F;kofi4.png?v=3&#x27;
+                alt=&#x27;Buy Me a Coffee at ko-fi.com&#x27; &#x2F;&gt;
+        &lt;&#x2F;a&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I’m trying out a different layout for this post so the text is easier to read. it looked super dense in the typical layout. Let me know what you think! If this style is ugly I might just change it back&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I also activated full &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Weeb_(disambiguation)&quot;&gt;“weeb”&lt;&#x2F;a&gt; mode for this post. I can remove it if it detracts from people’s enjoyment, but I’m hoping it makes reading this &lt;em&gt;even more enjoyable&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;update: the GIF inclusion can break &lt;em&gt;some&lt;&#x2F;em&gt; rss feeds. If you have the option to “load full text” that should fix it. Otherwise the actual website should work too.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;Wait…AI??&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Wait…AI??&quot; aria-label=&quot;Anchor link for: Wait…AI??&quot;&gt;Wait…AI??&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;First to dismiss anyone who came in here thinking I was going to talk about &lt;em&gt;ChatGPT&lt;&#x2F;em&gt; or &lt;em&gt;Midjourney&lt;&#x2F;em&gt;. While those are also referred generally as “AI”, the term itself is infinitely more general than “Large Language Model used for generating arbitrary content while also violating every license known to humanity.” This article is focusing on a different sector of artificial intelligence. Specifically one of the more “smoke and mirrors” type of intelligence, which is really where games development thrives!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;AI_and_Games_🤖&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#AI_and_Games_🤖&quot; aria-label=&quot;Anchor link for: AI_and_Games_🤖&quot;&gt;AI and Games 🤖&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Generally, it is easiest to think of AI in games to be primarily used for creating interesting hostile enemies such as the guards in &lt;em&gt;Metal Gear Solid&lt;&#x2F;em&gt; games or the Alien (Xenomorph) in &lt;em&gt;Alien: Isolation&lt;&#x2F;em&gt;. However they are also used for the cute characters in the &lt;em&gt;Animal Crossing&lt;&#x2F;em&gt; games, or the slimes in &lt;em&gt;Slime Rancher&lt;&#x2F;em&gt;. But then getting even past tangible characters, there is “The Director” in &lt;em&gt;Left For Dead 2&lt;&#x2F;em&gt;, which is an AI solution that dynamically adjusts the game based on current conditions.&lt;&#x2F;p&gt;
+&lt;p&gt;Hopefully I’m getting across the idea that AI in games is significantly more simple than the “AIs” that are sweeping public consciousness right now. In fact they can get so simple that there’s really only two kinds that I’ve ever used. That isn’t to say there &lt;strong&gt;aren’t&lt;&#x2F;strong&gt; other kinds. But that I’ve never had a problem that needed a different solution than either one or the other.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Behaviour_Trees_my_beloved_💕&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Behaviour_Trees_my_beloved_💕&quot; aria-label=&quot;Anchor link for: Behaviour_Trees_my_beloved_💕&quot;&gt;Behaviour Trees my beloved 💕&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Behaviour Trees were my first love. They are absolutely incredible and I would argue that they are functional enough to do some basic scripting with them should the need arise. Now to actually talk about them 😅&lt;&#x2F;p&gt;
+&lt;p&gt;Behaviour Trees are closest to a &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Flowchart&quot;&gt;“Flow Chart”&lt;&#x2F;a&gt;, which is probably the best way to think about them if you’re just getting started.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;What_is_a_tree?_(In_programming_at_least)&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#What_is_a_tree?_(In_programming_at_least)&quot; aria-label=&quot;Anchor link for: What_is_a_tree?_(In_programming_at_least)&quot;&gt;What is a tree? (In programming at least)&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;A tree is a generic data structure that is used to hold “nodes” (which generally have some kind of data associated with them), and their relationships between each other. Now technically that description would be called a “Graph”, which is a less restrictive type of data structure.&lt;&#x2F;p&gt;
+&lt;p&gt;Trees have some particular rules that each node can have children , which is a one-way relationship where the parent knows its children but the children do not know their parent. Additionally each node can only have a single parent. If you are used to Godot, the “Scene Tree” is a type of tree.&lt;&#x2F;p&gt;
+&lt;p&gt;Technically some extra flavour is added such that child nodes &lt;em&gt;can&lt;&#x2F;em&gt; access their parent nodes, but this is distinctly against recommended workflow. You might have heard “Call down; Signal Up”. This is a method that preserves the Tree rules by ensuring that only parent nodes need to know about their child nodes. And never the other way around.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Back_to_Behaviour_Trees&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Back_to_Behaviour_Trees&quot; aria-label=&quot;Anchor link for: Back_to_Behaviour_Trees&quot;&gt;Back to Behaviour Trees&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;So knowing that it is a tree data structure used to model some kind of “behaviour”, you might already have some ideas. The nodes available come in a few key types that serve specific purposes:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;root (in some cases isn’t technically a node)&lt;&#x2F;li&gt;
+&lt;li&gt;compositor&lt;&#x2F;li&gt;
+&lt;li&gt;decorator&lt;&#x2F;li&gt;
+&lt;li&gt;query&#x2F;condition&lt;&#x2F;li&gt;
+&lt;li&gt;action&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The root is fairly boring because all it does is call down whatever child node it has (only one is usually allowed).&lt;&#x2F;p&gt;
+&lt;p&gt;All nodes in a behaviour tree use a “tick” (or otherwise named) method to perform their own logic, and then return a state value for that node. Usually “Success”, “Failure”, or “Running” (for when it takes multiple ticks to accomplish the task).&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Queries&#x2F;Conditions&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Queries&amp;#x2F;Conditions&quot; aria-label=&quot;Anchor link for: Queries&amp;#x2F;Conditions&quot;&gt;Queries&#x2F;Conditions&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;A query node simply checks against some logical condition and returns “Success” if true and “Failure” if false. Specifically the positive affirmation leaning is helpful such that we don’t use “Is thing not true” conditions, since those can get messy.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Actions&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Actions&quot; aria-label=&quot;Anchor link for: Actions&quot;&gt;Actions&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;An action node tries to do something. Ideally some kind of transformation that creates an external effect. Like applying a force to the character or triggering a VFX. Returns “Success” when completed, “Running” while processing, and “Failure” if something goes wrong.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Compsitors&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Compsitors&quot; aria-label=&quot;Anchor link for: Compsitors&quot;&gt;Compsitors&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;A compositor is a node that can have one or more children. Based on the type of compositor (typically two core types), the way the children are iterated through is different.&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&quot;text-align: left&quot;&gt;Type&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: center&quot;&gt;Result&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: left&quot;&gt;Sequence&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Children are iterated through until the first child that returns “Failure”&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: left&quot;&gt;Select&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Children are iterated through until the first child that returns “Success”&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;Sequences are really useful for prefixing with conditions in order to have pre-requisites for a particular action. That way you can determine under what condition an action (or actions!) is&#x2F;are taken.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Decorators&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Decorators&quot; aria-label=&quot;Anchor link for: Decorators&quot;&gt;Decorators&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Decorators are nodes that can only have a single child node. They “decorate” the result of their child node by transforming it in some way. There are a few key types that are generally useful:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&quot;text-align: center&quot;&gt;Type&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: left&quot;&gt;Result&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;Succeeder&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Returns “Success” always (except for when child returns “Running”)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;Failer&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Returns “Failure” always (except for when child returns “Running”)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;Inverter&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Returns the opposite of the childs result (except for when child returns “Running”)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;Limiter&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Returns the child’s result the first time (or a customizable number of times) and then always returns “Failure” without calling the child node&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;Timer&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Returns the child’s result at first, then uses a countdown timer to determine the next time to use the child node’s result. If not time yet, returns “Failure”&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;Decorators are pretty fun to apply a logical transformation for results. Remember how conditions are supposed to be positive affirmations? Inverters are where you can check for negative affirmations. ( &lt;em&gt;Don’t tell your therapist about this!&lt;&#x2F;em&gt; 😏 )&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Putting_it_all_together&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Putting_it_all_together&quot; aria-label=&quot;Anchor link for: Putting_it_all_together&quot;&gt;Putting it all together&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;behaviour_tree_example.jpg&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;behaviour_tree_example.jpg&quot; alt=&quot;An example of a behaviour tree&quot; title=&quot;An example of a behaviour tree&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                An example of a behaviour tree
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;p&gt;Here’s a behaviour tree example I mocked up in Obsidian.&lt;&#x2F;p&gt;
+&lt;p&gt;You can see the “root” node connects to a “Sequence” which then has two children which are also “sequence” nodes. In certain contexts, it’s usually helpful to name different branches based on what they are supposed to accomplish in totality. So if we read through the tree, it goes through these steps:&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;Jump_Branch&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Jump_Branch&quot; aria-label=&quot;Anchor link for: Jump_Branch&quot;&gt;Jump Branch&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Checking if it’s on the ground&lt;&#x2F;li&gt;
+&lt;li&gt;Checking if the “JUMP” input is pressed&lt;&#x2F;li&gt;
+&lt;li&gt;Passing both checks, applying a positive Y force.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h4 id=&quot;Idle_Branch&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Idle_Branch&quot; aria-label=&quot;Anchor link for: Idle_Branch&quot;&gt;Idle Branch&lt;&#x2F;a&gt;&lt;&#x2F;h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Invert result of
+&lt;ul&gt;
+&lt;li&gt;Checking if the actors velocity vector length (speed technically) is greater than zero&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Passing the check, requesting the animation “IDLE” to play&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;More_complexity?&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#More_complexity?&quot; aria-label=&quot;Anchor link for: More_complexity?&quot;&gt;More complexity?&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;The awesome thing about behaviuour trees is that the same core nodes apply no matter what scale your tree operates at. There are some more advanced solutions for incredibly massive behaviour trees like in for the enemies in recent &lt;em&gt;Far Cry&lt;&#x2F;em&gt; games. But the same core logic is always being applied.&lt;&#x2F;p&gt;
+&lt;p&gt;Also I didn’t even get into the concept of the “Blackboard”, which is basically a &lt;code&gt;Dictionary&lt;&#x2F;code&gt; of values (&lt;code&gt;Variant&lt;&#x2F;code&gt; would be a good choice for Godot) that is accessible to all nodes in the tree when they perform their tick process. The blackboard is used to communicate information across nodes. Such as caching a particular jump strength based on a condition, then using that jump strength in the “Jump Branch”.&lt;&#x2F;p&gt;
+&lt;p&gt;Complex logic is pretty easy to do, once you get over the hurdle of the boiler plate. I promise I’m getting to the pros and cons, but first I gotta talk about State Machines!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Finally_talking_about_State_Machines&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Finally_talking_about_State_Machines&quot; aria-label=&quot;Anchor link for: Finally_talking_about_State_Machines&quot;&gt;Finally talking about State Machines&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;State Machines are so incredibly old compared to all of the kinds of AI available to use in games. They are originally a concept from Electrical Engineering. Specifically in the &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Moore_machine&quot;&gt;“Moore”&lt;&#x2F;a&gt; and &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Mealy_machine&quot;&gt;“Mealy”&lt;&#x2F;a&gt; machines. Those two types of state machines are pretty much the end of what was stolen from electrical engineering and robotics. From there, we added a bit of our own &lt;em&gt;spice&lt;&#x2F;em&gt; to make things more fun.&lt;&#x2F;p&gt;
+&lt;p&gt;State machines are actually incredibly simple when we get down to it. Though there are some implementations that are more robust than others. We usually refer to them as “Finite State Machines” because there is a limited (finite) number of states the “machine” can be in. And specifically the machine can only ever be in one state at a single time.&lt;&#x2F;p&gt;
+&lt;p&gt;Here an example image first might be more helpful:&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;fsm_example.jpg&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;fsm_example.jpg&quot; alt=&quot;An example Finite State Machine&quot; title=&quot;An example Finite State Machine&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                An example Finite State Machine
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;p&gt;Each state handles it’s own logic as if it was completely independant of the other states. Which should be super familiar for you if you have programming experience. Essentially, if you are using a long &lt;code&gt;if...elseif...elseif...elseif...else&lt;&#x2F;code&gt; chain, or a super massive &lt;code&gt;switch&lt;&#x2F;code&gt; statement, then you might benefit from extracting each clause into a state definition.&lt;&#x2F;p&gt;
+&lt;p&gt;In the above example we can see three core states, and the conditions by which they transition to the particular state. It is imporant to note those transitions are one-way directional. States themselves are actually incredibly simple. The complexity comes in when we need to orchestrate transitions based on conditions. A very Godot approach is to use signals, and then have a parent node connect those signals to state change calls. &lt;em&gt;Which is exactly what I did in Squiggles Core 4X (SC4X)&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cs&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-cs &quot;&gt;&lt;code class=&quot;language-cs&quot; data-lang=&quot;cs&quot;&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;public &lt;&#x2F;span&gt;&lt;span&gt;override &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;void _Ready&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;background-color:#bf616a;color:#2b303b;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span&gt; {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;_stateCutscene&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;OnStateFinished &lt;&#x2F;span&gt;&lt;span&gt;+= () &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;=&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;_fsm&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;ChangeState&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;_stateMoving&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;_stateMoving&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;OnStateFinished &lt;&#x2F;span&gt;&lt;span&gt;+= () &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;=&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;_fsm&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;ChangeState&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;_stateCutscene&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;In case you aren’t super familiar with C# code, the above code is connecting the &lt;code&gt;OnStateFinished&lt;&#x2F;code&gt; signal from the two types of states available to a lambda expression that calls the &lt;code&gt;_fsm&lt;&#x2F;code&gt; (an instance of &lt;code&gt;FiniteStateMachine&lt;&#x2F;code&gt;) to change the state to a new state. The signals are emitted from the state when they detect a condition where they need to exit and the orchestating node (in this case a “Player Controller”) defines how those are handled. Additionally, we can use external triggers to force a switch if we like. And subclasses of &lt;code&gt;State&lt;&#x2F;code&gt; can even define their own signals to allow multiple types of transitions out.&lt;&#x2F;p&gt;
+&lt;p&gt;So we have it working great! A small number of states and the transtions handled by an orchestrating node. Now imagine we have 9 possible states with 16 total transitions! That sounds like a whole lot! How would we even begin to create a solution to that, let alone an &lt;em&gt;elegant&lt;&#x2F;em&gt; one!?&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Adding_completixity_to_FSMs&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Adding_completixity_to_FSMs&quot; aria-label=&quot;Anchor link for: Adding_completixity_to_FSMs&quot;&gt;Adding completixity to FSMs&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+
+
+&lt;div class=&quot;flex justify-center not-prose&quot;&gt;
+    &lt;div class=&quot;card card-compact shadow-2xl bg-neutral max-w-lg&quot;&gt;
+        &lt;figure&gt;
+            &lt;a href=&quot;hfsm_example.jpg&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+                &lt;img class=&quot;rounded-box shadow-md&quot; src=&quot;hfsm_example.jpg&quot; alt=&quot;An example of an HFSM&quot; title=&quot;An example of an HFSM&quot; &#x2F;&gt;
+            &lt;&#x2F;a&gt;
+        &lt;&#x2F;figure&gt;
+        
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;prose&quot;&gt;
+                An example of an HFSM
+            &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;p&gt;So this is what would be called a “Hierarchical Finite State Machine” (HFSM). Bascially the solution to complexity is just layering more and more states on top. In the example the “top level states” would be:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;State Overworld&lt;&#x2F;li&gt;
+&lt;li&gt;State Cutscene&lt;&#x2F;li&gt;
+&lt;li&gt;State Fishing Minigame&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Then “Overworld” and “Fishing Minigame” each have their own sub-FSMs for controlling logic within that state. An essential guide is that for any state implementation, if you are asking it to store more state information and changing behaviour based on that, you should extract that into multiple states. And if those multiple states are closely tied as a coherent group, group them in a sub-state machine (&lt;em&gt;kinky&lt;&#x2F;em&gt; &#x2F;j).&lt;&#x2F;p&gt;
+&lt;p&gt;That hierarchy of state machines embedded into state machines is why it is called “Hierarchical.” As far as my experience goes, HFSMs are best used for more complex AI problems. For example, the above example is for a player controller which allows the game to react to the current game state and handle the player’s actions based on that. So the mini-games are just another top-level state (with sub-space). In fact if the game requires &lt;em&gt;many&lt;&#x2F;em&gt; mini-games each with their own needed controls, it may be prudent to make a new top-level state for all mini-games and then have a sub-level for each game state and then another sub-level for the individual action states for those mini-games.&lt;&#x2F;p&gt;
+&lt;p&gt;Which, I would argue is rather &lt;em&gt;&lt;strong&gt;elegant&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;!--
+Embeds a GIF from tenor with some styling to ensure it looks good while not dominating the page
+===
+data_postid: id of the post on tenor (take from embed code)
+data_aspect_ratio: the aspect ratio of the gif (take from embed code)
+url: embed url (take from embed code)
+width: a standard CSS width value to determine how big to display the gif at. (50% usually looks good)
+caption (optional): a text caption that will display below the image and serve as a link to the image. Supports markdown!
+===
+Example Data:
+data_postid=&quot;8246706&quot; 
+data_aspect_ratio=&quot;1.43103&quot; 
+url=&#x27;https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706&#x27; 
+caption=&quot;Goku from Dragon Ball Z power up to &#x27;super saiyin&#x27;&quot; 
+fallback=&quot;https:&#x2F;&#x2F;media.tenor.com&#x2F;XfrqyR_-jzIAAAAC&#x2F;anime-goku.gif&quot;
+
+--&gt;
+&lt;div class=&quot;flex justify-center&quot;&gt;
+    &lt;div class=&quot;not-prose card bg-base-200 max-w-md&quot;&gt;
+        &lt;noscript&gt;
+            &lt;figure&gt;
+                &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;media.tenor.com&amp;#x2F;MWuIYnle2BsAAAAd&amp;#x2F;spy-x-family-elegant.gif&quot; &#x2F;&gt;
+            &lt;&#x2F;figure&gt;
+        &lt;&#x2F;noscript&gt;
+        &lt;div class=&quot;card-body mx-2&quot;&gt;
+            &lt;div class=&quot;tenor-gif-embed&quot; data-postid=&quot;3561089886890940443&quot; data-share-method=&quot;host&quot;
+                data-aspect-ratio=&quot;1.56604&quot; data-width=&quot;100%&quot;&gt;
+            &lt;&#x2F;div&gt;
+            &lt;script type=&quot;text&#x2F;javascript&quot; async src=&quot;https:&#x2F;&#x2F;tenor.com&#x2F;embed.js&quot;&gt;
+            &lt;&#x2F;script&gt;
+            &lt;div class=&quot;prose px-2 md:px-4&quot;&gt;
+                &lt;noscript&gt;
+                    &lt;p class=&quot;bg-info text-neutral not-prose rounded-box py-2 text-center&quot;&gt;
+                        &lt;i class=&quot;fas fa-solid fa-info&quot;&gt;&lt;&#x2F;i&gt;
+                        &lt;b&gt;GIF embed fallback in use.&lt;&#x2F;b&gt;
+                        &lt;a class=&quot;link&quot; href=&quot;https:&amp;#x2F;&amp;#x2F;tenor.com&amp;#x2F;view&amp;#x2F;spy-x-family-elegant-elegance-gif-3561089886890940443&quot;&gt;
+                            Open remote
+                        &lt;&#x2F;a&gt;
+                    &lt;&#x2F;p&gt;
+                &lt;&#x2F;noscript&gt;
+                &lt;p&gt;Spy X Family character shouting ‘elegant!’&lt;&#x2F;p&gt;
+
+            &lt;&#x2F;div&gt;
+        &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;&lt;h2 id=&quot;Pros_and_Cons&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Pros_and_Cons&quot; aria-label=&quot;Anchor link for: Pros_and_Cons&quot;&gt;Pros and Cons&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Let’s look at the two now that we’ve gone over how they each work!&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Behaviour_Tree_Pros&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Behaviour_Tree_Pros&quot; aria-label=&quot;Anchor link for: Behaviour_Tree_Pros&quot;&gt;Behaviour Tree Pros&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Behaviour trees are absolutely incredible at modelling more complex behaviours and interactions. A lot of enemy AIs in recent years that felt “alive” are because of super-charged behaviour trees. (As well as incredibly smart AI designers!!!) This structure is incredibly powerful for organizing behaviours and conditions in a way that can react to dynamic alterations to the structure. Yeah you can hot-swap branches at runtime and Behaviour Trees will shrug it off like a light rain (when done correctly).&lt;&#x2F;p&gt;
+&lt;!--
+Embeds a GIF from tenor with some styling to ensure it looks good while not dominating the page
+===
+data_postid: id of the post on tenor (take from embed code)
+data_aspect_ratio: the aspect ratio of the gif (take from embed code)
+url: embed url (take from embed code)
+width: a standard CSS width value to determine how big to display the gif at. (50% usually looks good)
+caption (optional): a text caption that will display below the image and serve as a link to the image. Supports markdown!
+===
+Example Data:
+data_postid=&quot;8246706&quot; 
+data_aspect_ratio=&quot;1.43103&quot; 
+url=&#x27;https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706&#x27; 
+caption=&quot;Goku from Dragon Ball Z power up to &#x27;super saiyin&#x27;&quot; 
+fallback=&quot;https:&#x2F;&#x2F;media.tenor.com&#x2F;XfrqyR_-jzIAAAAC&#x2F;anime-goku.gif&quot;
+
+--&gt;
+&lt;div class=&quot;flex justify-center&quot;&gt;
+    &lt;div class=&quot;not-prose card bg-base-200 max-w-md&quot;&gt;
+        &lt;noscript&gt;
+            &lt;figure&gt;
+                &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;media.tenor.com&amp;#x2F;mBgSW3COdJUAAAAd&amp;#x2F;yor-forger-spy-x-family.gif&quot; &#x2F;&gt;
+            &lt;&#x2F;figure&gt;
+        &lt;&#x2F;noscript&gt;
+        &lt;div class=&quot;card-body mx-2&quot;&gt;
+            &lt;div class=&quot;tenor-gif-embed&quot; data-postid=&quot;26816185&quot; data-share-method=&quot;host&quot;
+                data-aspect-ratio=&quot;1.77778&quot; data-width=&quot;100%&quot;&gt;
+            &lt;&#x2F;div&gt;
+            &lt;script type=&quot;text&#x2F;javascript&quot; async src=&quot;https:&#x2F;&#x2F;tenor.com&#x2F;embed.js&quot;&gt;
+            &lt;&#x2F;script&gt;
+            &lt;div class=&quot;prose px-2 md:px-4&quot;&gt;
+                &lt;noscript&gt;
+                    &lt;p class=&quot;bg-info text-neutral not-prose rounded-box py-2 text-center&quot;&gt;
+                        &lt;i class=&quot;fas fa-solid fa-info&quot;&gt;&lt;&#x2F;i&gt;
+                        &lt;b&gt;GIF embed fallback in use.&lt;&#x2F;b&gt;
+                        &lt;a class=&quot;link&quot; href=&quot;https:&amp;#x2F;&amp;#x2F;tenor.com&amp;#x2F;view&amp;#x2F;yor-forger-spy-x-family-spy-x-family-season2-spy-x-family-part2-yor-gif-26816185&quot;&gt;
+                            Open remote
+                        &lt;&#x2F;a&gt;
+                    &lt;&#x2F;p&gt;
+                &lt;&#x2F;noscript&gt;
+                &lt;p&gt;Yor from Spy X Family spinning a blade in a dark forest. It ends with her catching a falling flower at the very tip of the blade.&lt;&#x2F;p&gt;
+
+            &lt;&#x2F;div&gt;
+        &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;&lt;h3 id=&quot;State_Machine_(FSM&#x2F;HFSM)_Pros&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#State_Machine_(FSM&amp;#x2F;HFSM)_Pros&quot; aria-label=&quot;Anchor link for: State_Machine_(FSM&amp;#x2F;HFSM)_Pros&quot;&gt;State Machine (FSM&#x2F;HFSM) Pros&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;FSMs are incredibly simple to build from scratch, and can re-use existing code if you are going through a refactor. Additionally, you can extract them into HFSMs if the need arises. They are incredibly powerful at handling logic when you know a discrete number of states you want the AI to be in, and you have very specific transitions between them.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Behaviour_Tree_Cons&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Behaviour_Tree_Cons&quot; aria-label=&quot;Anchor link for: Behaviour_Tree_Cons&quot;&gt;Behaviour Tree Cons&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;There is &lt;strong&gt;so much boilerplate&lt;&#x2F;strong&gt; to get a behaviour tree system up and running. As well as needing to write custom nodes for each unique type of action that you want. If you have a lot of smaller actions that you want various different entities to be able to do slightly differently, that would be a use case, but it is still going to be a huge pain assuming you even are able to overcome the steep learning curve of thinking in trees!&lt;&#x2F;p&gt;
+&lt;!--
+Embeds a GIF from tenor with some styling to ensure it looks good while not dominating the page
+===
+data_postid: id of the post on tenor (take from embed code)
+data_aspect_ratio: the aspect ratio of the gif (take from embed code)
+url: embed url (take from embed code)
+width: a standard CSS width value to determine how big to display the gif at. (50% usually looks good)
+caption (optional): a text caption that will display below the image and serve as a link to the image. Supports markdown!
+===
+Example Data:
+data_postid=&quot;8246706&quot; 
+data_aspect_ratio=&quot;1.43103&quot; 
+url=&#x27;https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706&#x27; 
+caption=&quot;Goku from Dragon Ball Z power up to &#x27;super saiyin&#x27;&quot; 
+fallback=&quot;https:&#x2F;&#x2F;media.tenor.com&#x2F;XfrqyR_-jzIAAAAC&#x2F;anime-goku.gif&quot;
+
+--&gt;
+&lt;div class=&quot;flex justify-center&quot;&gt;
+    &lt;div class=&quot;not-prose card bg-base-200 max-w-md&quot;&gt;
+        &lt;noscript&gt;
+            &lt;figure&gt;
+                &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;media.tenor.com&amp;#x2F;A2ihJ4zvpOkAAAAC&amp;#x2F;anya-anya-forger.gif&quot; &#x2F;&gt;
+            &lt;&#x2F;figure&gt;
+        &lt;&#x2F;noscript&gt;
+        &lt;div class=&quot;card-body mx-2&quot;&gt;
+            &lt;div class=&quot;tenor-gif-embed&quot; data-postid=&quot;245623370932004073&quot; data-share-method=&quot;host&quot;
+                data-aspect-ratio=&quot;0.854839&quot; data-width=&quot;100%&quot;&gt;
+            &lt;&#x2F;div&gt;
+            &lt;script type=&quot;text&#x2F;javascript&quot; async src=&quot;https:&#x2F;&#x2F;tenor.com&#x2F;embed.js&quot;&gt;
+            &lt;&#x2F;script&gt;
+            &lt;div class=&quot;prose px-2 md:px-4&quot;&gt;
+                &lt;noscript&gt;
+                    &lt;p class=&quot;bg-info text-neutral not-prose rounded-box py-2 text-center&quot;&gt;
+                        &lt;i class=&quot;fas fa-solid fa-info&quot;&gt;&lt;&#x2F;i&gt;
+                        &lt;b&gt;GIF embed fallback in use.&lt;&#x2F;b&gt;
+                        &lt;a class=&quot;link&quot; href=&quot;https:&amp;#x2F;&amp;#x2F;tenor.com&amp;#x2F;view&amp;#x2F;anya-anya-forger-spy-x-family-brain-fried-gif-245623370932004073&quot;&gt;
+                            Open remote
+                        &lt;&#x2F;a&gt;
+                    &lt;&#x2F;p&gt;
+                &lt;&#x2F;noscript&gt;
+                &lt;p&gt;Anya from Spy X Family looking confused and burnt out&lt;&#x2F;p&gt;
+
+            &lt;&#x2F;div&gt;
+        &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;&lt;h3 id=&quot;State_Machine_(FSM&#x2F;HFSM)_Cons&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#State_Machine_(FSM&amp;#x2F;HFSM)_Cons&quot; aria-label=&quot;Anchor link for: State_Machine_(FSM&amp;#x2F;HFSM)_Cons&quot;&gt;State Machine (FSM&#x2F;HFSM) Cons&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;State Machines are much less resiliant to run-time changes because a run-time change would necessitate a re-orchestration of all of the transitions. And if that is something you are doing, you should &lt;em&gt;really&lt;&#x2F;em&gt; make sure you wouldn’t rather use an HFSM for the same solution.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;Conclusion&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Conclusion&quot; aria-label=&quot;Anchor link for: Conclusion&quot;&gt;Conclusion&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;I really wish I could just tell you, “X is better than Y and Z, so just use that for everything.” But that’s not how this works. &lt;em&gt;Nothing is ever easy&lt;&#x2F;em&gt;. The lesson I hope you are taking from this article is that you need to find the right &lt;em&gt;&lt;strong&gt;tool&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt; for the &lt;em&gt;&lt;strong&gt;job&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;!--
+Embeds a GIF from tenor with some styling to ensure it looks good while not dominating the page
+===
+data_postid: id of the post on tenor (take from embed code)
+data_aspect_ratio: the aspect ratio of the gif (take from embed code)
+url: embed url (take from embed code)
+width: a standard CSS width value to determine how big to display the gif at. (50% usually looks good)
+caption (optional): a text caption that will display below the image and serve as a link to the image. Supports markdown!
+===
+Example Data:
+data_postid=&quot;8246706&quot; 
+data_aspect_ratio=&quot;1.43103&quot; 
+url=&#x27;https:&#x2F;&#x2F;tenor.com&#x2F;view&#x2F;anime-goku-dbz-dragon-ball-super-saiyan-gif-8246706&#x27; 
+caption=&quot;Goku from Dragon Ball Z power up to &#x27;super saiyin&#x27;&quot; 
+fallback=&quot;https:&#x2F;&#x2F;media.tenor.com&#x2F;XfrqyR_-jzIAAAAC&#x2F;anime-goku.gif&quot;
+
+--&gt;
+&lt;div class=&quot;flex justify-center&quot;&gt;
+    &lt;div class=&quot;not-prose card bg-base-200 max-w-md&quot;&gt;
+        &lt;noscript&gt;
+            &lt;figure&gt;
+                &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;media1.tenor.com&amp;#x2F;m&amp;#x2F;7W75SiCsuJUAAAAC&amp;#x2F;tails-speech-bubble.gif&quot; &#x2F;&gt;
+            &lt;&#x2F;figure&gt;
+        &lt;&#x2F;noscript&gt;
+        &lt;div class=&quot;card-body mx-2&quot;&gt;
+            &lt;div class=&quot;tenor-gif-embed&quot; data-postid=&quot;26158321&quot; data-share-method=&quot;host&quot;
+                data-aspect-ratio=&quot;1&quot; data-width=&quot;100%&quot;&gt;
+            &lt;&#x2F;div&gt;
+            &lt;script type=&quot;text&#x2F;javascript&quot; async src=&quot;https:&#x2F;&#x2F;tenor.com&#x2F;embed.js&quot;&gt;
+            &lt;&#x2F;script&gt;
+            &lt;div class=&quot;prose px-2 md:px-4&quot;&gt;
+                &lt;noscript&gt;
+                    &lt;p class=&quot;bg-info text-neutral not-prose rounded-box py-2 text-center&quot;&gt;
+                        &lt;i class=&quot;fas fa-solid fa-info&quot;&gt;&lt;&#x2F;i&gt;
+                        &lt;b&gt;GIF embed fallback in use.&lt;&#x2F;b&gt;
+                        &lt;a class=&quot;link&quot; href=&quot;https:&amp;#x2F;&amp;#x2F;tenor.com&amp;#x2F;view&amp;#x2F;tails-speech-bubble-soup-gif-26158321&quot;&gt;
+                            Open remote
+                        &lt;&#x2F;a&gt;
+                    &lt;&#x2F;p&gt;
+                &lt;&#x2F;noscript&gt;
+                &lt;p&gt;Tails from Sonic Boom trying to eat soup with a fork and laughing&lt;&#x2F;p&gt;
+
+            &lt;&#x2F;div&gt;
+        &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In case you haven’t noticed, I have emojis now! Thanks to a &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jekyll&#x2F;jemoji&quot;&gt;jekyll plugin&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Note: this is actually a clever lie now that I’m no longer using Jekyll, or even the next SSG (Static Site Generator) that I used after. I’m onto Zola, which just has emoji shortcode support out of the box. Leaving the link though in case anyone in the future wants to add the feature to their jekyll based blog&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;So_you_want_to_learn_more?&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#So_you_want_to_learn_more?&quot; aria-label=&quot;Anchor link for: So_you_want_to_learn_more?&quot;&gt;So you want to learn more?&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s some resources to learn more about particular AIs in games and how to use them in interesting ways. Lotta youtube links because gamedev youtube is my &lt;em&gt;addiction&lt;&#x2F;em&gt; ❤️&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&quot;text-align: center&quot;&gt;Link&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: left&quot;&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;user&#x2F;tthompso&quot;&gt;‘AI &amp;amp; Games’ (Tommy Thompson) YouTube channel&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;Tommy is an excellent resource for learning about cutting edge AI techniques used in gaming, primarily focused on AAA solutions. But my entry to the subject was his channel which went into deep dives on different topics.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;qwOM3v8T33Q&quot;&gt;Heartbeast’s Amazing FSM Tutorial (GDscript)&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;A super straightforward approach to implementing a basic Finite State Machine in Godot 4 using GDScript. I used it as a guide for the State Machine implementation in &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;QueenOfSquiggles&#x2F;Squiggles-Core-4X&quot;&gt;Squiggles Core 4X&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: center&quot;&gt;&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;bitbrain&#x2F;beehave&quot;&gt;BitBrain’s Behaviour Tree Addon “Beehave” (GDscript)(MIT)&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;A super amazing behaviour tree implementation that uses a few extra node types to make the trees more robust. Comes with debugging tools so you can inspect what the tree is doing at any given time (even in real-time!!!)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;h2 id=&quot;Bonus!_You_like_memes?&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Bonus!_You_like_memes?&quot; aria-label=&quot;Anchor link for: Bonus!_You_like_memes?&quot;&gt;Bonus! You like memes?&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;You might have noticed the GIFs I used in this post. I made a custom “include” type that I can use for my posts that specifically embeds any tenor GIF with a particular width and then centers it and adds a border. Optionally it can add a caption to the gif as well since I’m not sure how well tenor embedded gifs support captions. Plus that way if it fails to load, the meaning is still there. You can refer to my &lt;a href=&quot;https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;guides&#x2F;embedding-gifs&#x2F;&quot;&gt;Embedding GIFs&lt;&#x2F;a&gt; page for details.&lt;&#x2F;p&gt;
+&lt;!-- 
+ Hey hey! this is hard-coded for my-kofi to ensure the classes get injected into tailwind. 
+ You&#x27;ll need to make an overriding shortcode in your `templates&#x2F;shortcodes` called `kofi.html
+ Just do your best to copy this styling if you want the same as I have. Else use Kofi&#x27;s style
+--&gt;
+
+&lt;div class=&quot;flex not-prose container mx-auto justify-center&quot;&gt;
+    &lt;div class=&quot;bg-accent p-2 rounded-box shadow-2xl&quot;&gt;
+        &lt;a class=&quot;flex flex-col flex-wrap justify-center&quot; href=&#x27;https:&#x2F;&#x2F;ko-fi.com&#x2F;G2G3AP0TR&#x27; target=&#x27;_blank&#x27;
+            rel=&quot;noopener noreferrer&quot;&gt;
+            &lt;img class=&quot;rounded-full shadow-md&quot; src=&#x27;https:&#x2F;&#x2F;storage.ko-fi.com&#x2F;cdn&#x2F;kofi4.png?v=3&#x27;
+                alt=&#x27;Buy Me a Coffee at ko-fi.com&#x27; &#x2F;&gt;
+        &lt;&#x2F;a&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;</content>
+        
+    </entry>
+</feed>

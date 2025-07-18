@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="synthwave">
+
+<head>
+  
+  <title>
+
+Indie Game Design Using Obsidian | Queen Of Squiggles&#x27;s Blog
+
+</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  
+  <link rel="me" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles">
+  
+
+  <!-- Tailwind compiled CSS -->
+  <link rel="stylesheet" href="https://queenofsquiggles.github.io/output.css">
+  <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+
+  
+  <script defer src="https://queenofsquiggles.github.io/elasticlunr.min.js"></script>
+  <script defer src="https://queenofsquiggles.github.io/search_index.en.js"></script>
+  <script src="https://queenofsquiggles.github.io/js/search.js"></script>
+  
+
+  
+  
+  <!-- Includes the default RSS feed if enabled in configuration -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://queenofsquiggles.github.io/rss.xml">
+  
+  
+  <!-- Includes the ddefault Atom feed if enabled in configuration -->
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="https://queenofsquiggles.github.io/atom.xml" />
+  
+
+  
+  
+</head>
+
+<body>
+  <div class="navbar bg-base-200 sticky top-0 z-50">
+    <div class="navbar-center lg:navbar-start">
+      <div class="hidden lg:flex">
+        <a class="btn btn-ghost text-xl" href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Queen Of Squiggles&#x27;s Blog</a>
+      </div>
+
+      <!-- small screen navbar (drop down) -->
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          Queen Of Squiggles&#x27;s Blog
+
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-300 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-4">
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;">Home</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+          </li>
+          
+          <li>
+            <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+          </li>
+          
+          
+
+          <li class="dropdown">
+            <details>
+              <summary>Theme</summary>
+
+              <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="light" value="light" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="dark" value="dark" />
+                </li>
+                
+                <li>
+                  <input type="radio" name="theme-dropdown" class="theme-controller btn btn-ghost"
+                    aria-label="synthwave" value="synthwave" />
+                </li>
+                
+
+              </ul>
+            </details>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- large screen navbar -->
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;tags">Tags</a>
+        </li>
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;queenofsquiggles.github.io&#x2F;about">About</a>
+        </li>
+        
+      </ul>
+      
+
+      <div class="flex-1 gap-2">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            Theme
+          </div>
+          <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="light"
+                value="light" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="dark"
+                value="dark" />
+            </li>
+            
+            <li>
+              <input type="radio" name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="synthwave"
+                value="synthwave" />
+            </li>
+            
+
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <div class="navbar-end hidden lg:flex">
+      <form class="form-control lg:focus-within:grow" onsubmit="return goSearch(event)">
+        <input type="text" class="input input-bordered" placeholder="Search" />
+      </form>
+    </div>
+    
+  </div>
+
+  
+  <div class="navbar flex justify-center lg:hidden pb-4">
+    <form class="form-control" onsubmit="return goSearch(event)">
+      <input type="text" class="input input-bordered" placeholder="Search" />
+    </form>
+  </div>
+  
+
+  <main class="flex flex-col container mx-auto justify-center my-2">
+    
+
+
+
+<div class="flex flex-row flex-wrap lg:flex-nowrap w-full justify-center gap-1 py-2">
+  <div class=" hero container mx-auto bg-base-200 rounded-box">
+    <div class="hero-content flex-col lg:flex-col">
+      
+      
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="banner.jpg" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="banner.jpg" alt="" title="" />
+            </a>
+        </figure>
+        
+    </div>
+</div>
+
+
+      
+      <div>
+        <h1 class="text-5xl font-bold"> Indie Game Design Using Obsidian </h1>
+        <div class="py-6">
+          
+          <div class="flex flex-row flex-wrap gap-4  py-2">
+            
+            <a href="https://queenofsquiggles.github.io/tags/tech discussion/" class="btn btn-secondary rounded-box">
+              tech discussion
+            </a>
+            
+            <a href="https://queenofsquiggles.github.io/tags/guide/" class="btn btn-secondary rounded-box">
+              guide
+            </a>
+            
+            <a href="https://queenofsquiggles.github.io/tags/tool/" class="btn btn-secondary rounded-box">
+              tool
+            </a>
+            
+          </div>
+          
+          
+
+          
+          <div class="join join-vertical py-2">
+
+            <div class="btn btn-outline rounded-box no-animation join-item leading-relaxed">Written - 
+Monday the 15 of January, 2024
+</div>
+
+            
+            <div class="btn btn-outline rounded-box no-animation join-item leading-relaxed">Updated - 
+Friday the 18 of October, 2024
+</div>
+            
+
+
+
+            
+
+          </div>
+          <div class="py-2">
+            <i> Read time is about 9 minutes </i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-md">
+    
+
+<!-- Table of contents supporting h1, h2, h3, h4, h5, h6 (or optionally reduced depth based on config) -->
+
+
+<ul class="not-prose flex menu bg-base-200 rounded-box divide-y divide-dotted md:divide-none">
+    <li class="menu-title text-xl">
+        <h1>
+            Table of Contents
+        </h1>
+    </li>
+    
+    <li>
+        <a href="https://queenofsquiggles.github.io/guides/game-design-using-obsidian/#Obsidian,_a_note-taking_app_with_(mostly)_good_features">Obsidian, a note-taking app with (mostly) good features</a>
+    </li>
+    
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/guides/game-design-using-obsidian/#Scaffolding_Ideas">Scaffolding Ideas</a>
+    </li>
+    
+    <li>
+        <ul class="divide-y divide-dotted md:divide-none">
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/game-design-using-obsidian/#Callouts_in_Obsidian">
+                    Callouts in Obsidian
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/game-design-using-obsidian/#Headings">
+                    Headings
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/game-design-using-obsidian/#Super-charged_Links">
+                    Super-charged Links
+                </a>
+            </li>
+            
+            
+        </ul>
+        
+        
+    <li>
+        <a href="https://queenofsquiggles.github.io/guides/game-design-using-obsidian/#Let’s_Make_a_Game">Let’s Make a Game</a>
+    </li>
+    
+    <li>
+        <ul class="divide-y divide-dotted md:divide-none">
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/game-design-using-obsidian/#Putting_Down_Ideas">
+                    Putting Down Ideas
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/game-design-using-obsidian/#Organizing_Sequences">
+                    Organizing Sequences
+                </a>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/game-design-using-obsidian/#Managing_the_Project">
+                    Managing the Project
+                </a>
+            </li>
+            
+            <li>
+                <ul class="divide-y divide-dotted md:divide-none">
+                    
+                    <li>
+                        <a href="https://queenofsquiggles.github.io/guides/game-design-using-obsidian/#Endless_Cards">
+                            Endless Cards
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+
+                <a href="https://queenofsquiggles.github.io/guides/game-design-using-obsidian/#Building_to_Completion">
+                    Building to Completion
+                </a>
+            </li>
+            
+            
+        </ul>
+        
+        
+</ul>
+</li>
+</ul>
+
+
+
+  </div>
+
+</div>
+
+<div class="static">
+  <div class="fixed bottom-4 md:bottom-8 start-4 md:start-8 ">
+    <div class="tooltip" data-tip="Return to top">
+      <a class="btn bg-neutral aspect-square rounded-full shadow-md" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+          <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path fill="#FFFFFF"
+            d="M32 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c53 0 96-43 96-96l0-306.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 416c0 17.7-14.3 32-32 32l-96 0z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container mx-auto bg-base-200 rounded-box py-6 px-4">
+  <h1 class="prose prose-accent text-5xl font-bold">
+    Hey guess what! This blog has moved from being hosted on Github to being hosted on Codeberg. 
+    <a href="https://queenofsquiggles.codeberg.page&#x2F;guides&#x2F;game-design-using-obsidian&#x2F;" target="_blank" rel="noopener noreferrer">
+      [[Click here]]
+    </a> to read this page on the new blog
+  </h1>
+</div>
+
+<div class="container mx-auto py-6 px-4"></div>
+
+<div class="flex flex-col justify-center">
+  <article
+    class="prose prose-neutral lg:prose-xl px-2 max-w-none prose-blockquote:rounded-r-lg prose-blockquote:shadow-2xl prose-blockquote:bg-base-200 prose-blockquote:p-2">
+    <blockquote>
+<p>This guide is primarily aimed at game developers who may not have explored options for project organization and management. If that’s not you, enjoy learning about my personal workflow</p>
+</blockquote>
+<h2 id="Obsidian,_a_note-taking_app_with_(mostly)_good_features"><a class="zola-anchor" href="#Obsidian,_a_note-taking_app_with_(mostly)_good_features" aria-label="Anchor link for: Obsidian,_a_note-taking_app_with_(mostly)_good_features">Obsidian, a note-taking app with (mostly) good features</a></h2>
+<p>As much as I do love FOSS (Free and Open Source Software), <a rel="noopener nofollow noreferrer" target="_blank" href="https://obsidian.md/">Obsidian</a> is my favourite app to use for notes and organizing my ideas. I’ve used it for everything from project management, sequence planning, personal to-do lists, notes for a story I’m writing, and even school notes!</p>
+<p>One of the most valuable uses I’ve found is organizing my thoughts for game design!</p>
+<h2 id="Scaffolding_Ideas"><a class="zola-anchor" href="#Scaffolding_Ideas" aria-label="Anchor link for: Scaffolding_Ideas">Scaffolding Ideas</a></h2>
+<p>Obsidian uses a superset of Markdown, which is a pretty nifty language for formatting text. (I’m even using it for formatting this blog!)</p>
+<p>Because of this, the text is pretty quick to format without needing to leave your keyboard.</p>
+
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="contact-range-notes.png" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="contact-range-notes.png" alt="An example of a page in Obsidian" title="An example of a page in Obsidian" />
+            </a>
+        </figure>
+        
+        <div class="card-body">
+            <p class="prose">
+                An example of a page in Obsidian
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+<h3 id="Callouts_in_Obsidian"><a class="zola-anchor" href="#Callouts_in_Obsidian" aria-label="Anchor link for: Callouts_in_Obsidian">Callouts in Obsidian</a></h3>
+<p>You can see in the picture above that I’m using a “callout” to mark some useful resources for developing <em>Contact Range</em>. I didn’t end up using all of them to be fair. But the callouts can be super helpful for specific ideas and there’s a few different kinds of them with associated colours and names.</p>
+<p>This is the syntax I used above. Note that it acts as an extension of the ‘quote’ formatting that uses <code>&gt;</code> prefix to each line. The heading is specified by square brackets (<code>[]</code>), and an exclamation point (<code>!</code>) prefixed key-word.</p>
+<pre data-lang="Markdown" style="background-color:#2b303b;color:#c0c5ce;" class="language-Markdown "><code class="language-Markdown" data-lang="Markdown"><span style="color:#d08770;">&gt;[!hint]+ Useful Resources
+</span><span style="color:#d08770;">&gt; ... text ...
+</span><span>
+</span></code></pre>
+<p>Also if you note that the square brackets are ended by <code>+</code>, that’s a collapse notation. It tells Obsidian that we want to be able to collapse the callout down to the header, but by default we want it to display as full. For defaulting to collapsed, you would rather use <code>-</code>. Following that is the title of the callout. If you omit it, the keyword default title will be used as a heading. For example <code>!help</code> would become “Help”</p>
+<p>My most used key-words are:</p>
+<ul>
+<li>hint</li>
+<li>help</li>
+<li>info</li>
+</ul>
+<p>This is usually because my notes focus on expressing information. And so the callouts are extra information that would be used.</p>
+<h3 id="Headings"><a class="zola-anchor" href="#Headings" aria-label="Anchor link for: Headings">Headings</a></h3>
+<p>Headings in any text document are incredibly useful. In obsidian, they are automatically built into a table of contents on the right pane.</p>
+
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="contact-range-notes-toc.png" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="contact-range-notes-toc.png" alt="The table of contents for the Contact Range document" title="The table of contents for the Contact Range document" />
+            </a>
+        </figure>
+        
+        <div class="card-body">
+            <p class="prose">
+                The table of contents for the Contact Range document
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+<p>This pane is collapseable for when you really want to focus, but is super helpful for larger documents.</p>
+<h3 id="Super-charged_Links"><a class="zola-anchor" href="#Super-charged_Links" aria-label="Anchor link for: Super-charged_Links">Super-charged Links</a></h3>
+<p>Remember what I said about Obsidian using a <em>superset</em> of Markdown. Here’s where that matters. So links work just like regular markdown, even for images. To review, the format is:</p>
+<pre data-lang="Markdown" style="background-color:#2b303b;color:#c0c5ce;" class="language-Markdown "><code class="language-Markdown" data-lang="Markdown"><span>
+</span><span style="color:#d08770;">[Link Text](https://www.your-link.net)
+</span><span>
+</span><span>![Image Alt-Text](/path/to/your/image.jpg)
+</span><span>
+</span></code></pre>
+<p>Obsidian introduces a new type of link called a “Note Link”. It allows you to reference other note pages you have written which helps to connect different elements that each have their own concise pages. I use this more for writing stories, so each character, faction, location, etc… will get their own page with links connecting everything where relevant.</p>
+<pre data-lang="Markdown" style="background-color:#2b303b;color:#c0c5ce;" class="language-Markdown "><code class="language-Markdown" data-lang="Markdown"><span>
+</span><span>[[Full Name Of The Note You Want To Link]]
+</span><span>
+</span></code></pre>
+<p><strong>Important to note:</strong> the page name will provide auto-complete suggestions, but it is most helpful when your pages uses unique names across the “vault” (obsidian’s currently scoped directory).</p>
+<h2 id="Let’s_Make_a_Game"><a class="zola-anchor" href="#Let’s_Make_a_Game" aria-label="Anchor link for: Let’s_Make_a_Game">Let’s Make a Game</a></h2>
+<p>Now that you’re equipped with a basic understanding of how to write effective notes in Obsidian, let’s look at how that relates to game development and design.</p>
+<h3 id="Putting_Down_Ideas"><a class="zola-anchor" href="#Putting_Down_Ideas" aria-label="Anchor link for: Putting_Down_Ideas">Putting Down Ideas</a></h3>
+<p>You will probably want to start with a document where you just “brain dump” on the page. Text notes are good. All you are doing at this phase is getting ideas on ‘paper’, or page perhaps. Once it’s all written down you can start to review what you wrote and see if any ideas coalesce. If you are working as part of a team, sharing the document and reviewing it together could be better. But most of my experience is solo dev, so <em>it’s just me babyyyy</em>!</p>
+<p>After getting the ideas organized and cleaned up, you can start working on the next few phases.</p>
+<h3 id="Organizing_Sequences"><a class="zola-anchor" href="#Organizing_Sequences" aria-label="Anchor link for: Organizing_Sequences">Organizing Sequences</a></h3>
+<p>So you’ve got a game idea now and you want the player to do X, Y, Z, using items Alpha, Beta, Gamma, and talking to NPCs 1, 2, and 3. How do we organize that!?!?</p>
+<p>My solution is to use a “core plugin” called “canvas”.</p>
+<p>To setup canvas you need to open the settings menu with the cog icon in the bottom left corner. Then go to “Core Plugins” and enable “Canvas”. Optionally, you can fiddle with the options for Canvas using the cog button on the same line, or in the left pane under the “Core Plugins” header. My preferred change is to set “Default location for new canvas files” to “Same folder as current file”. By default they drop to the vault’s root directory.</p>
+<p>A canvas is a generic node graphing tool that you can use to make <em>beautiful spaghetti</em></p>
+
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="contact-range-canvas.png" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="contact-range-canvas.png" alt="The beautiful spaghetti of a node graph I made for Contact Range" title="The beautiful spaghetti of a node graph I made for Contact Range" />
+            </a>
+        </figure>
+        
+        <div class="card-body">
+            <p class="prose">
+                The beautiful spaghetti of a node graph I made for Contact Range
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+<p>You might want to open that image in a separate tab if you want to be able to read the text. Otherwise, just trust that I’m being truthful.</p>
+<p>There are three main types of nodes allowed:</p>
+<ul>
+<li>Generic Text</li>
+<li>Note</li>
+<li>Picture</li>
+</ul>
+<p>Generic text is just a block that you can put text into and style it how you like. If you look closely I used headers in some nodes to mark the “quest lines”. Note Nodes allow you to link an existing notes into the canvas as a resizable node. You can even scroll through the entire document from the canvas if you like. Finally Image Nodes are as expected, an embedded image. Combined with the ability to create connections between nodes, assign directional arrows, colours for node blocks and connections, and a theoretically infinite canvas, organizing structures of information is definitely possible.</p>
+<p>For my purposes I made every room, item, and ‘quest action’ into a node. Then I connected them to help me map the players progress through the ship. I wanted to ensure they spent time in all of the rooms since the aliens were going to spread throughout the ship and attack the player in any of the rooms.</p>
+<blockquote>
+<p>If you are reading through the canvas above and have played Contact Range, you might have noticed that not everything from the canvas was implemented. Sorry about that! That’s what happens during game jams, ruthless feature cutting</p>
+</blockquote>
+<h3 id="Managing_the_Project"><a class="zola-anchor" href="#Managing_the_Project" aria-label="Anchor link for: Managing_the_Project">Managing the Project</a></h3>
+<blockquote>
+<p>If you have experience with DevOps you’re probably good to skip this. Unless you wanna help me find any mistakes I made &lt;3</p>
+</blockquote>
+<p>So with your ideas put together and some rough (or maybe not so rough) sequencing figured out, now you need to break it down into manageable and–most importantly–actionable tasks. This is where “Project Management” (PM) rears its ugly head. Most of PM work is not exceptionally difficult in theory, but almost always is difficult in practice. There are so many different methods for organizing tasks into small chunks that can be assigned to individual team members. My favourite is a <a rel="noopener nofollow noreferrer" target="_blank" href="https://en.wikipedia.org/wiki/Kanban">Kanban Board</a>. It’s a fairly simple process. You organize tasks into “cards” that describe the task and maybe some additional meta-data like who’s assigned to it and/or what category of task it is (art, code, sfx, etc…). For me, I usually skip the assignment step since it’s usually all me.</p>
+
+
+<div class="flex justify-center not-prose">
+    <div class="card card-compact shadow-2xl bg-neutral max-w-lg">
+        <figure>
+            <a href="personal-todo-kanban.jpg" target="_blank" rel="noopener noreferrer">
+                <img class="rounded-box shadow-md" src="personal-todo-kanban.jpg" alt="A Kanban Board of my personal life tasks" title="A Kanban Board of my personal life tasks" />
+            </a>
+        </figure>
+        
+        <div class="card-body">
+            <p class="prose">
+                A Kanban Board of my personal life tasks
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+<p>Here’s an example of a kanban board. Specifically one I use to organize my personal life tasks. Once something makes it to the “Done” channel I like to archive it so it doesn’t clutter up the view. If you are perceptive, you probably noticed that I’m still using Obsidian. There is a “Community Plugin” (not maintained by the Obsidian Devs) called “Kanban” by “mgmeyers” that I use almost religiously. It adds a type of note that is a Kanban board which allows you to specify which lanes you want. There is also tools for things like due dates, tagging, and styles. You can even make styles react to the tags or date proximity on the card. For example, when I used this for school I made green, orange, and red colour styles based on how urgently the task needed to be done (based on 7+ days out, 3+ days out, or less than 3 days away, respectively)</p>
+<p>You can even add styling specific to a single Kanban board or have those settings globally. Which is super powerful.</p>
+<h4 id="Endless_Cards"><a class="zola-anchor" href="#Endless_Cards" aria-label="Anchor link for: Endless_Cards">Endless Cards</a></h4>
+<p>A simple approach is to make a card for each “thing” you need to do. So for each asset to make, it gets a card. For every system that needs code, that’s a card. For every QA work done at a step in the process, that’s another card! And when the moon hits your eye like a big pizza pie, that’s <del>another card</del> <em>amore!</em></p>
+<p>There’s a ton of solutions for figuring out how to organize your cards. In my experience the solution that’s best is <em>the one that works for you and your needs</em>.</p>
+<p>One such solution that I use for projects larger than a game jam are <a rel="noopener nofollow noreferrer" target="_blank" href="https://scrumandkanban.co.uk/theme-epic-story-task/">“Epic Cards”</a>. It’s a way to create a hierarchy of tasks and categorize them into a particular order. I’ve seen many people use Epics almost like versioning. So once that “Epic” is complete that’s 0.1 more version points. (For clarity, I mean a project at version 1.2 would go to 1.3 after the 1.3.X epic is compeleted. And subversions, 1.2.X, would increment as stable changes are made.)</p>
+<p>Of course that’s not the only way to organize your tasks. I highly recommend looking into modern technique of project management if you are more interested in this. Without being more familiar with what industry standards look like, I’m hesitant to make a particular recommendation.</p>
+<h3 id="Building_to_Completion"><a class="zola-anchor" href="#Building_to_Completion" aria-label="Anchor link for: Building_to_Completion">Building to Completion</a></h3>
+<p>Now you’ve got your idea, the sequences, and your tasks all organized. That was the easy part. Your next steps are to make it all happen. This is where you “get your hands dirty” and work on the code/art/model/shader/SFX/music/VFX/API/etc… necessary for your project!</p>
+<p>From here I can’t quite help you. Or rather, I can’t in this article. Obsidian is an excellent tool for organizing all of the game design components. But once you transition to the development, Obsidian is mostly useful as a refernce. Best of luck. I hope you have an enjoyable project! Or at least an <em>interesting</em> one!</p>
+
+  </article>
+</div>
+
+<div class="flex justify-center py-2">
+  
+  <ul class="menu menu-vertical lg:menu-horizontal bg-secondary text-neutral rounded-box">
+    <li class="menu-title text-neutral">Read more with tag:</li>
+    
+    <li class="bg-secondary hover:bg-primary rounded-box">
+      <a href="https://queenofsquiggles.github.io/tags/tech discussion/">
+        tech discussion
+      </a>
+    </li>
+    
+    <li class="bg-secondary hover:bg-primary rounded-box">
+      <a href="https://queenofsquiggles.github.io/tags/guide/">
+        guide
+      </a>
+    </li>
+    
+    <li class="bg-secondary hover:bg-primary rounded-box">
+      <a href="https://queenofsquiggles.github.io/tags/tool/">
+        tool
+      </a>
+    </li>
+    
+  </ul>
+  
+
+</div>
+
+
+  </main>
+
+  
+  
+
+  
+  <footer class="footer bg-neutral text-neutral-content p-10 justify-center">
+    <aside>
+      
+      <a href=" mailto:thequeenofsquiggles@gmail.com">thequeenofsquiggles@gmail.com</a>
+      
+    </aside>
+    
+    <nav>
+      <h6 class="footer-title">Socials</h6>
+      <div class="grid grid-flow-col gap-4">
+        
+        <a class="flex-auto" href="https:&#x2F;&#x2F;blobfox.coffee&#x2F;@queenofsquiggles"  title="Mastodon" ><i
+            class="fab fa-mastodon"></i></a>
+        
+        <a class="flex-auto" href="rss.xml"  title="RSS Feed" ><i
+            class="fas fa-rss"></i></a>
+        
+      </div>
+    </nav>
+    
+  </footer>
+  
+</body>
+
+</html>
